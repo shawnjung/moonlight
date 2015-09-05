@@ -1,0 +1,168 @@
+{
+  "assets": [
+    {
+      "id": "logo",
+      "type": "image",
+      "src": "the-moonlight/images/logo.png"
+    },
+    {
+      "id": "background",
+      "type": "image",
+      "src": "the-moonlight/images/background.png"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "opening",
+      "view": "SceneView",
+      "options": {
+        "opacity": 0
+      },
+
+      "actors": [
+        {
+          "id": "shawn",
+          "name": "Shawn Jung",
+          "short_name": "Shawn",
+          "actions": {}
+        }
+      ],
+
+      "layers": [
+        {
+          "id": "background",
+          "z": 1
+        },
+        {
+          "id": "characters",
+          "z": 2
+        },
+        {
+          "id": "effectors",
+          "z": 3
+        },
+        {
+          "id": "subtitles",
+          "z": 4
+        }
+
+      ],
+      "preevents": [
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "background",
+            "layer_id": "background"
+          },
+          "auto_next": 0
+        }
+      ],
+      "events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [0, 1],
+            "duration": 1000
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "fade_in_image",
+          "options": {
+            "view_id": "logo",
+            "asset_id": "logo",
+            "layer_id": "subtitles",
+            "position": {"x": 0.5, "y": 0.5},
+            "origin": {"x": 0.5, "y": 0.5},
+            "duration": 2000
+          },
+          "auto_next": 0
+        },
+        {
+          "view": "logo",
+          "method": "animate",
+          "options": {
+            "position": {"x": 0.5, "y": 0.15},
+            "duration": 1200
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "shawn",
+                "speed": 30,
+                "font_size": 28,
+                "message": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+              },
+              {
+                "actor_id": "",
+                "speed": 30,
+                "font_size": 28,
+                "message": "Donec ullamcorper nulla non metus auctor fringilla."
+              },
+              {
+                "actor_id": "shawn",
+                "speed": 30,
+                "font_size": 28,
+                "message": "Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum."
+              },
+              {
+                "actor_id": "shawn",
+                "speed": 30,
+                "font_size": 28,
+                "message": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+              },
+              {
+                "actor_id": "shawn",
+                "speed": 30,
+                "font_size": 28,
+                "message": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."
+              },
+              {
+                "actor_id": "shawn",
+                "speed": 30,
+                "font_size": 28,
+                "message": "Donec ullamcorper nulla non metus auctor fringilla."
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi1",
+            "choices": [
+              {
+                "text": "Move Scene",
+                "method": "move_scene",
+                "options": {
+                  "scene_id": "new_scene"
+                }
+              },
+              {
+                "text": "Remeber Variable"
+              },
+              {
+                "text": "No Action"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "new_scene",
+      "view": "SceneView",
+      "options": {}
+    }
+  ]
+}

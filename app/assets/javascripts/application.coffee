@@ -15,12 +15,12 @@ class Moon.SceneManager extends SUI.Router
     width: 640
     height: 960
 
-  initialize: ->
+  initialize: (options = {}) ->
     @view   = new Moon.View.ApplicationView app: this
     @game   = new Moon.Model.Game
 
     $.ajax
-      url: 'the-moonlight.json'
+      url: options.json
       success: (response) =>
         @game.init_game_data_from response
         @game.preload_assets =>
