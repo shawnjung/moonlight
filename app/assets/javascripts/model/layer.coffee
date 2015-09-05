@@ -1,0 +1,1 @@
+class Moon.Model.Layer extends Backbone.Model

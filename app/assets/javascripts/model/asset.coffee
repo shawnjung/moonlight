@@ -1,0 +1,1 @@
+class Moon.Model.Asset extends Backbone.Model

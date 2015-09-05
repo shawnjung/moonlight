@@ -1,0 +1,52 @@
+[
+  {
+    "scene_id": "opening",
+    "view": "SceneView",
+    "assets": [
+      {
+        "id": "logo",
+        "type": "image",
+        "src": "the-moonlight/images/logo.png"
+      }
+    ],
+    "layers": [
+      {
+        "id": "background",
+        "z": 1
+      },
+      {
+        "id": "characters",
+        "z": 2
+      },
+      {
+        "id": "effectors",
+        "z": 3
+      },
+      {
+        "id": "subtitles",
+        "z": 4
+      }
+
+    ],
+    "events": [
+      {
+        "method": "fade_in_image",
+        "asset_id": "logo",
+        "view_id": "logo",
+        "layer_id": "subtitles",
+        "position": {"x": 0.5, "y": 0.5},
+        "origin": {"x": 0.5, "y": 0.5},
+        "duration": 2000,
+        "auto_skip": 0
+      },
+      {
+        "method": "animate_image",
+        "view_id": "logo",
+        "scale": [1,2],
+        "opacity": 0,
+        "duration": 2000,
+        "auto_skip": 0
+      }
+    ]
+  }
+]

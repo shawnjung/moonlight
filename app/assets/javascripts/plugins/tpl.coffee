@@ -1,0 +1,1 @@
+window.TPL = (path) -> JST["views/#{path}"]
