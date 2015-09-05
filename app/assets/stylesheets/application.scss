@@ -1,12 +1,18 @@
+//= require normalize
+//= require_self
 //= require_tree ./components
+
+@import "compass/css3";
+
+h1, h2, h3, h4, h5, h6, p, div {
+  @include box-sizing(border-box);
+}
 
 body {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
-  background: black; padding: 0; margin: 0;
+  background: #111; padding: 0; margin: 0;
+  font-family: 'Source Sans Pro', sans-serif; font-weight: 400;
+  input, textarea, select { font-family: 'Source Sans Pro', sans-serif; font-weight: 400; }
 }
-#moon-application {
-  position: absolute;
-  left: 50%; top: 50%;
-  background: #ccc;
-}
+

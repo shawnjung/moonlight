@@ -1,0 +1,1 @@
+class Moon.Model.Actor extends SUI.Model

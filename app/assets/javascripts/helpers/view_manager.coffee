@@ -1,4 +1,4 @@
-class Moon.Helper.ImageViewManager
+class Moon.Helper.ViewManager
   constructor: (options) ->
     @views = {}
 

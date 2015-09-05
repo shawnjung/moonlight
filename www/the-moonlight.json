@@ -2,13 +2,32 @@
   {
     "scene_id": "opening",
     "view": "SceneView",
+    "options": {
+      "opacity": 0
+    },
+
     "assets": [
       {
         "id": "logo",
         "type": "image",
         "src": "the-moonlight/images/logo.png"
+      },
+      {
+        "id": "background",
+        "type": "image",
+        "src": "the-moonlight/images/background.png"
       }
     ],
+
+    "actors": [
+      {
+        "id": "shawn",
+        "name": "Shawn Jung",
+        "short_name": "Shawn",
+        "actions": {}
+      }
+    ],
+
     "layers": [
       {
         "id": "background",
@@ -28,24 +47,62 @@
       }
 
     ],
+    "preevents": [
+      {
+        "view": "self",
+        "method": "new_image",
+        "options": {
+          "asset_id": "background",
+          "layer_id": "background"
+        },
+        "auto_next": 0
+      }
+    ],
     "events": [
       {
-        "method": "fade_in_image",
-        "asset_id": "logo",
-        "view_id": "logo",
-        "layer_id": "subtitles",
-        "position": {"x": 0.5, "y": 0.5},
-        "origin": {"x": 0.5, "y": 0.5},
-        "duration": 2000,
-        "auto_skip": 0
+        "view": "self",
+        "method": "fade",
+        "options": {
+          "opacity": [0, 1],
+          "duration": 1000
+        },
+        "auto_next": 1
       },
       {
-        "method": "animate_image",
-        "view_id": "logo",
-        "scale": [1,2],
-        "opacity": 0,
-        "duration": 2000,
-        "auto_skip": 0
+        "view": "self",
+        "method": "fade_in_image",
+        "options": {
+          "view_id": "logo",
+          "asset_id": "logo",
+          "layer_id": "subtitles",
+          "position": {"x": 0.5, "y": 0.5},
+          "origin": {"x": 0.5, "y": 0.5},
+          "duration": 2000
+        },
+        "auto_next": 0
+      },
+      {
+        "view": "logo",
+        "method": "animate",
+        "options": {
+          "position": {"x": 0.5, "y": 0.15},
+          "duration": 1200
+        },
+        "auto_next": 1
+      },
+      {
+        "view": "self",
+        "method": "new_conversation",
+        "options": {
+          "messages": [
+            {"actor_id": "shawn", "speed": 30, "font_size": 28, "message": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."},
+            {"actor_id": "shawn", "speed": 30, "font_size": 28, "message": "Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum."},
+            {"actor_id": "shawn", "speed": 30, "font_size": 28, "message": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet."},
+            {"actor_id": "shawn", "speed": 30, "font_size": 28, "message": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."},
+            {"actor_id": "shawn", "speed": 30, "font_size": 28, "message": "Donec ullamcorper nulla non metus auctor fringilla."},
+            {"actor_id": "", "speed": 30, "font_size": 28, "message": "Donec ullamcorper nulla non metus auctor fringilla."}
+          ]
+        }
       }
     ]
   }

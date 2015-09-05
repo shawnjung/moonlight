@@ -7,8 +7,8 @@ class Moon.View.ImageView extends SUI.View
 
     @scale    = if _(options.scale).isUndefined() then 1 else options.scale
     @opacity  = if _(options.opacity).isUndefined() then 1 else options.opacity
-    @origin   = options.origin
-    @position = options.position
+    @origin   = options.origin or {x: 0, y: 0}
+    @position = options.position or {x: 0, y: 0}
 
     @_render()
     @_position options.layer_id
@@ -27,9 +27,8 @@ class Moon.View.ImageView extends SUI.View
       else
         animate_options[attr] = options[attr]
 
-    @$el.css prepare_options
-    console.log animate_options
-    @$el.transition animate_options, options.duration
+    @$el.css @_convert_position_attr prepare_options
+    @$el.transition @_convert_position_attr(animate_options), options.duration
 
   _render: ->
     width  = parseInt @asset.get('width')
@@ -39,16 +38,17 @@ class Moon.View.ImageView extends SUI.View
     height_percentage = height/@app.screen_size.height*100
     height_percentage_by_width = height/@app.screen_size.width*100
 
-    @$el.css
+    prepare_options =
       width:  "#{width_percentage}%"
       height: "#{height_percentage}%"
       marginLeft: "#{width_percentage*@origin.x*-1}%"
       marginTop: "#{height_percentage_by_width*@origin.y*-1}%"
-      left: "#{@position.x*100}%", top: "#{@position.y*100}%"
+      position: @position
       opacity: @opacity
       scale: @scale
       transformOrigin: "#{@origin.x*100}% #{@origin.y*100}%"
 
+    @$el.css @_convert_position_attr prepare_options
     @$image = $("<img src='#{@asset.get('src')}'>")
     @$el.append @$image
 
@@ -56,3 +56,18 @@ class Moon.View.ImageView extends SUI.View
   _position: (layer_id) ->
     layer = @scene.layers.get layer_id
     layer.view.$el.append @el
+
+
+  _convert_position_attr: (options) ->
+    position = options.position
+
+    return options unless position
+
+    options.left = "#{position.x*100}%" if position.x
+    options.top  = "#{position.y*100}%" if position.y
+
+    delete options.position
+
+    options
+
+

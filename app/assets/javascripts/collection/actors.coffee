@@ -1,0 +1,1 @@
+class Moon.Collection.Actors extends SUI.Collection

@@ -3,12 +3,15 @@ class Moon.View.SceneView extends SUI.View
   initialize: (options) ->
     @model.view = this
     @current_event_index = options.current_event_index or 0
-    @image_view_manager  = new Moon.Helper.ImageViewManager
+    @view_manager        = new Moon.Helper.ViewManager
 
+    @_render()
     @_render_layer_views()
     @_position()
 
     @_start_from @current_event_index
+
+
 
 
   events:
@@ -22,32 +25,44 @@ class Moon.View.SceneView extends SUI.View
     @current_event_index = next_index
 
 
-  render_image: (event, options = {}) ->
-    image_options = event.pick 'scale', 'origin', 'position', 'opacity', 'layer_id'
-    _(image_options).extend options
+  fade: (options) ->
+    prepare_options = {}
+    animate_options = {}
+    if _(options.opacity).isArray()
+      prepare_options.opacity = options.opacity[0]
+      animate_options.opacity = options.opacity[1]
+    else
+      animate_options.opacity = options.opacity
+    @$el.css prepare_options
+    @$el.animate animate_options
 
-    view  = new Moon.View.ImageView _(image_options).defaults
+
+  new_image: (options = {}) ->
+    view  = new Moon.View.ImageView _(options).defaults
               app: @app, scene: @model
-              asset: @model.assets.get(event.get('asset_id'))
+              asset: @model.assets.get(options.asset_id)
 
-    @image_view_manager.add event.get('view_id'), view
-
-  animate_image: (event, options = {}) ->
-    image_options = event.pick 'scale', 'origin', 'position', 'opacity', 'duration'
-    _(image_options).extend options
-
-    view = @image_view_manager.get event.get('view_id')
-    view.animate image_options
-
-  remove_image: (event) ->
-    view = @image_view_manager.remove event.get('view_id')
-    view.remove()
-
-  fade_in_image: (event) ->
-    @render_image event, opacity: 0
-    @animate_image event, opacity: 1
+    @view_manager.add options.view_id, view
+    view
 
 
+  new_conversation: (options = {}) ->
+    view = new Moon.View.ConversationView _(options).defaults
+              app: @app, scene: @model
+
+    @view_manager.add options.view_id, view
+    view
+
+
+  fade_in_image: (options) ->
+    options.opacity = 0
+    view = @new_image options
+    options.opacity = 1
+    view.animate options
+
+
+  _render: ->
+    @$el.css @model.get('options')
 
   _render_layer_views: ->
     @model.layers.each (layer) =>
@@ -60,9 +75,21 @@ class Moon.View.SceneView extends SUI.View
 
 
   _start_from: (event_index) ->
+    @model.preevents.each (event) => @_perform_event event
     _(@model.events.first(event_index+1)).each (event, index) =>
       @_perform_event event
       @current_event_index = index
 
   _perform_event: (event) ->
-    @[event.get('method')] event
+    if event.get('view') is 'self'
+      target = this
+    else
+      target = @view_manager.get event.get('view')
+
+    return unless target
+
+    target[event.get('method')] event.get('options')
+
+    if event.get('auto_next')
+      next_event_callback = _(@next_event).bind(this)
+      _(next_event_callback).delay event.get('auto_next')

@@ -4,6 +4,8 @@ class Moon.Model.Scene extends Backbone.Model
     @assets = new Moon.Collection.Assets
     @layers = new Moon.Collection.Layers
     @events = new Moon.Collection.Events
+    @preevents = new Moon.Collection.Events
+    @actors = new Moon.Collection.Actors
 
 
   init_assets: (assets_data) ->
@@ -16,6 +18,13 @@ class Moon.Model.Scene extends Backbone.Model
 
   init_events: (events_data)  ->
     @events.reset events_data
+
+  init_preevents: (preevents_data)  ->
+    @preevents.reset preevents_data
+
+  init_actors: (actors_data) ->
+    @actors.reset actors_data
+
 
 
   preload_assets: (callback) ->
