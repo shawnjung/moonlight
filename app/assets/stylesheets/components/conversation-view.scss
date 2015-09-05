@@ -16,7 +16,7 @@
     position: absolute; left: 25em; top: -20em; height: 60em; line-height: 60em;
     background: white; color: black; opacity: 0;
     padding: 0 15em; @include border-radius(8em);
-    @include transition(opacity 0.5s); z-index: 1
+    @include transition(opacity 0.3s); z-index: 1
     ;
   }
   .name {

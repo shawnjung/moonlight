@@ -12,15 +12,16 @@ class Moon.View.SceneView extends SUI.View
     @_start_from @current_event_index
 
 
-
-
   events:
-    'click': 'next_event'
+    'click': 'next'
 
-  next_event: ->
+  next: (e) ->
+    return @_receiver.$el.trigger e.type, e if @_receiver
+
     next_index = @current_event_index+1
     event      = @model.events.at next_index
 
+    return unless event
     @_perform_event event
     @current_event_index = next_index
 
@@ -37,17 +38,31 @@ class Moon.View.SceneView extends SUI.View
     @$el.animate animate_options
 
 
+  register_receiver: (receiver_view) ->
+    @_receiver = receiver_view
+
+  unregister_receiver: ->
+    @_receiver = undefined
+
+
   new_image: (options = {}) ->
     view  = new Moon.View.ImageView _(options).defaults
               app: @app, scene: @model
-              asset: @model.assets.get(options.asset_id)
+              asset: @app.game.assets.get(options.asset_id)
 
     @view_manager.add options.view_id, view
     view
 
 
   new_conversation: (options = {}) ->
-    view = new Moon.View.ConversationView _(options).defaults
+    view  = new Moon.View.ConversationView _(options).defaults
+              app: @app, scene: @model
+
+    @view_manager.add options.view_id, view
+    view
+
+  new_choices: (options) ->
+    view  = new Moon.View.ChoiceView _(options).defaults
               app: @app, scene: @model
 
     @view_manager.add options.view_id, view
@@ -91,5 +106,5 @@ class Moon.View.SceneView extends SUI.View
     target[event.get('method')] event.get('options')
 
     if event.get('auto_next')
-      next_event_callback = _(@next_event).bind(this)
+      next_event_callback = _(@next).bind(this)
       _(next_event_callback).delay event.get('auto_next')

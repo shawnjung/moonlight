@@ -16,14 +16,15 @@ class Moon.SceneManager extends SUI.Router
     height: 960
 
   initialize: ->
-    @scenes = new Moon.Collection.Scenes []
     @view   = new Moon.View.ApplicationView app: this
+    @game   = new Moon.Model.Game
 
     $.ajax
       url: 'the-moonlight.json'
       success: (response) =>
-        @scenes.init_scenes_from response
-        Backbone.history.start()
+        @game.init_game_data_from response
+        @game.preload_assets =>
+          Backbone.history.start()
 
   routes:
     '': 'move_to_first_scene'
@@ -35,8 +36,7 @@ class Moon.SceneManager extends SUI.Router
 
 
   show_scene_view: (id) ->
-    scene = @scenes.get id
-    scene.preload_assets =>
-      @render_view Moon.View.SceneView, model: scene
+    scene = @game.scenes.get id
+    @render_view Moon.View.SceneView, model: scene
 
 

@@ -18,20 +18,33 @@ class Moon.View.ConversationView extends SUI.View
 
   skip_animation_or_next: (e) ->
     e.stopPropagation()
+
     if @_typing
       @_stop_typing()
       @_show_message @current_message_index
     else
-      @next()
+      next_index = @current_message_index+1
+      if @messages.at next_index
+        @_stop_typing()
+        @_show_message next_index, typing: true
+      else
+        @hide =>
+          @remove()
+          @scene.view.next()
 
 
-  next: ->
-    @_stop_typing()
-    @_show_message @current_message_index+1, typing: true
+
 
   show: ->
+    @scene.view.register_receiver this
     @$el.transition y: '0', opacity: 1, 800, =>
       @_show_message 0, typing: true
+
+  hide: (callback) ->
+    @scene.view.unregister_receiver()
+    @$el.transition y: '15%', opacity: 0, 800, =>
+      callback() if callback instanceof Function
+
 
 
   _show_message: (index, options = {}) ->
@@ -43,7 +56,6 @@ class Moon.View.ConversationView extends SUI.View
       @$el.addClass 'show-name-label'
     else
       @$el.removeClass 'show-name-label'
-
 
     @$message.css fontSize: "#{message.get('font_size')}em"
     @$message.empty()
