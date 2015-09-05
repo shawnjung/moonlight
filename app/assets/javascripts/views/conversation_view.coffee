@@ -14,19 +14,27 @@ class Moon.View.ConversationView extends SUI.View
     @show()
 
   events:
-    'click': 'next'
+    'click': 'skip_animation_or_next'
 
-  next: (e) ->
+  skip_animation_or_next: (e) ->
     e.stopPropagation()
-    clearTimeout @_typing
-    @_show_message @current_message_index+1
+    if @_typing
+      @_stop_typing()
+      @_show_message @current_message_index
+    else
+      @next()
+
+
+  next: ->
+    @_stop_typing()
+    @_show_message @current_message_index+1, typing: true
 
   show: ->
     @$el.transition y: '0', opacity: 1, 800, =>
-      @_show_message 0
+      @_show_message 0, typing: true
 
 
-  _show_message: (index) ->
+  _show_message: (index, options = {}) ->
     message = @messages.at index
     actor   = @scene.actors.get message.get('actor_id')
 
@@ -39,23 +47,34 @@ class Moon.View.ConversationView extends SUI.View
 
     @$message.css fontSize: "#{message.get('font_size')}em"
     @$message.empty()
-    @_type_message message.get('message'), 0, message.get('speed')
+
+    if options.typing
+      @_type_message message.get('message'), message.get('speed')
+    else
+      @$message.html message.get('message')
 
     @current_message_index = index
 
-  _type_message: (message_text, index, interval) ->
+  _type_message: (message_text, interval) ->
+    @_stop_typing()
     return unless message_text
-    @$message.append "<span class='letter'>#{message_text.substr(index, 1)}</span>"
+    @$message.append "<span class='letter'>#{message_text[0]}</span>"
+    @$message_area.scrollTop @$message_area.prop('scrollHeight') - @$message_area.height()
 
     @_typing = setTimeout =>
-      @_type_message message_text, index+1, interval
+      @_type_message message_text.substring(1), interval
     , interval
+
+  _stop_typing: ->
+    clearTimeout @_typing
+    delete @_typing
 
   _render: ->
     @$el.html @template()
     @$el.css opacity: 0, y: '15%'
     @$name    = @$(".name")
     @$message = @$(".message")
+    @$message_area = @$(".message-area")
 
 
 

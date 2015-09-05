@@ -9,23 +9,29 @@
 .conversation-view {
   position: absolute;
   left: 15em; bottom: 15em; right: 15em;
-  background: rgba(black, 0.5); height: 400em;
-  padding: 20em 25em 20em; @include border-radius(15em);
+  background: rgba(black, 0.5); height: 300em;
+  @include border-radius(15em);
   color: white; border: 2em solid rgba(white, 0.5);
   .name-label {
     position: absolute; left: 25em; top: -20em; height: 60em; line-height: 60em;
     background: white; color: black; opacity: 0;
     padding: 0 15em; @include border-radius(8em);
-    @include transition(opacity 0.5s);
+    @include transition(opacity 0.5s); z-index: 1
+    ;
   }
   .name {
     font-size: 32em; font-weight: bold;
+  }
+  .message-area {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    padding: 20em 25em 30em; overflow: auto;
   }
   .letter {
     @include animation(fade_in 0.6s);
   }
   &.show-name-label {
-    padding-top: 50em;
+    .message-area { padding-top: 50em; }
     .name-label { opacity: 1 }
   }
 }
