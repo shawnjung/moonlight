@@ -507,6 +507,386 @@
           }
       }
       ]
+    },
+    {
+     "id": "Street",
+     "view": "SceneView",
+     "options": {
+       "opacity":0
+     },
+     "actors": [
+       {
+         "id": "player",
+         "name": "User User",
+         "short_name": "User",
+         "actions": {}
+       },
+       {
+         "id": "coworker",
+         "name": "co-worker, in car",
+         "short_name": "co-worker, in car",
+         "actions": {}
+       }
+     ],
+     "layers": [
+       {
+         "id": "background",
+         "z": 1
+       },
+       {
+         "id": "characters",
+         "z": 2
+       },
+       {
+         "id": "effectors",
+         "z": 3
+       },
+       {
+         "id": "subtitles",
+         "z": 4
+       }
+
+     ],
+     "preevents": [
+       {
+         "view": "self",
+         "method": "new_image",
+         "options": {
+           "asset_id": "background",
+           "layer_id": "background"
+         }
+       },
+       {
+         "view": "self",
+         "method": "play_audio",
+         "options": {
+           "asset_id": "background-music",
+           "loop": true
+         }
+       }
+     ],
+     "post_scene_events": [],
+     "events": [
+       {
+         "view": "self",
+         "method": "fade",
+         "options": {
+           "opacity": [0, 1],
+           "duration": 1000
+         },
+         "auto_next": 1
+       },
+       {
+         "view": "self",
+         "method": "new_monologue",
+         "options": {
+           "view_id": "mono2",
+           "messages": ["The moon is very shiny",
+           "Most people look happy, but some people are a little scared."]
+         }
+       },
+       {
+         "view": "self",
+         "method": "new_conversation",
+         "options": {
+           "view_id": "conv1",
+           "messages": [
+             {
+               "actor_id": "player",
+               "speed": 10,
+               "font_size": 28,
+               "message": "Maybe I am the only one who knows what is happening exactly."
+             }
+           ]
+           }
+         },
+         {
+           "view": "self",
+           "method": "new_monologue",
+           "options": {
+             "view_id": "mono2",
+             "messages": ["I hear a car behind me..."]
+           }
+         },
+         {
+           "view": "self",
+           "method": "new_conversation",
+           "options": {
+             "view_id": "conv1",
+             "messages": [
+               {
+                 "actor_id": "coworker",
+                 "speed": 10,
+                 "font_size": 28,
+                 "message": "Is this what we think it is? If so, we have a very small amount of time."
+               },
+               {
+                 "actor_id": "player",
+                 "speed": 10,
+                 "font_size": 28,
+                 "message": "what will you do?"
+               },
+               {
+                 "actor_id": "coworker",
+                 "speed": 10,
+                 "font_size": 28,
+                 "message": "I don't know, something crazy. I have always been the good one, so I want to go wild at least once."
+               }
+             ]
+             }
+           },
+           {
+             "view": "self",
+             "method": "new_monologue",
+             "options": {
+               "view_id": "mono2",
+               "messages": ["Before disappearing, she adds:"]
+             }
+           },
+           {
+             "view": "self",
+             "method": "new_conversation",
+             "options": {
+               "view_id": "conv1",
+               "messages": [
+                 {
+                   "actor_id": "coworker",
+                   "speed": 10,
+                   "font_size": 28,
+                   "message": "I don’t recommend you visit your girlfriend’s place. Visiting parents could be more valuable for you. and… "
+                 }
+               ]
+               }
+             },
+             {
+               "view": "self",
+               "method": "new_monologue",
+               "options": {
+                 "view_id": "mono2",
+                 "messages": ["should I go to - girlfriend’s room, or parents’ house?"]
+               }
+             },
+             {
+               "view": "self",
+               "method": "new_choices",
+               "options": {
+                 "view_id": "choi2",
+                 "title": "car and place choices",
+                 "description": "So... what should I do?",
+                 "choice_font_size": 46,
+                 "choice_radius": 50,
+                 "background_color": "000000",
+                 "background_opacity": 0.7,
+                 "choices": [
+                   {
+                     "text": "go to girlfriend’s room",
+                     "dynamic_events": []
+                   },
+                   {
+                     "text": "go to parents’ house",
+                     "dynamic_events": []
+                   }
+                 ]
+               }
+             },
+
+     ],
+     "dynamic_events": []
+   },
+   {
+    "id": "GirlfriendsHouse",
+    "view": "SceneView",
+    "options": {
+      "opacity": 0
+    },
+    "actors": [
+      {
+        "id": "player",
+        "name": "User User",
+        "short_name": "User",
+        "actions": {}
+      }
+    ],
+    "layers": [
+      {
+        "id": "background",
+        "z": 1
+      },
+      {
+        "id": "characters",
+        "z": 2
+      },
+      {
+        "id": "effectors",
+        "z": 3
+      },
+      {
+        "id": "subtitles",
+        "z": 4
+      }
+
+    ],
+    "preevents": [
+      {
+        "view": "self",
+        "method": "new_image",
+        "options": {
+          "asset_id": "background",
+          "layer_id": "background"
+        }
+      },
+      {
+        "view": "self",
+        "method": "play_audio",
+        "options": {
+          "asset_id": "background-music",
+          "loop": true
+        }
+      }
+    ],
+    "post_scene_events": [],
+    "events": [
+      {
+        "view": "self",
+        "method": "fade",
+        "options": {
+          "opacity": [0, 1],
+          "duration": 1000
+        },
+        "auto_next": 1
+      }
+    ],
+    "dynamic_events": []
+  },
+  {
+   "id": "ParentsHouse",
+   "view": "SceneView",
+   "options": {
+     "opacity": 0
+   },
+   "actors": [
+     {
+       "id": "player",
+       "name": "User User",
+       "short_name": "User",
+       "actions": {}
+     }
+   ],
+   "layers": [
+     {
+       "id": "background",
+       "z": 1
+     },
+     {
+       "id": "characters",
+       "z": 2
+     },
+     {
+       "id": "effectors",
+       "z": 3
+     },
+     {
+       "id": "subtitles",
+       "z": 4
+     }
+
+   ],
+   "preevents": [
+     {
+       "view": "self",
+       "method": "new_image",
+       "options": {
+         "asset_id": "background",
+         "layer_id": "background"
+       }
+     },
+     {
+       "view": "self",
+       "method": "play_audio",
+       "options": {
+         "asset_id": "background-music",
+         "loop": true
+       }
+     }
+   ],
+   "post_scene_events": [],
+   "events": [
+     {
+       "view": "self",
+       "method": "fade",
+       "options": {
+         "opacity": [0, 1],
+         "duration": 1000
+       },
+       "auto_next": 1
+     }
+   ],
+   "dynamic_events": []
+ },
+ {
+  "id": "OnTheRoad",
+  "view": "SceneView",
+  "options": {
+    "opacity": 0
+  },
+  "actors": [
+    {
+      "id": "player",
+      "name": "User User",
+      "short_name": "User",
+      "actions": {}
     }
+  ],
+  "layers": [
+    {
+      "id": "background",
+      "z": 1
+    },
+    {
+      "id": "characters",
+      "z": 2
+    },
+    {
+      "id": "effectors",
+      "z": 3
+    },
+    {
+      "id": "subtitles",
+      "z": 4
+    }
+
+  ],
+  "preevents": [
+    {
+      "view": "self",
+      "method": "new_image",
+      "options": {
+        "asset_id": "background",
+        "layer_id": "background"
+      }
+    },
+    {
+      "view": "self",
+      "method": "play_audio",
+      "options": {
+        "asset_id": "background-music",
+        "loop": true
+      }
+    }
+  ],
+  "post_scene_events": [],
+  "events": [
+    {
+      "view": "self",
+      "method": "fade",
+      "options": {
+        "opacity": [0, 1],
+        "duration": 1000
+      },
+      "auto_next": 1
+    }
+  ],
+  "dynamic_events": []
+}
   ]
 }
