@@ -1,4 +1,4 @@
-class Moon.View.LayerView extends SUI.View
+class Moon.View.LayerView extends Moon.View.BaseView
   className: 'layer-view'
   initialize: (options) ->
     @scene = options.scene

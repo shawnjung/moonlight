@@ -95,97 +95,89 @@
         },
         {
           "view": "self",
-          "method": "new_monologue",
+          "method": "new_choices",
           "options": {
-            "view_id": "mono1",
-            "halign": "center",
-            "valign": "middle",
-            "background_color": "ffffff",
-            "font_color": "000000",
-            "opacity": 1,
-            "messages": [
-              "Donec ullamcorper nulla."
-            ]
-          }
-        },
-        {
-          "view": "self",
-          "method": "new_monologue",
-          "options": {
-            "view_id": "mono2",
-            "messages": [
-              "Donec ullamcorper nulla non metus auctor fringilla.",
-              "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.",
-              "Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.",
-              "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.\n              Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit."
-            ]
-          }
-        },
-        {
-          "view": "logo",
-          "method": "animate",
-          "options": {
-            "position": {"x": 0.5, "y": 0.15},
-            "duration": 1200
-          },
-          "auto_next": 0
-        },
-        {
-          "view": "self",
-          "method": "new_conversation",
-          "options": {
-            "view_id": "conv1",
-            "messages": [
+            "view_id": "choi1",
+            "title": "What should I do now?",
+            "description": "You have no idea what to do.",
+            "choices": [
               {
-                "actor_id": "ozi",
-                "message": "The Sun goes nova(explodes) on the otherside of the Earth, so the Moon shines A LOT. It makes a beautiful scene, but only few people notice that this is the last BEAUTIFUL NIGHT we will have. When the morning comes, the world will burn and humanity will be destroyed. What will you do? Maybe you can have good time with your girlfriend. Or you can drive and see your mom and dad. You have a lot of options on what to do, but you have no time to do everything. When time runs out, we will finally learn an important lesson: You have to make every second count. (This story is inspired by <Inconstant Moon>, Larry Niven, the SF writer.)"
-
+                "text": "Ask to Shawn",
+                "events": ["dynamic_event_1", "back"]
               },
               {
-                "actor_id": "shawn",
-                "message": "He wakes up. He notices something has happened. He sees the moon, and realized that the moon is too shiny today. He knows what happened because he was monitoring the sun with his team 3 days ago and noticed more solar flares than the normal amount, and he and his team knew that when that happened, it meant that the sun has gone nova… and made everything around it hotter, which meant the end of humanity. He panicked and continued to stare at the moon… He still cannot believe what is happening. He is alone in room."
+                "text": "Ask to Ozi",
+                "events": ["dynamic_event_2", "next"]
               },
               {
-                "actor_id": "sangmin",
-                "message": "Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum."
-              },
-              {
-                "actor_id": "shawn",
-                "message": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
-              },
-              {
-                "actor_id": "ozi",
-                "message": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."
-              },
-              {
-                "actor_id": "ozi",
-                "message": "Donec ullamcorper nulla non metus auctor fringilla."
-              },
-              {
-                "actor_id": "shawn",
-                "message": "it works so far!"
+                "text": "Ask to SangMin",
+                "events": ["dynamic_event_3", "back"]
               }
             ]
           }
         },
         {
           "view": "self",
-          "method": "new_choices",
+          "method": "switch_by_variable",
           "options": {
-            "view_id": "choi1",
-            "choices": [
+            "variable_id": "favorite_food",
+            "cases": [
               {
-                "text": "Move Scene",
-                "method": "move_scene",
-                "options": {
-                  "scene_id": "new_scene"
-                }
+                "value": "pizza",
+                "events": [""]
               },
               {
-                "text": "Remeber Variable"
+                "value": "apple",
+                "events": [""]
               },
               {
-                "text": "No Action"
+                "value": "coffee",
+                "events": [""]
+              }
+            ]
+          }
+
+        }
+      ],
+      "dynamic_events": [
+        {
+          "id": "dynamic_event_1",
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv",
+            "messages": [
+              {
+                "actor_id": "shawn",
+                "message": "You're wrong."
+              }
+            ]
+          }
+        },
+        {
+          "id": "dynamic_event_2",
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv",
+            "messages": [
+              {
+                "actor_id": "ozi",
+                "message": "Let's get out here!"
+              }
+            ]
+          }
+        },
+        {
+          "id": "dynamic_event_3",
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv",
+            "messages": [
+              {
+                "actor_id": "sangmin",
+                "message": "You're wrong."
               }
             ]
           }

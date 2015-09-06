@@ -1,4 +1,4 @@
-class Moon.View.MonologueView extends SUI.View
+class Moon.View.MonologueView extends Moon.View.BaseView
   className: 'monologue-view'
   template: TPL('monologue')
   default_voptions:

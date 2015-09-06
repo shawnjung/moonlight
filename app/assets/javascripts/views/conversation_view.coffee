@@ -1,4 +1,4 @@
-class Moon.View.ConversationView extends SUI.View
+class Moon.View.ConversationView extends Moon.View.BaseView
   className: 'conversation-view'
   template: TPL('conversation')
   default_message_options:
@@ -7,14 +7,14 @@ class Moon.View.ConversationView extends SUI.View
 
   initialize: (options) ->
     @current_message_index = 0
-    @scene = options.scene
+    @scene    = options.scene
+    @messages = new Moon.Collection.Messages options.messages
+
     @_render()
     @_adjust_scale()
     @_position options.layer_id or 'subtitles'
 
     @listenTo @app, 'scale-changed', @_adjust_scale
-
-    @messages = new Moon.Collection.Messages options.messages
     @show()
 
   events:

@@ -19,6 +19,7 @@ class Moon.Model.Game extends SUI.Model
       scene.init_preevents scene_data.preevents
       scene.init_events scene_data.events
       scene.init_actors scene_data.actors
+      scene.init_dynamic_events scene_data.dynamic_events
       @scenes.add scene
 
   preload_assets: (callback) ->

@@ -12,7 +12,7 @@
   .message-area {
     position: absolute;
     left: 0; top: 0; right: 0; bottom: 0;
-    padding: 40em 25em 40em; overflow: auto;
+    padding: 50em 40em 50em; overflow: auto;
   }
   .letter {
     @include animation(fade_in 0.6s);

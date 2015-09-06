@@ -2,6 +2,7 @@ class Moon.View.SceneView extends SUI.View
   className: 'scene-view'
   initialize: (options) ->
     @model.view = this
+    @dynamic_event_queue = []
     @current_event_index = options.current_event_index or 0
     @view_manager        = new Moon.Helper.ViewManager
 
@@ -17,13 +18,52 @@ class Moon.View.SceneView extends SUI.View
 
   next: (e) ->
     return @_receiver.$el.trigger e.type, e if @_receiver
+    return @_perform_next_dynamic_event() if @dynamic_event_queue.length
 
+    @perform_next_event()
+
+  perform_next_event: ->
     next_index = @current_event_index+1
     event      = @model.events.at next_index
 
     return unless event
-    @_perform_event event
+    @perform_event event
     @current_event_index = next_index
+
+
+  perform_event: (event) ->
+    if event.get('view') is 'self'
+      target = this
+    else
+      target = @view_manager.get event.get('view')
+
+    return unless target
+
+    target[event.get('method')] event.get('options')
+
+    if event.get('auto_next')
+      next_event_callback = _(@next).bind(this)
+      _(next_event_callback).delay event.get('auto_next')
+
+
+  perform_dynamic_events: (dynamic_event_names) ->
+    @dynamic_event_queue = dynamic_event_names.concat @dynamic_event_queue
+    @_perform_next_dynamic_event()
+
+
+  _perform_next_dynamic_event: ->
+    event_name = @dynamic_event_queue.shift()
+    switch event_name
+      when 'next'
+        @perform_next_event()
+      when 'back'
+        event = @model.events.at @current_event_index
+        @perform_event event
+      else
+        dynamic_event = @model.dynamic_events.get event_name
+        @perform_event dynamic_event
+
+
 
 
   fade: (options) ->
@@ -69,7 +109,7 @@ class Moon.View.SceneView extends SUI.View
     view
 
   new_choices: (options) ->
-    view  = new Moon.View.ChoiceView _(options).defaults
+    view  = new Moon.View.ChoicesView _(options).defaults
               app: @app, scene: @model
 
     @view_manager.add options.view_id, view
@@ -97,21 +137,7 @@ class Moon.View.SceneView extends SUI.View
 
 
   _start_from: (event_index) ->
-    @model.preevents.each (event) => @_perform_event event
+    @model.preevents.each (event) => @perform_event event
     _(@model.events.first(event_index+1)).each (event, index) =>
-      @_perform_event event
+      @perform_event event
       @current_event_index = index
-
-  _perform_event: (event) ->
-    if event.get('view') is 'self'
-      target = this
-    else
-      target = @view_manager.get event.get('view')
-
-    return unless target
-
-    target[event.get('method')] event.get('options')
-
-    if event.get('auto_next')
-      next_event_callback = _(@next).bind(this)
-      _(next_event_callback).delay event.get('auto_next')

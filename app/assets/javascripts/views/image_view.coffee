@@ -1,4 +1,4 @@
-class Moon.View.ImageView extends SUI.View
+class Moon.View.ImageView extends Moon.View.BaseView
   className: 'image-view'
   animate_attributes: ['scale', 'origin', 'position', 'opacity']
   initialize: (options = {}) ->

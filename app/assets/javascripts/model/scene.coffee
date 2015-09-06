@@ -3,12 +3,12 @@ class Moon.Model.Scene extends Backbone.Model
     @layers = new Moon.Collection.Layers
     @events = new Moon.Collection.Events
     @preevents = new Moon.Collection.Events
+    @dynamic_events = new Moon.Collection.Events
     @actors = new Moon.Collection.Actors
 
 
   init_layers: (layers_data) ->
     @layers.reset layers_data
-
 
   init_events: (events_data)  ->
     @events.reset events_data
@@ -18,3 +18,6 @@ class Moon.Model.Scene extends Backbone.Model
 
   init_actors: (actors_data) ->
     @actors.reset actors_data
+
+  init_dynamic_events: (dynamic_events_data) ->
+    @dynamic_events.reset dynamic_events_data
