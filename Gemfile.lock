@@ -21,6 +21,7 @@ GEM
     ejs (1.1.1)
     execjs (2.5.2)
     ffi (1.9.8)
+    ffi (1.9.8-x64-mingw32)
     hike (1.2.3)
     json (1.8.2)
     multi_json (1.11.0)
@@ -58,6 +59,10 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   savanna
+
+BUNDLED WITH
+   1.10.6
