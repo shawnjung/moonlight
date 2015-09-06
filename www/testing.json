@@ -25,6 +25,18 @@
           "name": "Shawn Jung",
           "short_name": "Shawn",
           "actions": {}
+        },
+        {
+          "id": "sangmin",
+          "name": "SangMin Jun",
+          "short_name": "SM",
+          "actions": {}
+        },
+        {
+          "id": "ozi",
+          "name": "Oziel Guerra",
+          "short_name": "Ozi",
+          "actions": {}
         }
       ],
 
@@ -117,6 +129,44 @@
             "duration": 1200
           },
           "auto_next": 0
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "ozi",
+                "message": "The Sun goes nova(explodes) on the otherside of the Earth, so the Moon shines A LOT. It makes a beautiful scene, but only few people notice that this is the last BEAUTIFUL NIGHT we will have. When the morning comes, the world will burn and humanity will be destroyed. What will you do? Maybe you can have good time with your girlfriend. Or you can drive and see your mom and dad. You have a lot of options on what to do, but you have no time to do everything. When time runs out, we will finally learn an important lesson: You have to make every second count. (This story is inspired by <Inconstant Moon>, Larry Niven, the SF writer.)"
+
+              },
+              {
+                "actor_id": "shawn",
+                "message": "He wakes up. He notices something has happened. He sees the moon, and realized that the moon is too shiny today. He knows what happened because he was monitoring the sun with his team 3 days ago and noticed more solar flares than the normal amount, and he and his team knew that when that happened, it meant that the sun has gone nova… and made everything around it hotter, which meant the end of humanity. He panicked and continued to stare at the moon… He still cannot believe what is happening. He is alone in room."
+              },
+              {
+                "actor_id": "sangmin",
+                "message": "Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum."
+              },
+              {
+                "actor_id": "shawn",
+                "message": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
+              },
+              {
+                "actor_id": "ozi",
+                "message": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."
+              },
+              {
+                "actor_id": "ozi",
+                "message": "Donec ullamcorper nulla non metus auctor fringilla."
+              },
+              {
+                "actor_id": "shawn",
+                "message": "it works so far!"
+              }
+            ]
+          }
         },
         {
           "view": "self",

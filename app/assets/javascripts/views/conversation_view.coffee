@@ -1,6 +1,10 @@
 class Moon.View.ConversationView extends SUI.View
   className: 'conversation-view'
   template: TPL('conversation')
+  default_message_options:
+    speed: 10
+    font_size: 28
+
   initialize: (options) ->
     @current_message_index = 0
     @scene = options.scene
@@ -50,6 +54,8 @@ class Moon.View.ConversationView extends SUI.View
   _show_message: (index, options = {}) ->
     message = @messages.at index
     actor   = @scene.actors.get message.get('actor_id')
+
+    _(message.attributes).defaults @default_message_options
 
     if actor and actor_name = actor.get('short_name')
       @$name.html actor.get('short_name')
