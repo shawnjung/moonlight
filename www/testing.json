@@ -103,45 +103,36 @@
             "choices": [
               {
                 "text": "Ask to Shawn",
-                "events": ["dynamic_event_1", "back"]
+                "events": ["shawn_says_and_failed", "back"]
               },
               {
                 "text": "Ask to Ozi",
-                "events": ["dynamic_event_2", "next"]
+                "events": ["oz_says", "quit_the_room", "next"]
               },
               {
                 "text": "Ask to SangMin",
-                "events": ["dynamic_event_3", "back"]
+                "events": ["sangmin_says_and_failed", "back"]
               }
             ]
           }
         },
         {
           "view": "self",
-          "method": "switch_by_variable",
+          "method": "new_monologue",
           "options": {
-            "variable_id": "favorite_food",
-            "cases": [
-              {
-                "value": "pizza",
-                "events": [""]
-              },
-              {
-                "value": "apple",
-                "events": [""]
-              },
-              {
-                "value": "coffee",
-                "events": [""]
-              }
+            "view_id": "mono2",
+            "messages": [
+              "Donec ullamcorper nulla non metus auctor fringilla.",
+              "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.",
+              "Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+              "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.\n              Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit."
             ]
           }
-
         }
       ],
       "dynamic_events": [
         {
-          "id": "dynamic_event_1",
+          "id": "shawn_says_and_failed",
           "view": "self",
           "method": "new_conversation",
           "options": {
@@ -155,7 +146,7 @@
           }
         },
         {
-          "id": "dynamic_event_2",
+          "id": "oz_says",
           "view": "self",
           "method": "new_conversation",
           "options": {
@@ -169,7 +160,23 @@
           }
         },
         {
-          "id": "dynamic_event_3",
+          "id": "quit_the_room",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono1",
+            "halign": "center",
+            "valign": "middle",
+            "background_color": "ffffff",
+            "font_color": "000000",
+            "opacity": 1,
+            "messages": [
+              "Donec ullamcorper nulla."
+            ]
+          }
+        },
+        {
+          "id": "sangmin_says_and_failed",
           "view": "self",
           "method": "new_conversation",
           "options": {
