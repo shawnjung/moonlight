@@ -85,7 +85,22 @@
           "view": "self",
           "method": "new_monologue",
           "options": {
-            "view_id": "monologue",
+            "view_id": "mono1",
+            "halign": "center",
+            "valign": "middle",
+            "background_color": "ffffff",
+            "font_color": "000000",
+            "opacity": 1,
+            "messages": [
+              "Donec ullamcorper nulla."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
             "messages": [
               "Donec ullamcorper nulla non metus auctor fringilla.",
               "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.",

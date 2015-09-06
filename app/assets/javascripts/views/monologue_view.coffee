@@ -6,10 +6,10 @@ class Moon.View.MonologueView extends SUI.View
     duration: 800
     speed: 10
     font_size: 28
-    font_color: 'white'
+    font_color: 'ffffff'
     background_color: '000000',
-    halign: 'center',
-    valign: 'middle'
+    halign: 'left',
+    valign: 'top'
 
   initialize: (options) ->
     @current_message_index = 0
@@ -95,9 +95,11 @@ class Moon.View.MonologueView extends SUI.View
     @$el.css opacity: 0
     @$message = @$(".message")
     @$message_area = @$(".message-area")
-    color = _(@voptions.background_color).toRGB()
-    @$el.css 'font-color', @voptions.font_color
-    @$el.css 'background-color', "rgba(#{color.r}, #{color.g}, #{color.b}, #{@voptions.opacity})"
+    txt_color = _(@voptions.font_color).toRGB()
+    bg_color  = _(@voptions.background_color).toRGB()
+    console.log txt_color
+    @$el.css 'color', "rgb(#{txt_color.r}, #{txt_color.g}, #{txt_color.b})"
+    @$el.css 'background-color', "rgba(#{bg_color.r}, #{bg_color.g}, #{bg_color.b}, #{@voptions.opacity})"
     @$el.addClass "align-#{@voptions.halign}"
     @$el.addClass "valign-#{@voptions.valign}"
 

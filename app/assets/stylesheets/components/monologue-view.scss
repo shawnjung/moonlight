@@ -9,7 +9,6 @@
 .monologue-view {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
-  color: white;
   .message-area {
     position: absolute;
     left: 0; top: 0; right: 0; bottom: 0;
@@ -17,5 +16,16 @@
   }
   .letter {
     @include animation(fade_in 0.6s);
+  }
+  &.align-center .message-area { text-align: center; }
+  &.align-left .message-area { text-align: left; }
+  &.align-right .message-area { text-align: right; }
+
+  &.valign-middle {
+    .message-area {
+      @include display-flex;
+      @include align-items(center);
+      .message { width: 100%; }
+    }
   }
 }
