@@ -24,18 +24,13 @@
     {
       "id": "background-music",
       "type": "audio",
-      "src": "the-moonlight/audio/dreams-become-real.mp3",
+      "src": "the-moonlight/audio/dreams-become-real.lite.mp3",
       "buffer": true
-    },
-    {
-      "id": "getting-in-bed",
-      "type": "audio",
-      "src": "the-moonlight/audio/getting-in-bed-sound.wav"
     },
     {
       "id": "door-knock",
       "type": "audio",
-      "src": "the-moonlight/audio/door-knock.wav"
+      "src": "the-moonlight/audio/door-knock.mp3"
     }
   ],
   "scenes": [
@@ -172,19 +167,6 @@
                 "text": "Ask to SangMin",
                 "dynamic_events": ["sangmin_says_and_failed", "back"]
               }
-            ]
-          }
-        },
-        {
-          "view": "self",
-          "method": "new_monologue",
-          "options": {
-            "view_id": "mono2",
-            "messages": [
-              "Donec ullamcorper nulla non metus auctor fringilla.",
-              "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.",
-              "Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.",
-              "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.\n              Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit."
             ]
           }
         },
