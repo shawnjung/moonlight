@@ -217,32 +217,64 @@
           "view": "self",
           "method": "new_choices",
           "options": {
-            "view_id": "roomChoices",
+            "view_id": "choi1",
+            "title": "What should I do now?",
+            "description": "You have no idea what to do.",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
             "choices": [
               {
-                "text": "Tell a lie",
-                "method": "move_scene",
-                "options": {
-                "scene_id": "lie scene"
-                }
+                "text": "tell a lie",
+                "dynamic_events": ["lie_1","lie_2", "lie_3", "next"]
               },
               {
-                "text": "Say the truth",
-                "method": "move_scene",
-                "options": {
-                "scene_id": "truth scene"
+                "text": "tell the truth",
+                "dynamic_events": ["truth_1", "truth_2", "truth_3"]
               }
-              }
-
+            ]
+          }
+        }
+      ],
+      "dynamic_events": [
+        {
+          "id": "lie_1",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "The time was around the midnight. And I felt something was wrong.",
+              "I woke up to stare out the window, And all I saw was-"
+            ]
+          }
+        },
+        {
+          "id": "lie_2",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "The time was around the midnight. And I felt something was wrong.",
+              "I woke up to stare out the window, And all I saw was-"
+            ]
+          }
+        },
+        {
+          "id": "lie_3",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "The time was around the midnight. And I felt something was wrong.",
+              "I woke up to stare out the window, And all I saw was-"
             ]
           }
         }
       ]
-    },
-    {
-      "id": "lie scene",
-      "view": "SceneView",
-      "options": {}
     }
   ]
 }
