@@ -11,6 +11,36 @@
       "src": "the-moonlight/images/actor_oldwoman1.png"
     },
     {
+      "id": "cry",
+      "type": "image",
+      "src": "the-moonlight/images/ill_cry.png"
+    },
+    {
+      "id": "onTheRoad",
+      "type": "image",
+      "src": "the-moonlight/images/ill_ontheroad.png"
+    },
+    {
+      "id": "onTheRoad8",
+      "type": "image",
+      "src": "the-moonlight/images/ill_ontheroad_8.png"
+    },
+    {
+      "id": "onTheRoad19",
+      "type": "image",
+      "src": "the-moonlight/images/ill_ontheroad_19.png"
+    },
+    {
+      "id": "onTheRoad20",
+      "type": "image",
+      "src": "the-moonlight/images/ill_ontheroad_20.png"
+    },
+    {
+      "id": "onTheRoad30",
+      "type": "image",
+      "src": "the-moonlight/images/ill_ontheroad_30.png"
+    },
+    {
       "id": "grabBat",
       "type": "image",
       "src": "the-moonlight/images/ill_cheating.png"
@@ -657,7 +687,7 @@
          "view": "self",
          "method": "new_image",
          "options": {
-           "asset_id": "background",
+           "asset_id": "desertedStreet",
            "layer_id": "background"
          }
        }
@@ -1285,7 +1315,7 @@
       "view": "self",
       "method": "new_image",
       "options": {
-        "asset_id": "desertedStreet",
+        "asset_id": "onTheRoad",
         "layer_id": "background"
       }
     }
@@ -1328,6 +1358,14 @@
   },
   {
     "view": "self",
+    "method": "new_image",
+    "options": {
+      "asset_id": "onTheRoad8",
+      "layer_id": "background"
+    }
+  },
+  {
+    "view": "self",
     "method": "new_monologue",
     "options": {
       "view_id": "mono2",
@@ -1361,6 +1399,14 @@
           "dynamic_events": ["next"]
         }
       ]
+    }
+  },
+  {
+    "view": "self",
+    "method": "new_image",
+    "options": {
+      "asset_id": "onTheRoad19",
+      "layer_id": "background"
     }
   },
   {
@@ -1417,6 +1463,14 @@
 },
 {
   "view": "self",
+  "method": "new_image",
+  "options": {
+    "asset_id": "onTheRoad20",
+    "layer_id": "background"
+  }
+},
+{
+  "view": "self",
   "method": "new_monologue",
   "options": {
     "view_id": "mono2",
@@ -1465,6 +1519,14 @@
         "dynamic_events": ["next"]
       }
     ]
+  }
+},
+{
+  "view": "self",
+  "method": "new_image",
+  "options": {
+    "asset_id": "onTheRoad30",
+    "layer_id": "background"
   }
 },
 {
@@ -1519,6 +1581,14 @@
         "dynamic_events": ["next"]
       }
     ]
+  }
+},
+{
+  "view": "self",
+  "method": "new_image",
+  "options": {
+    "asset_id": "cry",
+    "layer_id": "background"
   }
 },
 {
