@@ -1197,7 +1197,216 @@
         "duration": 1000
       },
       "auto_next": 1
+    },
+    {
+      "view": "self",
+      "method": "new_monologue",
+      "options": {
+        "view_id": "mono2",
+        "messages": ["I turned up the radio, so I could have noise around me… first, classical music… then,",
+          "Punk!",
+          "Car wheel goes flat."]
+      }
+    },
+    {
+    "actor_id":"player",
+    "speed":10,
+    "font_size": 28,
+    "message": "Shit, I will have to walk from now on"
+  },
+  {
+    "view": "self",
+    "method": "new_monologue",
+    "options": {
+      "view_id": "mono2",
+      "messages": ["On the road, I start think about my life’s choices. ",
+        "there were always 2 or more ways, and I always chose one thing, just like Robert Frost’s Poem",
+        "(while he is walking under the big moon, his memory changes to...) 8 year old me ",
+        "my younger brother drowned at a lake.",
+        "I was the only one who could help him, but I couldn’t. ",
+        "Because I was not good swimmer, and I was so afraid… ",
+        "So I stood there, trembling, watching him die, helpless."]
     }
+  },
+  {
+    "view": "self",
+    "method": "new_choices",
+    "options": {
+      "view_id": "choi2",
+      "title": "",
+      "description": "",
+      "choice_font_size": 46,
+      "choice_radius": 50,
+      "background_color": "000000",
+      "background_opacity": 0.7,
+      "choices": [
+        {
+          "text": "I regret my choice",
+          "dynamic_events": ["next"]
+        },
+        {
+          "text": "I was right",
+          "dynamic_events": ["next"]
+        }
+      ]
+    }
+  },
+  {
+    "view": "self",
+    "method": "new_monologue",
+    "options": {
+      "view_id": "mono2",
+      "messages": ["he keeps walking",
+        "19 years old.",
+        "I was having relationship with a girl named ‘Kim’",
+        "whom I broke up with after 2 months.",
+        "And at the graduation party, another girl tried to seduce me. Her name was ‘Laura’, who became a famous hollywood actress later.",
+        "Needless to say, she was amazingly beautiful.",
+        "She said, we can have sex for just one night… and make it a secret."]
+    }
+  },
+  {
+  "actor_id":"player",
+  "speed":10,
+  "font_size": 28,
+  "message": "I still cant belive I had a chance to have sex with her, but I didn’t, because of Kim."
+},
+{
+  "view": "self",
+  "method": "new_choices",
+  "options": {
+    "view_id": "choi2",
+    "title": "",
+    "description": "",
+    "choice_font_size": 46,
+    "choice_radius": 50,
+    "background_color": "000000",
+    "background_opacity": 0.7,
+    "choices": [
+      {
+        "text": "I regret my choice, I should have had sex with Laura.",
+        "dynamic_events": ["next"]
+      },
+      {
+        "text": "I was right",
+        "dynamic_events": ["next"]
+      }
+    ]
+  }
+},
+{
+  "view": "self",
+  "method": "new_monologue",
+  "options": {
+    "view_id": "mono2",
+    "messages": ["he keeps walking… now he remembers when he was…",
+      "20 years old.",
+      "One year after graduation, I decided to pursue an education.",
+      "My passion was always to be a pilot, but my parents never let me be a pilot because they were afraid of heights and thought I would not get paid much, so they told me I should pursue an education in science…",
+      "And at the graduation party, another girl tried to seduce me. Her name was ‘Laura’, who became a famous hollywood actress later.",
+      "Now that I am a scientist and know what is going to happen to the world in a couple of hours, sometimes I imagine how life would be right now if I was a pilot and had no clue what is going to happen",
+      "Sometimes, ignorance is bliss."]
+  }
+},
+{
+"actor_id":"player",
+"speed":10,
+"font_size": 28,
+"message": "Flying is still my passion"
+},
+{
+  "view": "self",
+  "method": "new_choices",
+  "options": {
+    "view_id": "choi2",
+    "title": "",
+    "description": "",
+    "choice_font_size": 46,
+    "choice_radius": 50,
+    "background_color": "000000",
+    "background_opacity": 0.7,
+    "choices": [
+      {
+        "text": "I regret my choice, I should have followed my passion",
+        "dynamic_events": ["next"]
+      },
+      {
+        "text": "Being a scientist and knowing everything that is going to happen was good, even though it is not what I wanted in the beginning.",
+        "dynamic_events": ["next"]
+      }
+    ]
+  }
+},
+{
+  "view": "self",
+  "method": "new_monologue",
+  "options": {
+    "view_id": "mono2",
+    "messages": ["he keeps walking. now he is…",
+      "30 years old.",
+      "I got married and I was workaholic at the time.",
+      "When our babies were born, I was at a fundraiser party at our laboratory. ",
+      "There were very important people who had huge amounts of money attending the party, and I was in charge of our team.",
+      "If I was not there, our fundraiser could have failed, and that would have been a big problem for the company. ",
+      "The 3 years we took to build a good company would have gone to waste.",
+      "But exactly at that time, my ex-wife was in hospital giving birth to our babies, alone.",
+      "I couldn’t be by her side, I couldn’t watch my twins being born."]
+  }
+},
+{
+"actor_id":"player",
+"speed":10,
+"font_size": 28,
+"message": "How could I have missed the birth of my daughters..."
+},
+{
+  "view": "self",
+  "method": "new_choices",
+  "options": {
+    "view_id": "choi2",
+    "title": "",
+    "description": "",
+    "choice_font_size": 46,
+    "choice_radius": 50,
+    "background_color": "000000",
+    "background_opacity": 0.7,
+    "choices": [
+      {
+        "text": "I regret my choice. I should have gone to hospital.",
+        "dynamic_events": ["next"]
+      },
+      {
+        "text": "I was right",
+        "dynamic_events": ["next"]
+      }
+    ]
+  }
+},
+{
+  "view": "self",
+  "method": "new_monologue",
+  "options": {
+    "view_id": "mono2",
+    "messages": ["Suddenly tears drop... continuously"]
+  }
+},
+{
+"actor_id":"player",
+"speed":10,
+"font_size": 28,
+"message": "Maybe I will spend my last time crying on the road..."
+},
+{
+  "view": "self",
+  "method": "new_monologue",
+  "options": {
+    "view_id": "mono2",
+    "messages": ["While I’m crying on the road, a truck comes. I hitchhiked, and truck driver sent me to downtown."]
+  }
+}
+
+
+
   ],
   "dynamic_events": []
 },
@@ -1269,8 +1478,8 @@
      "method": "new_choices",
      "options": {
        "view_id": "choi2",
-       "title": "call choices",
-       "description": "So... what would I do first?",
+       "title": "",
+       "description": "",
        "choice_font_size": 46,
        "choice_radius": 50,
        "background_color": "000000",
