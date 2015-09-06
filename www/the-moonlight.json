@@ -400,10 +400,17 @@
             "method": "new_monologue",
             "options": {
               "view_id": "mono2",
-              "messages": ["I left my room"]
+              "messages": ["I left my room... what will I find on the street"]
 
             }
-          }
+          },
+          {
+             "view": "self",
+             "method": "change_scene",
+             "options": {
+               "scene_id": "Street"
+             }
+           }
 
       ],
       "dynamic_events": [
@@ -680,18 +687,35 @@
                  "choices": [
                    {
                      "text": "go to girlfriend’s room",
-                     "dynamic_events": []
+                     "dynamic_events": ["gfhouse"]
                    },
                    {
                      "text": "go to parents’ house",
-                     "dynamic_events": []
+                     "dynamic_events": ["parentsHouse"]
                    }
                  ]
                }
-             },
+             }
 
      ],
-     "dynamic_events": []
+     "dynamic_events": [
+       {
+         "id": "gfhouse",
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "GirlfriendsHouse"
+          }
+        },
+        {
+          "id":"parentsHouse",
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "ParentsHouse"
+          }
+        }
+     ]
    },
    {
     "id": "GirlfriendsHouse",
@@ -754,6 +778,14 @@
           "duration": 1000
         },
         "auto_next": 1
+      },
+      {
+        "view": "self",
+        "method": "new_monologue",
+        "options": {
+          "view_id": "mono2",
+          "messages": ["welcome to my crib bitches"]
+        }
       }
     ],
     "dynamic_events": []
