@@ -19,6 +19,11 @@
       "id": "room",
       "type": "image",
       "src": "the-moonlight/images/myroomandold.jpg"
+    },
+    {
+      "id": "bat",
+      "type": "image",
+      "src": "the-moonlight/images/badass.jpg"
     }
   ],
   "scenes": [
@@ -799,11 +804,154 @@
           "view_id": "mono2",
           "messages": ["Just got to my girlfriends place…. wait… what is that noice upstairs?",
             " I will grab my girlfriends bat just in case it is needed… ",
-            "About to open the door… I aopen it, and…"]
+            "About to open the door… I open it, and…"]
+        }
+      },
+      {
+        "view": "self",
+        "method": "new_conversation",
+        "options": {
+          "view_id": "conv1",
+          "messages": [
+            {
+              "actor_id": "player",
+              "speed": 10,
+              "font_size": 28,
+              "message": "What the fuck are you doing with my girlfriend Carl?!"
+            }
+          ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": ["Carl is one of my co-workers, he also knew the world is ending soon"]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "coworker",
+                "speed": 10,
+                "font_size": 28,
+                "message": "I… I am sorry… I.. just… please understand me, the world is ending"
+              },
+              {
+              "actor_id":"girlfriend",
+              "speed":10,
+              "font_size": 28,
+              "message": "I am so sorry user! I never thought you would have come… And your penis is just too small..."
+            },
+            {
+            "actor_id":"player",
+            "speed":10,
+            "font_size": 28,
+            "message": "..."
+          }
+            ]
+            }
+          },
+          {
+            "view": "self",
+            "method": "new_image",
+            "options": {
+              "asset_id": "bat",
+              "layer_id": "background"
+            },
+            "auto_next": 0
+          },
+          {
+            "view": "self",
+            "method": "new_monologue",
+            "options": {
+              "view_id": "mono2",
+              "messages": ["It took me one fucking hour to get here and this shit happens..."]
+            }
+          },
+          {
+            "view": "self",
+            "method": "new_choices",
+            "options": {
+              "view_id": "choi2",
+              "title": "How should I handle this...",
+              "description": "So... what should I do?",
+              "choice_font_size": 46,
+              "choice_radius": 50,
+              "background_color": "000000",
+              "background_opacity": 0.7,
+              "choices": [
+                {
+                  "text": "kill Carl",
+                  "dynamic_events": ["killCarl", "next"]
+                },
+                {
+                  "text": "kill the girlfriend",
+                  "dynamic_events": ["killGirlfriend", "next"]
+                },
+                {
+                  "text": "kill both",
+                  "dynamic_events": ["killBoth", "next"]
+                },
+                {
+                  "text": "just leave",
+                  "dynamic_events": ["leave", "next"]
+                }
+              ]
+            }
+          },
+          {
+             "view": "self",
+             "method": "change_scene",
+             "options": {
+               "scene_id": "OnTheRoad"
+             }
+           },
+
+    ],
+    "dynamic_events": [
+      {
+        "id":"killCarl",
+        "view": "self",
+        "method": "new_monologue",
+        "options": {
+          "view_id": "mono2",
+          "messages": ["Carl was now dead, he put some resistance but it wasnt har for me to kill him"]
+        }
+      },
+      {
+        "id":"kill the girlfriend",
+        "view": "self",
+        "method": "new_monologue",
+        "options": {
+          "view_id": "mono2",
+          "messages": ["It hurt me so much to do it but I killed my girlfriend... Carl just ran away"]
+        }
+      },
+      {
+        "id":"killBoth",
+        "view": "self",
+        "method": "new_monologue",
+        "options": {
+          "view_id": "mono2",
+          "messages": ["I killed both, maybe this moon thing is starting to drive me crazy"]
+        }
+      },
+      {
+        "id":"leave",
+        "view": "self",
+        "method": "new_monologue",
+        "options": {
+          "view_id": "mono2",
+          "messages": ["I just left... losing my integrity because of unfaithful people is not worth it"]
         }
       }
-    ],
-    "dynamic_events": []
+    ]
   },
   {
    "id": "ParentsHouse",
