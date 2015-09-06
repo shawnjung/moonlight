@@ -8,10 +8,14 @@
 
 .conversation-view {
   position: absolute;
-  left: 15em; bottom: 15em; right: 15em;
-  background: rgba(black, 0.5); height: 300em;
-  @include border-radius(15em);
-  color: white; border: 2em solid rgba(white, 0.5);
+  left: 0; top: 0; right: 0; bottom: 0;
+  .conversation-block {
+    position: absolute;
+    left: 15em; bottom: 15em; right: 15em;
+    background: rgba(black, 0.5); height: 300em;
+    @include border-radius(15em);
+    color: white; border: 2em solid rgba(white, 0.5);
+  }
   .name-label {
     position: absolute; left: 25em; top: -20em; height: 60em; line-height: 60em;
     background: white; color: black; opacity: 0;
