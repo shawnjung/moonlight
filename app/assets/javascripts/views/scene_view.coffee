@@ -116,6 +116,25 @@ class Moon.View.SceneView extends SUI.View
     view
 
 
+  play_audio: (options) ->
+    asset = @app.game.assets.get(options.asset_id)
+    audio = asset.audio
+    audio.loop() if options.loop
+    audio.play()
+
+
+  stop_audio: (options) ->
+    asset = @app.game.assets.get(options.asset_id)
+    audio = asset.audio
+
+    if options.fade > 0
+      audio.fade 1, 0, options.fade, => audio.stop
+    else
+      audio.stop()
+
+
+
+
   fade_in_image: (options) ->
     options.opacity = 0
     view = @new_image options

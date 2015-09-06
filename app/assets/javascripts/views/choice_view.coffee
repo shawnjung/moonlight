@@ -17,6 +17,7 @@ class Moon.View.ChoiceView extends Moon.View.BaseView
   run_events: ->
     @parent.hide =>
       @scene.view.perform_dynamic_events @model.get('dynamic_events')
+      @parent.remove()
 
   show: ->
     @$el.transition opacity: 1, 1000
