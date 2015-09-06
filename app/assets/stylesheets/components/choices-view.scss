@@ -1,33 +1,97 @@
 @import "moon";
 
+@include keyframes(sona) {
+  0% { @include transform(scale(1)); opacity: 1 }
+  100% { @include transform(scale(3)); opacity: 0 }
+}
+
 .choices-view {
   position: absolute;
   left: 0; top: 0; right: 0; bottom: 0;
-  @include display-flex;
-  @include align-items(center);
-  .content {
-    width: 100%;
-  }
-  .header {
-    color: white;
-    text-align: center;
-    margin-bottom: 50em;
+  &.pointer-type {
     .title {
-      font-size: 42em;
-      font-weight: bold;
+      position: absolute;
+      z-index: 2;
+      left: 20em; top: 20em; right: 20em;
+      color: white; text-align: center;
+      background: rgba(black, 0.5);
+      padding: 15em 0; @include border-radius(10em);
+      border: 2em solid rgba(white, 0.5);
+      .text { font-size: 32em; font-weight: bold; }
     }
-    .description { font-size: 24em; }
+    .description {
+      position: absolute;
+      z-index: 2;
+      left: 20em; bottom: 20em; right: 20em;
+      height: 180em;
+      padding: 20em 20em; @include border-radius(10em);
+      border: 2em solid rgba(white, 0.5);
+      color: white; background: rgba(black, 0.5); overflow: auto;
+      .text { font-size: 28em; }
+    }
+    .background-wrap {
+      position: absolute;
+      left: 0; top: 0; right: 0; bottom: 0;
+      overflow: auto; z-index: 1;
+      .image-view { z-index: 1; }
+    }
+    .choice-list {
+      position: absolute;
+      left: 0; top: 0;
+      z-index: 2;
+    }
+    .choice-item {
+      position: absolute;
+      width: 80em; height: 80em;
+      margin: -40em 0 0 -40em;
+      @include border-radius(50%);
+      background: rgba(black, 0.5);
+      .dot {
+        position: absolute;
+        left: 20em; top: 20em; width: 40em; height: 40em;
+        background: white;  @include border-radius(50%);
+        &:before, &:after {
+          content: '';
+          position: absolute;
+          left: 0; top: 0; right: 0; bottom: 0;
+          background-color: white; @include border-radius(50%);
+        }
+        &:before {
+          @include animation(sona 0.8s infinite 0s);
+        }
+        &:after {
+          @include animation(sona 0.8s infinite 0.4s);
+        }
+      }
+    }
   }
-  .choice-list {
-    margin: 50em 50em;
-    color: white;
-  }
-  .choice-item {
-    border: 3em solid white;
-    text-align: center;
-    background: black;
-    list-style: none; margin: 16em 0;
-    padding: 10em;
-    &:active { background: white; color: black; }
+  &.text-type {
+    @include display-flex;
+    @include align-items(center);
+    .content {
+      width: 100%;
+    }
+    .header {
+      color: white;
+      text-align: center;
+      margin-bottom: 50em;
+      .title {
+        font-size: 42em;
+        font-weight: bold;
+      }
+      .description { font-size: 24em; }
+    }
+    .choice-list {
+      margin: 50em 50em;
+      color: white;
+    }
+    .choice-item {
+      border: 3em solid white;
+      text-align: center;
+      background: black;
+      list-style: none; margin: 16em 0;
+      padding: 10em;
+      &:active { background: white; color: black; }
+    }
   }
 }

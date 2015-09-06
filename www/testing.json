@@ -31,6 +31,11 @@
       "id": "door-knock",
       "type": "audio",
       "src": "the-moonlight/audio/door-knock.mp3"
+    },
+    {
+      "id": "living-room-background",
+      "type": "image",
+      "src": "testing/images/living-room-background.jpg"
     }
   ],
   "scenes": [
@@ -86,6 +91,7 @@
           "view": "self",
           "method": "new_image",
           "options": {
+            "view_id":  "background",
             "asset_id": "background",
             "layer_id": "background"
           }
@@ -97,6 +103,14 @@
             "audio_id": "bg_sound",
             "asset_id": "background-music",
             "loop": true
+          }
+        },
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [0, 1],
+            "duration": 1000
           }
         }
       ],
@@ -123,15 +137,6 @@
       "events": [
         {
           "view": "self",
-          "method": "fade",
-          "options": {
-            "opacity": [0, 1],
-            "duration": 1000
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
           "method": "fade_in_image",
           "options": {
             "view_id": "logo",
@@ -145,108 +150,73 @@
         },
         {
           "view": "self",
+          "method": "fade_out_image",
+          "options": {
+            "view_id": "logo",
+            "duration": 700
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "fade_out_image",
+          "options": {
+            "view_id": "background",
+            "duration": 700
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi1",
-            "title": "Do you know who like a pizza?",
-            "description": "Seems like Ozi loves a pizza",
+            "title": "What should I do now?",
+            "description": "You have no idea what to do.",
             "choice_font_size": 46,
             "choice_radius": 50,
             "background_color": "000000",
             "background_opacity": 0.7,
             "choices": [
               {
-                "text": "Ask to Shawn",
-                "dynamic_events": ["shawn_says_and_failed", "back"]
+                "text": "tell a lie",
+                "dynamic_events": ["next"]
               },
               {
-                "text": "Ask to Ozi",
+                "text": "tell the truth",
+                "dynamic_events": ["back"]
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "select_location_in_living_room",
+            "title": "Where should I go?",
+            "description": "Please tap a pointer.",
+            "choice_type": "pointer",
+            "background_asset_id": "living-room-background",
+            "choices": [
+              {
+                "position": {"x": 0.25, "y": 0.25},
+                "dynamic_events": ["shawn_says_and_failed", "back"]
+
+              },
+              {
+                "position": {"x": 0.75, "y": 0.25},
                 "dynamic_events": ["knock_sound", "oz_says", "quit_the_room", "next"]
               },
               {
-                "text": "Ask to SangMin",
+                "position": {"x": 0.5, "y": 0.5},
                 "dynamic_events": ["sangmin_says_and_failed", "back"]
               }
             ]
           }
-        },
-        {
-          "view": "self",
-          "method": "change_scene",
-          "options": {
-            "scene_id": "pizza"
-          }
         }
       ],
-      "dynamic_events": [
-        {
-          "id": "shawn_says_and_failed",
-          "view": "self",
-          "method": "new_conversation",
-          "options": {
-            "view_id": "conv",
-            "messages": [
-              {
-                "actor_id": "shawn",
-                "message": "You're wrong."
-              }
-            ]
-          }
-        },
-        {
-          "id": "knock_sound",
-          "view": "self",
-          "method": "play_audio",
-          "options": {
-            "asset_id": "door-knock"
-          },
-          "auto_next": 1
-        },
-        {
-          "id": "oz_says",
-          "view": "self",
-          "method": "new_conversation",
-          "options": {
-            "view_id": "conv",
-            "messages": [
-              {
-                "actor_id": "ozi",
-                "message": "Let's get a pizza now!"
-              }
-            ]
-          }
-        },
-        {
-          "id": "quit_the_room",
-          "view": "self",
-          "method": "new_monologue",
-          "options": {
-            "view_id": "mono1",
-            "halign": "center",
-            "valign": "middle",
-            "background_color": "ffffff",
-            "font_color": "000000",
-            "opacity": 1,
-            "messages": [
-              "Donec ullamcorper nulla."
-            ]
-          }
-        },
-        {
-          "id": "sangmin_says_and_failed",
-          "view": "self",
-          "method": "new_conversation",
-          "options": {
-            "view_id": "conv",
-            "messages": [
-              {
-                "actor_id": "sangmin",
-                "message": "You're wrong."
-              }
-            ]
-          }
-        }
-      ]
+      "dynamic_events": []
     },
     {
       "id": "pizza",
