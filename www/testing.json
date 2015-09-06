@@ -11,10 +11,20 @@
       "src": "the-moonlight/images/background.png"
     },
     {
-      "id": "background_music",
+      "id": "background-music",
       "type": "audio",
       "src": "the-moonlight/audio/dreams-become-real.mp3",
       "buffer": true
+    },
+    {
+      "id": "getting-in-bed",
+      "type": "audio",
+      "src": "the-moonlight/audio/getting-in-bed-sound.wav"
+    },
+    {
+      "id": "door-knock",
+      "type": "audio",
+      "src": "the-moonlight/audio/door-knock.wav"
     }
   ],
   "scenes": [
@@ -78,7 +88,7 @@
           "view": "self",
           "method": "play_audio",
           "options": {
-            "asset_id": "background_music",
+            "asset_id": "background-music",
             "loop": true
           }
         }
@@ -124,7 +134,7 @@
               },
               {
                 "text": "Ask to Ozi",
-                "dynamic_events": ["oz_says", "quit_the_room", "next"]
+                "dynamic_events": ["knock_sound", "oz_says", "quit_the_room", "next"]
               },
               {
                 "text": "Ask to SangMin",
@@ -137,7 +147,7 @@
           "view": "self",
           "method": "stop_audio",
           "options": {
-            "asset_id": "background_music",
+            "asset_id": "background-music",
             "fade": 1200
           },
           "auto_next": 1
@@ -170,6 +180,15 @@
               }
             ]
           }
+        },
+        {
+          "id": "knock_sound",
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "door-knock"
+          },
+          "auto_next": 1
         },
         {
           "id": "oz_says",
