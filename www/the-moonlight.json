@@ -217,28 +217,30 @@
           "view": "self",
           "method": "new_choices",
           "options": {
-            "view_id": "choi1",
+            "view_id": "roomChoices",
             "choices": [
               {
-                "text": "Move Scene",
+                "text": "Tell a lie",
                 "method": "move_scene",
                 "options": {
-                  "scene_id": "new_scene"
+                "scene_id": "lie scene"
                 }
               },
               {
-                "text": "Remeber Variable"
-              },
-              {
-                "text": "No Action"
+                "text": "Say the truth",
+                "method": "move_scene",
+                "options": {
+                "scene_id": "truth scene"
               }
+              }
+
             ]
           }
         }
       ]
     },
     {
-      "id": "new_scene",
+      "id": "lie scene",
       "view": "SceneView",
       "options": {}
     }
