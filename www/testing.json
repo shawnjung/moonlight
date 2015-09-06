@@ -11,6 +11,17 @@
       "src": "the-moonlight/images/background.png"
     },
     {
+      "id": "pizza-background",
+      "type": "image",
+      "src": "testing/images/pizza.png"
+    },
+    {
+      "id": "pizza-theme-music",
+      "type": "audio",
+      "src": "testing/audio/pizza-theme.mp3",
+      "buffer": true
+    },
+    {
       "id": "background-music",
       "type": "audio",
       "src": "the-moonlight/audio/dreams-become-real.mp3",
@@ -88,6 +99,7 @@
           "view": "self",
           "method": "play_audio",
           "options": {
+            "audio_id": "bg_sound",
             "asset_id": "background-music",
             "loop": true
           }
@@ -107,7 +119,7 @@
           "view": "self",
           "method": "stop_audio",
           "options": {
-            "asset_id": "background-music",
+            "audio_id": "bg_sound",
             "fade": 1000
           },
           "wait": 1000
@@ -141,8 +153,8 @@
           "method": "new_choices",
           "options": {
             "view_id": "choi1",
-            "title": "What should I do now?",
-            "description": "You have no idea what to do.",
+            "title": "Do you know who like a pizza?",
+            "description": "Seems like Ozi loves a pizza",
             "choice_font_size": 46,
             "choice_radius": 50,
             "background_color": "000000",
@@ -217,7 +229,7 @@
             "messages": [
               {
                 "actor_id": "ozi",
-                "message": "Let's get out here!"
+                "message": "Let's get a pizza now!"
               }
             ]
           }
@@ -285,7 +297,7 @@
           "view": "self",
           "method": "new_image",
           "options": {
-            "asset_id": "background",
+            "asset_id": "pizza-background",
             "layer_id": "background"
           }
         },
@@ -293,7 +305,8 @@
           "view": "self",
           "method": "play_audio",
           "options": {
-            "asset_id": "background-music",
+            "audio_id": "bg_sound",
+            "asset_id": "pizza-theme-music",
             "loop": true
           }
         }
@@ -303,7 +316,7 @@
           "view": "self",
           "method": "stop_audio",
           "options": {
-            "asset_id": "background-music",
+            "audio_id": "bg_sound",
             "fade": 1000
           },
           "wait": 1000
@@ -327,6 +340,39 @@
             "duration": 1000
           },
           "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono1",
+            "opacity": 0.4,
+            "messages": [
+              "A delicious pizza is on the table."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "halign": "center",
+            "valign": "middle",
+            "background_color": "ffffff",
+            "font_color": "000000",
+            "opacity": 1,
+            "messages": [
+              "I love pizza too much."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "opening"
+          }
         }
       ],
       "dynamic_events": []

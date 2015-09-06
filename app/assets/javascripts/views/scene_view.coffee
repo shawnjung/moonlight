@@ -5,6 +5,7 @@ class Moon.View.SceneView extends SUI.View
     @dynamic_event_queue = []
     @current_event_index = options.current_event_index or 0
     @view_manager        = new Moon.Helper.ViewManager
+    @audio_manager       = new Moon.Helper.ViewManager
 
     @_render()
     @_render_layer_views()
@@ -129,15 +130,17 @@ class Moon.View.SceneView extends SUI.View
 
   play_audio: (options) ->
     asset = @app.game.assets.get(options.asset_id)
+
     audio = asset.audio
     audio.volume(1)
     audio.loop() if options.loop
     audio.play()
 
+    @audio_manager.add options.audio_id, audio
+
 
   stop_audio: (options) ->
-    asset = @app.game.assets.get(options.asset_id)
-    audio = asset.audio
+    audio = @audio_manager.get options.audio_id
 
     if options.fade > 0
       audio.fade 1, 0, options.fade, => audio.stop()
