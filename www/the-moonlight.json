@@ -139,7 +139,40 @@
           "options": {
             "view_id": "mono2",
             "messages": [
-              "The time was around the midnight.\n And I felt something was wrong."
+              "The time was around the midnight. And I felt something was wrong.",
+              "I woke up to stare out the window, And all I saw was-"
+            ]
+          }
+        },
+        {
+          "view": "logo",
+          "method": "animate",
+          "options": {
+            "position": {"x": 0.5, "y": 0.15},
+            "duration": 1200
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "The moon is looking down at me..."
+
+              },
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "...And it is shining five times brighter than usual"
+
+              }
             ]
           }
         },
