@@ -14,6 +14,11 @@
       "id": "darkness",
       "type": "image",
       "src": "the-moonlight/images/darkness.png"
+    },
+    {
+      "id": "room",
+      "type": "image",
+      "src": "the-moonlight/images/myroomandold.jpg"
     }
   ],
   "scenes": [
@@ -157,6 +162,15 @@
               "I woke up to stare out the window, And all I saw was-"
             ]
           }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "room",
+            "layer_id": "background"
+          },
+          "auto_next": 0
         },
         {
           "view": "logo",
