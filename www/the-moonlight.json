@@ -6,6 +6,41 @@
       "src": "the-moonlight/images/logo.png"
     },
     {
+      "id": "oldWoman1",
+      "type": "image",
+      "src": "the-moonlight/images/actor_oldwoman1.png"
+    },
+    {
+      "id": "grabBat",
+      "type": "image",
+      "src": "the-moonlight/images/ill_cheating.png"
+    },
+    {
+      "id": "hitBat",
+      "type": "image",
+      "src": "the-moonlight/images/ill_cheating3.png"
+    },
+    {
+      "id": "oldWoman2",
+      "type": "image",
+      "src": "the-moonlight/images/actor_oldwoman2.png"
+    },
+    {
+      "id": "suicide",
+      "type": "image",
+      "src": "the-moonlight/images/ill_suicide.png"
+    },
+    {
+      "id": "parents",
+      "type": "image",
+      "src": "the-moonlight/images/actor_parents.png"
+    },
+    {
+      "id": "coworkerimage",
+      "type": "image",
+      "src": "the-moonlight/images/actor_coworker.png"
+    },
+    {
       "id": "background",
       "type": "image",
       "src": "the-moonlight/images/background.png"
@@ -13,7 +48,7 @@
     {
       "id": "gameOver",
       "type": "image",
-      "src": "the-moonlight/images/gameOver.jpg"
+      "src": "the-moonlight/images/gameOver.png"
     },
     {
       "id": "darkness",
@@ -23,7 +58,7 @@
     {
       "id": "room",
       "type": "image",
-      "src": "the-moonlight/images/myroomandold.jpg"
+      "src": "the-moonlight/images/bg_myroom.png"
     },
     {
       "id": "bat",
@@ -308,6 +343,15 @@
           }
         },
         {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "oldWoman1",
+            "layer_id": "background"
+          },
+          "auto_next": 0
+        },
+        {
           "view": "logo",
           "method": "animate",
           "options": {
@@ -355,7 +399,7 @@
               },
               {
                 "text": "tell the truth",
-                "dynamic_events": ["truth_1", "truth_2", "truth_3"]
+                "dynamic_events": ["truth_0", "truth_1", "truth_2", "truth_3", "truth_4", "next"]
               }
             ]
           }
@@ -486,6 +530,16 @@
             }
         },
         {
+          "id": "truth_0",
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "oldWoman2",
+            "layer_id": "background"
+          },
+          "auto_next": 0
+        },
+        {
           "id": "truth_1",
           "view": "self",
           "method": "new_conversation",
@@ -520,12 +574,22 @@
           {
             "id":"truth_3",
             "view": "self",
+            "method": "new_image",
+            "options": {
+              "asset_id": "suicide",
+              "layer_id": "background"
+            },
+            "auto_next": 0
+          },
+          {
+            "id":"truth_4",
+            "view": "self",
             "method": "new_monologue",
             "options": {
               "view_id": "mono2",
               "messages": ["She left. With shocked, pale face.",
               "...",
-              "After some moments, you hear a gunshot, and realize she commited suicide"]
+              "After some moments, you hear a chair fall, and realize she commited suicide by hanging herself"]
             }
         },
         {
@@ -630,6 +694,15 @@
              "view_id": "mono2",
              "messages": ["I hear a car behind me..."]
            }
+         },
+         {
+           "view": "self",
+           "method": "new_image",
+           "options": {
+             "asset_id": "coworkerimage",
+             "layer_id": "background"
+           },
+           "auto_next": 0
          },
          {
            "view": "self",
@@ -802,6 +875,15 @@
       },
       {
         "view": "self",
+        "method": "new_image",
+        "options": {
+          "asset_id": "grabBat",
+          "layer_id": "background"
+        },
+        "auto_next": 0
+      },
+      {
+        "view": "self",
         "method": "new_monologue",
         "options": {
           "view_id": "mono2",
@@ -824,6 +906,15 @@
             }
           ]
           }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "bat",
+            "layer_id": "background"
+          },
+          "auto_next": 0
         },
         {
           "view": "self",
@@ -860,15 +951,7 @@
             ]
             }
           },
-          {
-            "view": "self",
-            "method": "new_image",
-            "options": {
-              "asset_id": "bat",
-              "layer_id": "background"
-            },
-            "auto_next": 0
-          },
+
           {
             "view": "self",
             "method": "new_monologue",
@@ -891,15 +974,15 @@
               "choices": [
                 {
                   "text": "kill Carl",
-                  "dynamic_events": ["killCarl", "next"]
+                  "dynamic_events": ["killImage", "killCarl", "next"]
                 },
                 {
                   "text": "kill the girlfriend",
-                  "dynamic_events": ["killGirlfriend", "next"]
+                  "dynamic_events": ["killImage", "killGirlfriend", "next"]
                 },
                 {
                   "text": "kill both",
-                  "dynamic_events": ["killBoth", "next"]
+                  "dynamic_events": ["killImage", "killBoth", "next"]
                 },
                 {
                   "text": "just leave",
@@ -924,8 +1007,18 @@
         "method": "new_monologue",
         "options": {
           "view_id": "mono2",
-          "messages": ["Carl was now dead, he put some resistance but it wasnt har for me to kill him"]
+          "messages": ["Carl was now dead, he put some resistance but it was not hard for me to kill him, I will go now to my ex wifes place"]
         }
+      },
+      {
+        "id":"killImage",
+        "view": "self",
+        "method": "new_image",
+        "options": {
+          "asset_id": "hitBat",
+          "layer_id": "background"
+        },
+        "auto_next": 0
       },
       {
         "id":"kill the girlfriend",
@@ -933,7 +1026,7 @@
         "method": "new_monologue",
         "options": {
           "view_id": "mono2",
-          "messages": ["It hurt me so much to do it but I killed my girlfriend... Carl just ran away"]
+          "messages": ["It hurt me so much to do it but I killed my girlfriend... Carl just ran away, I will go now to my ex wifes place"]
         }
       },
       {
@@ -942,7 +1035,7 @@
         "method": "new_monologue",
         "options": {
           "view_id": "mono2",
-          "messages": ["I killed both, maybe this moon thing is starting to drive me crazy"]
+          "messages": ["I killed both, maybe this moon thing is starting to drive me crazy, I will go now to my ex wifes place"]
         }
       },
       {
@@ -951,7 +1044,7 @@
         "method": "new_monologue",
         "options": {
           "view_id": "mono2",
-          "messages": ["I just left... losing my integrity because of unfaithful people is not worth it"]
+          "messages": ["I just left... losing my integrity because of unfaithful people is not worth it, I will go now to my ex wifes place"]
         }
       }
     ]
