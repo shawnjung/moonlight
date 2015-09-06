@@ -9,6 +9,11 @@
       "id": "background",
       "type": "image",
       "src": "the-moonlight/images/background.png"
+    },
+    {
+      "id": "darkness",
+      "type": "image",
+      "src": "the-moonlight/images/darkness.png"
     }
   ],
   "scenes": [
@@ -107,6 +112,15 @@
             "duration": 1200
           },
           "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "darkness",
+            "layer_id": "background"
+          },
+          "auto_next": 0
         },
         {
           "view": "self",
