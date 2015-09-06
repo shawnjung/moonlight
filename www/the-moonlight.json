@@ -41,6 +41,16 @@
       "src": "the-moonlight/images/actor_coworker.png"
     },
     {
+      "id": "desertedStreet",
+      "type": "image",
+      "src": "the-moonlight/images/bg_street.png"
+    },
+    {
+      "id": "parentsHouse",
+      "type": "image",
+      "src": "the-moonlight/images/bg_parentshouse.png"
+    },
+    {
       "id": "background",
       "type": "image",
       "src": "the-moonlight/images/background.png"
@@ -1275,7 +1285,7 @@
       "view": "self",
       "method": "new_image",
       "options": {
-        "asset_id": "background",
+        "asset_id": "desertedStreet",
         "layer_id": "background"
       }
     }
@@ -1301,11 +1311,20 @@
           "Car wheel goes flat."]
       }
     },
-    {
-    "actor_id":"player",
-    "speed":10,
-    "font_size": 28,
-    "message": "Shit, I will have to walk from now on"
+      {
+        "view": "self",
+        "method": "new_conversation",
+        "options": {
+          "view_id": "conv1",
+          "messages":[
+            {
+              "actor_id":"player",
+              "speed":10,
+              "font_size": 28,
+              "message": "Shit, I will have to walk from now on"
+            }
+          ]
+        }
   },
   {
     "view": "self",
@@ -1359,10 +1378,19 @@
     }
   },
   {
-  "actor_id":"player",
-  "speed":10,
-  "font_size": 28,
-  "message": "I still cant belive I had a chance to have sex with her, but I didn’t, because of Kim."
+    "view": "self",
+    "method": "new_conversation",
+    "options": {
+      "view_id": "conv1",
+      "messages":[
+        {
+          "actor_id":"player",
+          "speed":10,
+          "font_size": 28,
+          "message": "I still cant belive I had a chance to have sex with her, but I didn’t, because of Kim."
+        }
+      ]
+    }
 },
 {
   "view": "self",
@@ -1402,10 +1430,19 @@
   }
 },
 {
-"actor_id":"player",
-"speed":10,
-"font_size": 28,
-"message": "Flying is still my passion"
+  "view": "self",
+  "method": "new_conversation",
+  "options": {
+    "view_id": "conv1",
+    "messages":[
+      {
+        "actor_id":"player",
+        "speed":10,
+        "font_size": 28,
+        "message": "Flying is still my passion"
+      }
+    ]
+  }
 },
 {
   "view": "self",
@@ -1447,10 +1484,19 @@
   }
 },
 {
-"actor_id":"player",
-"speed":10,
-"font_size": 28,
-"message": "How could I have missed the birth of my daughters..."
+  "view": "self",
+  "method": "new_conversation",
+  "options": {
+    "view_id": "conv1",
+    "messages":[
+      {
+        "actor_id":"player",
+        "speed":10,
+        "font_size": 28,
+        "message": "How could I miss the birth of my daughters...."
+      }
+    ]
+  }
 },
 {
   "view": "self",
@@ -1484,10 +1530,19 @@
   }
 },
 {
-"actor_id":"player",
-"speed":10,
-"font_size": 28,
-"message": "Maybe I will spend my last time crying on the road..."
+  "view": "self",
+  "method": "new_conversation",
+  "options": {
+    "view_id": "conv1",
+    "messages":[
+      {
+        "actor_id":"player",
+        "speed":10,
+        "font_size": 28,
+        "message": "Maybe I will spend the last moments of my life crying on the road..."
+      }
+    ]
+  }
 },
 {
   "view": "self",
