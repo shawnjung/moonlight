@@ -100,18 +100,22 @@
             "view_id": "choi1",
             "title": "What should I do now?",
             "description": "You have no idea what to do.",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
             "choices": [
               {
                 "text": "Ask to Shawn",
-                "events": ["shawn_says_and_failed", "back"]
+                "dynamic_events": ["shawn_says_and_failed", "back"]
               },
               {
                 "text": "Ask to Ozi",
-                "events": ["oz_says", "quit_the_room", "next"]
+                "dynamic_events": ["oz_says", "quit_the_room", "next"]
               },
               {
                 "text": "Ask to SangMin",
-                "events": ["sangmin_says_and_failed", "back"]
+                "dynamic_events": ["sangmin_says_and_failed", "back"]
               }
             ]
           }
