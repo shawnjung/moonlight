@@ -97,7 +97,6 @@ class Moon.View.MonologueView extends Moon.View.BaseView
     @$message_area = @$(".message-area")
     txt_color = _(@voptions.font_color).toRGB()
     bg_color  = _(@voptions.background_color).toRGB()
-    console.log txt_color
     @$el.css 'color', "rgb(#{txt_color.r}, #{txt_color.g}, #{txt_color.b})"
     @$el.css 'background-color', "rgba(#{bg_color.r}, #{bg_color.g}, #{bg_color.b}, #{@voptions.opacity})"
     @$el.addClass "align-#{@voptions.halign}"
