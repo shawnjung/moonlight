@@ -729,7 +729,20 @@
         "name": "User User",
         "short_name": "User",
         "actions": {}
+      },
+      {
+        "id": "girlfriend",
+        "name": "girlfriend",
+        "short_name": "Girlfriend",
+        "actions": {}
+      },
+      {
+        "id": "coworker",
+        "name": "carl",
+        "short_name": "Carl",
+        "actions": {}
       }
+
     ],
     "layers": [
       {
@@ -784,7 +797,9 @@
         "method": "new_monologue",
         "options": {
           "view_id": "mono2",
-          "messages": ["welcome to my crib bitches"]
+          "messages": ["Just got to my girlfriends place…. wait… what is that noice upstairs?",
+            " I will grab my girlfriends bat just in case it is needed… ",
+            "About to open the door… I aopen it, and…"]
         }
       }
     ],
