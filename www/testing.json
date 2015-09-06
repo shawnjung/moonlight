@@ -75,7 +75,7 @@
         }
 
       ],
-      "preevents": [
+      "pre_scene_events": [
         {
           "view": "self",
           "method": "new_image",
@@ -91,6 +91,26 @@
             "asset_id": "background-music",
             "loop": true
           }
+        }
+      ],
+      "post_scene_events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [1, 0],
+            "duration": 1000
+          },
+          "wait": 1000
+        },
+        {
+          "view": "self",
+          "method": "stop_audio",
+          "options": {
+            "asset_id": "background-music",
+            "fade": 1000
+          },
+          "wait": 1000
         }
       ],
       "events": [
@@ -145,15 +165,6 @@
         },
         {
           "view": "self",
-          "method": "stop_audio",
-          "options": {
-            "asset_id": "background-music",
-            "fade": 1200
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -163,6 +174,13 @@
               "Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.",
               "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.\n              Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit."
             ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "pizza"
           }
         }
       ],
@@ -239,10 +257,79 @@
     {
       "id": "pizza",
       "view": "SceneView",
-      "options": {},
-      "actors": [
+      "options": {
+        "opacity": 0
+      },
+      "actors": [],
+      "layers": [
+        {
+          "id": "background",
+          "z": 1
+        },
+        {
+          "id": "characters",
+          "z": 2
+        },
+        {
+          "id": "effectors",
+          "z": 3
+        },
+        {
+          "id": "subtitles",
+          "z": 4
+        }
 
-      ]
+      ],
+      "pre_scene_events": [
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "background",
+            "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "background-music",
+            "loop": true
+          }
+        }
+      ],
+      "post_scene_events": [
+        {
+          "view": "self",
+          "method": "stop_audio",
+          "options": {
+            "asset_id": "background-music",
+            "fade": 1000
+          },
+          "wait": 1000
+        },
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [1, 0],
+            "duration": 1000
+          },
+          "wait": 1000
+        }
+      ],
+      "events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [0, 1],
+            "duration": 1000
+          },
+          "auto_next": 1
+        }
+      ],
+      "dynamic_events": []
     }
   ]
 }

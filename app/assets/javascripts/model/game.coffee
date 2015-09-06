@@ -15,11 +15,13 @@ class Moon.Model.Game extends SUI.Model
 
     _(response.scenes).each (scene_data) =>
       scene = new @scenes.model scene_data
-      scene.init_layers scene_data.layers
-      scene.init_preevents scene_data.preevents
-      scene.init_events scene_data.events
       scene.init_actors scene_data.actors
+      scene.init_layers scene_data.layers
+      scene.init_pre_scene_events scene_data.pre_scene_events or scene_data.preevents
+      scene.init_post_scene_events scene_data.post_scene_events
+      scene.init_events scene_data.events
       scene.init_dynamic_events scene_data.dynamic_events
+
       @scenes.add scene
 
   preload_assets: (callback) ->

@@ -46,6 +46,19 @@ class Moon.View.SceneView extends SUI.View
       _(next_event_callback).delay event.get('auto_next')
 
 
+  perform_post_events: (callback) ->
+    max_wait_time = 0
+    @_receiver = undefined
+    @model.post_scene_events.each (event) =>
+      @perform_event event
+      max_wait_time = event.get('wait') if event.get('wait') > max_wait_time
+
+    setTimeout callback, max_wait_time + 100
+
+
+
+
+
   perform_dynamic_events: (dynamic_event_names) ->
     @dynamic_event_queue = dynamic_event_names.concat @dynamic_event_queue
     @_perform_next_dynamic_event()
@@ -62,8 +75,6 @@ class Moon.View.SceneView extends SUI.View
       else
         dynamic_event = @model.dynamic_events.get event_name
         @perform_event dynamic_event
-
-
 
 
   fade: (options) ->
@@ -119,6 +130,7 @@ class Moon.View.SceneView extends SUI.View
   play_audio: (options) ->
     asset = @app.game.assets.get(options.asset_id)
     audio = asset.audio
+    audio.volume(1)
     audio.loop() if options.loop
     audio.play()
 
@@ -128,11 +140,14 @@ class Moon.View.SceneView extends SUI.View
     audio = asset.audio
 
     if options.fade > 0
-      audio.fade 1, 0, options.fade, => audio.stop
+      audio.fade 1, 0, options.fade, => audio.stop()
     else
       audio.stop()
 
 
+  change_scene: (options) ->
+    next_scene = @app.game.scenes.get options.scene_id
+    @app.navigate "scenes/#{next_scene.id}", trigger: true
 
 
   fade_in_image: (options) ->
@@ -156,7 +171,7 @@ class Moon.View.SceneView extends SUI.View
 
 
   _start_from: (event_index) ->
-    @model.preevents.each (event) => @perform_event event
+    @model.pre_scene_events.each (event) => @perform_event event
     _(@model.events.first(event_index+1)).each (event, index) =>
       @perform_event event
       @current_event_index = index

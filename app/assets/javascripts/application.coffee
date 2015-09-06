@@ -37,6 +37,19 @@ class Moon.SceneManager extends SUI.Router
 
   show_scene_view: (id) ->
     scene = @game.scenes.get id
-    @render_view Moon.View.SceneView, model: scene
+    @render_scene Moon.View.SceneView, model: scene
+
+
+
+  render_scene: (view_class, options = {})->
+    options = _({app: this}).extend options
+    render_scene = =>
+      @_current_scene.remove() if @_current_scene
+      @_current_scene = new view_class options
+
+    if @_current_scene instanceof Moon.View.SceneView
+      @_current_scene.perform_post_events render_scene
+    else
+      render_scene()
 
 
