@@ -88,7 +88,15 @@
             "layer_id": "background"
           },
           "auto_next": 0
-        }
+        },
+        {
+         "view": "self",
+         "method": "play_audio",
+         "options": {
+           "asset_id": "background-music",
+           "loop": true
+         }
+       }
       ],
       "events": [
 
@@ -578,14 +586,6 @@
            "asset_id": "background",
            "layer_id": "background"
          }
-       },
-       {
-         "view": "self",
-         "method": "play_audio",
-         "options": {
-           "asset_id": "background-music",
-           "loop": true
-         }
        }
      ],
      "post_scene_events": [],
@@ -786,14 +786,6 @@
         "options": {
           "asset_id": "background",
           "layer_id": "background"
-        }
-      },
-      {
-        "view": "self",
-        "method": "play_audio",
-        "options": {
-          "asset_id": "background-music",
-          "loop": true
         }
       }
     ],
@@ -1017,14 +1009,6 @@
          "asset_id": "background",
          "layer_id": "background"
        }
-     },
-     {
-       "view": "self",
-       "method": "play_audio",
-       "options": {
-         "asset_id": "background-music",
-         "loop": true
-       }
      }
    ],
    "post_scene_events": [],
@@ -1201,14 +1185,6 @@
         "asset_id": "background",
         "layer_id": "background"
       }
-    },
-    {
-      "view": "self",
-      "method": "play_audio",
-      "options": {
-        "asset_id": "background-music",
-        "loop": true
-      }
     }
   ],
   "post_scene_events": [],
@@ -1266,14 +1242,6 @@
      "options": {
        "asset_id": "gameOver",
        "layer_id": "background"
-     }
-   },
-   {
-     "view": "self",
-     "method": "play_audio",
-     "options": {
-       "asset_id": "background-music",
-       "loop": true
      }
    }
  ],
