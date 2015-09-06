@@ -23,15 +23,29 @@ class Moon.Model.Game extends SUI.Model
       @scenes.add scene
 
   preload_assets: (callback) ->
-    loaded_assets = 0
+    @loaded_assets = 0
     finish_callback = =>
-      callback() if loaded_assets is @assets.length
+      callback() if @loaded_assets is @assets.length
 
     @assets.each (asset) =>
-      image = new Image
-      image.onload = ->
-        loaded_assets++
-        asset.set 'width', image.width
-        asset.set 'height', image.height
+      @["_preload_#{asset.get('type')}"] asset, finish_callback
+
+
+  _preload_image: (asset, finish_callback) ->
+    image = new Image
+    image.onload = =>
+      @loaded_assets++
+      asset.set 'width', image.width
+      asset.set 'height', image.height
+      finish_callback()
+    image.src = asset.get('src')
+
+
+  _preload_audio: (asset, finish_callback) ->
+    audio = new Howl
+      urls: [asset.get('src')]
+      buffer: asset.get('buffer') or false
+      onload: =>
+        asset.audio = audio
+        @loaded_assets++
         finish_callback()
-      image.src = asset.get('src')

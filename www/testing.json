@@ -9,6 +9,12 @@
       "id": "background",
       "type": "image",
       "src": "the-moonlight/images/background.png"
+    },
+    {
+      "id": "background_music",
+      "type": "audio",
+      "src": "the-moonlight/audio/dreams-become-real.mp3",
+      "buffer": true
     }
   ],
   "scenes": [
@@ -66,8 +72,15 @@
           "options": {
             "asset_id": "background",
             "layer_id": "background"
-          },
-          "auto_next": 0
+          }
+        },
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "background_music",
+            "loop": true
+          }
         }
       ],
       "events": [
@@ -119,6 +132,15 @@
               }
             ]
           }
+        },
+        {
+          "view": "self",
+          "method": "stop_audio",
+          "options": {
+            "asset_id": "background_music",
+            "fade": 1200
+          },
+          "auto_next": 1
         },
         {
           "view": "self",
