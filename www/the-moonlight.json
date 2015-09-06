@@ -215,6 +215,106 @@
         },
         {
           "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "I realized that the moon is too shiny today.",
+              "I know what is happening, cause I was monitoring the sun with my team 3 days ago and noticed more solar flares than the normal amount.",
+              "The moon is too shiny - It meant that the sun has gone nova… and made everything around it hotter, which meant the end of humanity.",
+              "When morning comes, the world will burn."
+            ]
+          }
+        },
+        {
+          "view": "logo",
+          "method": "animate",
+          "options": {
+            "position": {"x": 0.5, "y": 0.15},
+            "duration": 1200
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "I cant believe this shit"
+
+              },
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "who is it?"
+
+              },
+              {
+                "actor_id": "oldLady",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Can I come in?"
+
+              }
+            ]
+          }
+        },
+        {
+          "view": "logo",
+          "method": "animate",
+          "options": {
+            "position": {"x": 0.5, "y": 0.5},
+            "duration": 1200
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": ["She is the owner of the house, maybe she wants me to pay the rent"]
+
+          }
+        },
+        {
+          "view": "logo",
+          "method": "animate",
+          "options": {
+            "position": {"x": 0.5, "y": 0.15},
+            "duration": 1200
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "oldLady",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Did you see the moon today?It’s very bright, like a huge light bulb."
+              },
+              {
+                "actor_id": "oldLady",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Do you know what is happening with the moon?"
+              }
+            ]
+            }
+          },
+        {
+          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi1",
@@ -235,45 +335,177 @@
               }
             ]
           }
-        }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "call choices",
+            "description": "So... what would I do first?",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "call ex-wife",
+                "dynamic_events": ["noResponse", "back"]
+              },
+              {
+                "text": "call girlfriend",
+                "dynamic_events": ["noResponse", "back"]
+              },
+              {
+                "text": "call parents",
+                "dynamic_events": ["noResponse", "back"]
+              },
+              {
+                "text": "call co-workers",
+                "dynamic_events": ["noResponse", "back"]
+              },
+              {
+                "text": "leave room",
+                "dynamic_events": ["next"]
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "There is nothing I can do in this room..."
+              }
+            ]
+            }
+          },
+          {
+            "view": "logo",
+            "method": "animate",
+            "options": {
+              "position": {"x": 0.5, "y": 0.5},
+              "duration": 1200
+            },
+            "auto_next": 1
+          },
+          {
+            "view": "self",
+            "method": "new_monologue",
+            "options": {
+              "view_id": "mono2",
+              "messages": ["I left my room"]
+
+            }
+          }
+
       ],
       "dynamic_events": [
         {
           "id": "lie_1",
           "view": "self",
-          "method": "new_monologue",
+          "method": "new_conversation",
           "options": {
-            "view_id": "mono2",
+            "view_id": "conv1",
             "messages": [
-              "The time was around the midnight. And I felt something was wrong.",
-              "I woke up to stare out the window, And all I saw was-"
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "The stars today are giving out too much light and that light makes the moon appear to shine brighter."
+              },
+              {
+                "actor_id": "oldLady",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Oh, that’s fantastic."
+              },
+              {
+                "actor_id": "oldLady",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Tomorrow my son and grandson will come to see me from the India. Hopefully they could see that too."
+              }
             ]
-          }
+            }
+          },
+          {
+            "id":"lie_2",
+            "view": "logo",
+            "method": "animate",
+            "options": {
+              "position": {"x": 0.5, "y": 0.5},
+              "duration": 1200
+            },
+            "auto_next": 1
+          },
+          {
+            "id":"lie_3",
+            "view": "self",
+            "method": "new_monologue",
+            "options": {
+              "view_id": "mono2",
+              "messages": ["...India is on the otherside of the earth, maybe burned all now. But I didn’t tell the truth, so that she left happily."]
+            }
         },
         {
-          "id": "lie_2",
+          "id": "truth_1",
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "oldLady",
+                "speed": 10,
+                "font_size": 28,
+                "message": "No, no. My son and grandson lives India."
+              },
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "..Sorry to hear that. Maybe the other side of the earth has burned completely by now… and we are next."
+              }
+            ]
+            }
+          },
+          {
+            "id":"truth_2",
+            "view": "logo",
+            "method": "animate",
+            "options": {
+              "position": {"x": 0.5, "y": 0.5},
+              "duration": 1200
+            },
+            "auto_next": 1
+          },
+          {
+            "id":"truth_3",
+            "view": "self",
+            "method": "new_monologue",
+            "options": {
+              "view_id": "mono2",
+              "messages": ["She left. With shocked, pale face.",
+              "...",
+              "After some moments, you hear a gunshot, and realize she commited suicide"]
+            }
+        },
+        {
+          "id":"noResponse",
           "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
-            "messages": [
-              "The time was around the midnight. And I felt something was wrong.",
-              "I woke up to stare out the window, And all I saw was-"
-            ]
+            "messages": ["no response..."]
           }
-        },
-        {
-          "id": "lie_3",
-          "view": "self",
-          "method": "new_monologue",
-          "options": {
-            "view_id": "mono2",
-            "messages": [
-              "The time was around the midnight. And I felt something was wrong.",
-              "I woke up to stare out the window, And all I saw was-"
-            ]
-          }
-        }
+      }
       ]
     }
   ]
