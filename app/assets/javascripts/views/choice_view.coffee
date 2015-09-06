@@ -1,1 +1,0 @@
-class Moon.View.ChoiceView extends SUI.View

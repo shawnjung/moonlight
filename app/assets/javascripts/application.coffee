@@ -32,7 +32,7 @@ class Moon.SceneManager extends SUI.Router
 
 
   move_to_first_scene: ->
-    @navigate "scenes/#{@scenes.first().id}", trigger: true
+    @navigate "scenes/#{@game.scenes.first().id}", trigger: true
 
 
   show_scene_view: (id) ->

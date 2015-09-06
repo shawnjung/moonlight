@@ -1,0 +1,21 @@
+@import "moon";
+
+@include keyframes(fade_in) {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+.monologue-view {
+  position: absolute;
+  left: 0; top: 0; right: 0; bottom: 0;
+  color: white;
+  .message-area {
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    padding: 40em 25em 40em; overflow: auto;
+  }
+  .letter {
+    @include animation(fade_in 0.6s);
+  }
+}

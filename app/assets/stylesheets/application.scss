@@ -13,6 +13,15 @@ body {
   left: 0; top: 0; right: 0; bottom: 0;
   background: #111; padding: 0; margin: 0;
   font-family: 'Source Sans Pro', sans-serif; font-weight: 400;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   input, textarea, select { font-family: 'Source Sans Pro', sans-serif; font-weight: 400; }
 }
 

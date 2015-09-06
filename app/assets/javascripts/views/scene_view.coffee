@@ -61,6 +61,13 @@ class Moon.View.SceneView extends SUI.View
     @view_manager.add options.view_id, view
     view
 
+  new_monologue: (options = {}) ->
+    view  = new Moon.View.MonologueView _(options).defaults
+              app: @app, scene: @model
+
+    @view_manager.add options.view_id, view
+    view
+
   new_choices: (options) ->
     view  = new Moon.View.ChoiceView _(options).defaults
               app: @app, scene: @model

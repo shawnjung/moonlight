@@ -82,58 +82,26 @@
           "auto_next": 0
         },
         {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "monologue",
+            "messages": [
+              "Donec ullamcorper nulla non metus auctor fringilla.",
+              "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.",
+              "Curabitur blandit tempus porttitor. Maecenas sed diam eget risus varius blandit sit amet non magna.",
+              "Nullam quis risus eget urna mollis ornare vel eu leo. Vestibulum id ligula porta felis euismod semper. Cras mattis consectetur purus sit amet fermentum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Etiam porta sem malesuada magna mollis euismod.\n              Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id dolor id nibh ultricies vehicula ut id elit."
+            ]
+          }
+        },
+        {
           "view": "logo",
           "method": "animate",
           "options": {
             "position": {"x": 0.5, "y": 0.15},
             "duration": 1200
           },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
-          "method": "new_conversation",
-          "options": {
-            "view_id": "conv1",
-            "messages": [
-              {
-                "actor_id": "shawn",
-                "speed": 30,
-                "font_size": 28,
-                "message": "Cras justo odio, dapibus ac facilisis in, egestas eget quam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
-              },
-              {
-                "actor_id": "",
-                "speed": 30,
-                "font_size": 28,
-                "message": "Donec ullamcorper nulla non metus auctor fringilla."
-              },
-              {
-                "actor_id": "shawn",
-                "speed": 30,
-                "font_size": 28,
-                "message": "Cras mattis consectetur purus sit amet fermentum. Donec ullamcorper nulla non metus auctor fringilla. Donec id elit non mi porta gravida at eget metus. Donec sed odio dui. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Maecenas faucibus mollis interdum."
-              },
-              {
-                "actor_id": "shawn",
-                "speed": 30,
-                "font_size": 28,
-                "message": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet."
-              },
-              {
-                "actor_id": "shawn",
-                "speed": 30,
-                "font_size": 28,
-                "message": "Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum."
-              },
-              {
-                "actor_id": "shawn",
-                "speed": 30,
-                "font_size": 28,
-                "message": "Donec ullamcorper nulla non metus auctor fringilla."
-              }
-            ]
-          }
+          "auto_next": 0
         },
         {
           "view": "self",
@@ -160,9 +128,12 @@
       ]
     },
     {
-      "id": "new_scene",
+      "id": "pizza",
       "view": "SceneView",
-      "options": {}
+      "options": {},
+      "actors": [
+
+      ]
     }
   ]
 }
