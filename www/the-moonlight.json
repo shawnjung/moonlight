@@ -1139,7 +1139,7 @@
        "view": "self",
        "method": "new_image",
        "options": {
-         "asset_id": "background",
+         "asset_id": "parentsHouse",
          "layer_id": "background"
        }
      }
@@ -1161,6 +1161,14 @@
        "options": {
          "view_id": "mono2",
          "messages": ["After half an hour of driving, I finally arrived at my parents house..."]
+       }
+     },
+     {
+       "view": "self",
+       "method": "new_image",
+       "options": {
+         "asset_id": "parents",
+         "layer_id": "background"
        }
      },
      {
