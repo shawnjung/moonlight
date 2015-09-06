@@ -29,6 +29,12 @@
       "id": "bat",
       "type": "image",
       "src": "the-moonlight/images/badass.jpg"
+    },
+    {
+      "id": "background-music",
+      "type": "audio",
+      "src": "the-moonlight/audio/dreams-become-real.lite.mp3",
+      "buffer": true
     }
   ],
   "scenes": [
