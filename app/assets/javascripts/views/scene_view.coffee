@@ -127,6 +127,14 @@ class Moon.View.SceneView extends SUI.View
     @view_manager.add options.view_id, view
     view
 
+  switch_background: (options) ->
+    options.duration = options.duration/2
+    @fade_out_image options, =>
+      options.layer_id = 'background'
+      @fade_in_image options
+
+
+
 
   play_audio: (options) ->
     asset = @app.game.assets.get(options.asset_id)
@@ -153,11 +161,21 @@ class Moon.View.SceneView extends SUI.View
     @app.navigate "scenes/#{next_scene.id}", trigger: true
 
 
-  fade_in_image: (options) ->
+  fade_in_image: (options, callback) ->
     options.opacity = 0
     view = @new_image options
     options.opacity = 1
-    view.animate options
+    view.animate options, =>
+      callback() if callback instanceof Function
+
+  fade_out_image: (options, callback) ->
+    view = @view_manager.get options.view_id, view
+    options.opacity = [1,0]
+    view.animate options, =>
+      view.remove()
+      @view_manager.remove options.view_id
+      callback() if callback instanceof Function
+
 
 
   _render: ->

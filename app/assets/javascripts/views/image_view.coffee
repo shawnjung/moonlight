@@ -11,10 +11,11 @@ class Moon.View.ImageView extends Moon.View.BaseView
     @position = options.position or {x: 0, y: 0}
 
     @_render()
-    @_position options.layer_id
+    @_position_to_layer options.layer_id if options.layer_id
+    @_position_to_element options.wrapper_el if options.wrapper_el
 
 
-  animate: (options) ->
+  animate: (options, callback) ->
     prepare_options = {}
     animate_options = {}
 
@@ -28,7 +29,8 @@ class Moon.View.ImageView extends Moon.View.BaseView
         animate_options[attr] = options[attr]
 
     @$el.css @_convert_position_attr prepare_options
-    @$el.transition @_convert_position_attr(animate_options), options.duration
+    @$el.transition @_convert_position_attr(animate_options), options.duration, =>
+      callback() if callback instanceof Function
 
   _render: ->
     width  = parseInt @asset.get('width')
@@ -53,9 +55,13 @@ class Moon.View.ImageView extends Moon.View.BaseView
     @$el.append @$image
 
 
-  _position: (layer_id) ->
+  _position_to_layer: (layer_id) ->
     layer = @scene.layers.get layer_id
     layer.view.$el.append @el
+
+  _position_to_element: (wrapper_el) ->
+    @$el.appendTo wrapper_el
+
 
 
   _convert_position_attr: (options) ->
