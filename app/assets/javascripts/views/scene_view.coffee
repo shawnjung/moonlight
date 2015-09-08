@@ -18,7 +18,7 @@ class Moon.View.SceneView extends SUI.View
     'click': 'next'
 
   next: (e) ->
-    return @_receiver.$el.trigger e.type, e if @_receiver
+    return @_receiver.$el.trigger e.type, e if e and @_receiver
     return @_perform_next_dynamic_event() if @dynamic_event_queue.length
 
     @perform_next_event()
@@ -87,7 +87,7 @@ class Moon.View.SceneView extends SUI.View
     else
       animate_options.opacity = options.opacity
     @$el.css prepare_options
-    @$el.animate animate_options
+    @$el.animate animate_options, options.duration
 
 
   register_receiver: (receiver_view) ->
@@ -165,7 +165,7 @@ class Moon.View.SceneView extends SUI.View
     options.opacity = 0
     view = @new_image options
     options.opacity = 1
-    view.animate options, =>
+    view.animate options, options.duration, =>
       callback() if callback instanceof Function
 
   fade_out_image: (options, callback) ->

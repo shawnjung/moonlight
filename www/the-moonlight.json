@@ -1,9 +1,34 @@
 {
   "assets": [
     {
+      "id": "window-and-man",
+      "type": "image",
+      "src": "the-moonlight/images/ill_window.png"
+    },
+    {
       "id": "logo",
       "type": "image",
-      "src": "the-moonlight/images/logo.png"
+      "src": "the-moonlight/images/title-logo.png"
+    },
+    {
+      "id": "credit-shawn",
+      "type": "image",
+      "src": "the-moonlight/images/credit-shawn.png"
+    },
+    {
+      "id": "credit-sangmin",
+      "type": "image",
+      "src": "the-moonlight/images/credit-sangmin.png"
+    },
+    {
+      "id": "credit-ozi",
+      "type": "image",
+      "src": "the-moonlight/images/credit-ozi.png"
+    },
+    {
+      "id": "moon-and-earth",
+      "type": "image",
+      "src": "the-moonlight/images/il_earth.png"
     },
     {
       "id": "oldWoman1",
@@ -110,21 +135,216 @@
       "type": "audio",
       "src": "the-moonlight/audio/dreams-become-real.lite.mp3",
       "buffer": true
+    },
+    {
+      "id": "door-knock",
+      "type": "audio",
+      "src": "the-moonlight/audio/door-knock.mp3"
     }
   ],
   "scenes": [
     {
+      "id": "landing",
+      "view": "SceneView",
+      "options": {},
+      "layers": [
+        {
+          "id": "background",
+          "z": 1
+        },
+        {
+          "id": "subtitles",
+          "z": 2
+        }
+      ],
+      "actors": [
+        {
+          "id": "player",
+          "name": "Player Name",
+          "short_name": "You",
+          "actions": {}
+        }
+      ],
+      "pre_scene_events": [],
+      "post_scene_events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [1, 0],
+            "duration": 1000
+          },
+          "wait": 1000
+        }
+      ],
+      "events": [
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "Sometimes we do not know the gravity of a situation...",
+              "...until it is too late."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "...What the hell was it?"
+
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "The time was around the midnight. And I felt something was wrong.",
+              "I woke up to stare out the window, And all I saw was-"
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "background-music",
+            "loop": true
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "fade_in_image",
+          "options": {
+            "view_id": "background",
+            "asset_id": "window-and-man",
+            "layer_id": "background"
+          },
+          "auto_next": 1000
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "The moon is looking down at me..."
+
+              },
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "...And it is shining five times brighter than usual"
+
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "fade_in_image",
+          "options": {
+            "view_id": "logo",
+            "asset_id": "logo",
+            "layer_id": "subtitles",
+            "origin": {
+              "x": 0.5, "y": 0.5
+            },
+            "position": {
+              "x": 0.5, "y": 0.30
+            },
+            "duration": 2000
+          },
+          "auto_next": 2000
+        },
+        {
+          "view": "self",
+          "method": "fade_in_image",
+          "options": {
+            "view_id": "credit-shawn",
+            "asset_id": "credit-shawn",
+            "layer_id": "subtitles",
+            "origin": {
+              "x": 0.5, "y": 0.5
+            },
+            "position": {
+              "x": 0.5, "y": 0.8
+            },
+            "duration": 1000
+          },
+          "auto_next": 500
+        },
+        {
+          "view": "self",
+          "method": "fade_in_image",
+          "options": {
+            "view_id": "credit-sangmin",
+            "asset_id": "credit-sangmin",
+            "layer_id": "subtitles",
+            "origin": {
+              "x": 0.5, "y": 0.5
+            },
+            "position": {
+              "x": 0.5, "y": 0.84
+            },
+            "duration": 1000
+          },
+          "auto_next": 500
+        },
+        {
+          "view": "self",
+          "method": "fade_in_image",
+          "options": {
+            "view_id": "credit-ozi",
+            "asset_id": "credit-ozi",
+            "layer_id": "subtitles",
+            "origin": {
+              "x": 0.5, "y": 0.5
+            },
+            "position": {
+              "x": 0.5, "y": 0.88
+            },
+            "duration": 1000
+          },
+          "auto_next": 0
+        },
+        {
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "opening"
+          }
+        }
+      ]
+    },
+    {
       "id": "opening",
       "view": "SceneView",
-      "options": {
-        "opacity": 0
-      },
+      "options": {},
 
       "actors": [
         {
           "id": "player",
-          "name": "User User",
-          "short_name": "User",
+          "name": "Player Name",
+          "short_name": "You",
           "actions": {}
         },
         {
@@ -154,164 +374,8 @@
         }
 
       ],
-      "preevents": [
-        {
-          "view": "self",
-          "method": "new_image",
-          "options": {
-            "asset_id": "background",
-            "layer_id": "background"
-          },
-          "auto_next": 0
-        },
-        {
-         "view": "self",
-         "method": "play_audio",
-         "options": {
-           "asset_id": "background-music",
-           "loop": true
-         }
-       }
-      ],
+      "pre_scene_events": [],
       "events": [
-
-        {
-          "view": "self",
-          "method": "fade",
-          "options": {
-            "opacity": [0, 1],
-            "duration": 1000
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
-          "method": "fade_in_image",
-          "options": {
-            "view_id": "logo",
-            "asset_id": "logo",
-            "layer_id": "subtitles",
-            "position": {"x": 0.5, "y": 0.5},
-            "origin": {"x": 0.5, "y": 0.5},
-            "duration": 2000
-          },
-          "auto_next": 0
-        },
-        {
-          "view": "self",
-          "method": "new_monologue",
-          "options": {
-            "view_id": "mono2",
-            "messages": [
-              "Sometimes we do not know the gravity of a situation...",
-              "...until it is too late."
-            ]
-          }
-        },
-        {
-          "view": "logo",
-          "method": "animate",
-          "options": {
-            "position": {"x": 0.5, "y": 0.15},
-            "duration": 1200
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
-          "method": "new_image",
-          "options": {
-            "asset_id": "darkness",
-            "layer_id": "background"
-          },
-          "auto_next": 0
-        },
-        {
-          "view": "self",
-          "method": "new_conversation",
-          "options": {
-            "view_id": "conv1",
-            "messages": [
-              {
-                "actor_id": "player",
-                "speed": 10,
-                "font_size": 28,
-                "message": "...What the hell was it?"
-
-              }
-            ]
-          }
-        },
-        {
-          "view": "logo",
-          "method": "animate",
-          "options": {
-            "position": {"x": 0.5, "y": 0.5},
-            "duration": 1200
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
-          "method": "new_monologue",
-          "options": {
-            "view_id": "mono2",
-            "messages": [
-              "The time was around the midnight. And I felt something was wrong.",
-              "I woke up to stare out the window, And all I saw was-"
-            ]
-          }
-        },
-        {
-          "view": "self",
-          "method": "new_image",
-          "options": {
-            "asset_id": "room",
-            "layer_id": "background"
-          },
-          "auto_next": 0
-        },
-        {
-          "view": "logo",
-          "method": "animate",
-          "options": {
-            "position": {"x": 0.5, "y": 0.15},
-            "duration": 1200
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
-          "method": "new_conversation",
-          "options": {
-            "view_id": "conv1",
-            "messages": [
-              {
-                "actor_id": "player",
-                "speed": 10,
-                "font_size": 28,
-                "message": "The moon is looking down at me..."
-
-              },
-              {
-                "actor_id": "player",
-                "speed": 10,
-                "font_size": 28,
-                "message": "...And it is shining five times brighter than usual"
-
-              }
-            ]
-          }
-        },
-        {
-          "view": "logo",
-          "method": "animate",
-          "options": {
-            "position": {"x": 0.5, "y": 0.5},
-            "duration": 1200
-          },
-          "auto_next": 1
-        },
         {
           "view": "self",
           "method": "new_monologue",
@@ -319,18 +383,39 @@
             "view_id": "mono2",
             "messages": [
               "I realized that the moon is too shiny today.",
-              "I know what is happening, cause I was monitoring the sun with my team 3 days ago and noticed more solar flares than the normal amount.",
+              "I know what is happening, cause I was monitoring the sun with my team 3 days ago and noticed more solar flares than the normal amount."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "fade_in_image",
+          "options": {
+            "asset_id": "moon-and-earth",
+            "view_id": "background",
+            "layer_id": "background",
+            "duration": 500
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
               "The moon is too shiny - It meant that the sun has gone nova… and made everything around it hotter, which meant the end of humanity.",
               "When morning comes, the world will burn."
             ]
           }
         },
         {
-          "view": "logo",
-          "method": "animate",
+          "view": "self",
+          "method": "switch_background",
           "options": {
-            "position": {"x": 0.5, "y": 0.15},
-            "duration": 1200
+            "view_id": "background",
+            "asset_id": "room",
+            "duration": 1600
           },
           "auto_next": 1
         },
@@ -346,7 +431,24 @@
                 "font_size": 28,
                 "message": "I cant believe this shit"
 
-              },
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "door-knock"
+          },
+          "auto_next": 200
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
               {
                 "actor_id": "player",
                 "speed": 10,
@@ -362,7 +464,8 @@
 
               }
             ]
-          }
+          },
+          "auto_next": 1
         },
         {
           "view": "logo",
@@ -384,21 +487,13 @@
         },
         {
           "view": "self",
-          "method": "new_image",
+          "method": "fade_in_image",
           "options": {
             "asset_id": "oldWoman1",
-            "layer_id": "background"
+            "layer_id": "background",
+            "duration": 800
           },
-          "auto_next": 0
-        },
-        {
-          "view": "logo",
-          "method": "animate",
-          "options": {
-            "position": {"x": 0.5, "y": 0.15},
-            "duration": 1200
-          },
-          "auto_next": 1
+          "auto_next": 600
         },
         {
           "view": "self",
