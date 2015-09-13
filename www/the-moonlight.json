@@ -133,8 +133,7 @@
     {
       "id": "background-music",
       "type": "audio",
-      "src": "the-moonlight/audio/dreams-become-real.lite.mp3",
-      "buffer": true
+      "src": "the-moonlight/audio/dreams-become-real.lite.mp3"
     },
     {
       "id": "door-knock",
@@ -171,7 +170,10 @@
           "view": "self",
           "method": "fade",
           "options": {
-            "opacity": [1, 0],
+            "opacity": [
+              1,
+              0
+            ],
             "duration": 1000
           },
           "wait": 1000
@@ -200,7 +202,6 @@
                 "speed": 10,
                 "font_size": 28,
                 "message": "...What the hell was it?"
-
               }
             ]
           }
@@ -246,14 +247,12 @@
                 "speed": 10,
                 "font_size": 28,
                 "message": "The moon is looking down at me..."
-
               },
               {
                 "actor_id": "player",
                 "speed": 10,
                 "font_size": 28,
                 "message": "...And it is shining five times brighter than usual"
-
               }
             ]
           }
@@ -266,10 +265,12 @@
             "asset_id": "logo",
             "layer_id": "subtitles",
             "origin": {
-              "x": 0.5, "y": 0.5
+              "x": 0.5,
+              "y": 0.5
             },
             "position": {
-              "x": 0.5, "y": 0.30
+              "x": 0.5,
+              "y": 0.30
             },
             "duration": 2000
           },
@@ -283,10 +284,12 @@
             "asset_id": "credit-shawn",
             "layer_id": "subtitles",
             "origin": {
-              "x": 0.5, "y": 0.5
+              "x": 0.5,
+              "y": 0.5
             },
             "position": {
-              "x": 0.5, "y": 0.8
+              "x": 0.5,
+              "y": 0.8
             },
             "duration": 1000
           },
@@ -300,10 +303,12 @@
             "asset_id": "credit-sangmin",
             "layer_id": "subtitles",
             "origin": {
-              "x": 0.5, "y": 0.5
+              "x": 0.5,
+              "y": 0.5
             },
             "position": {
-              "x": 0.5, "y": 0.84
+              "x": 0.5,
+              "y": 0.84
             },
             "duration": 1000
           },
@@ -317,10 +322,12 @@
             "asset_id": "credit-ozi",
             "layer_id": "subtitles",
             "origin": {
-              "x": 0.5, "y": 0.5
+              "x": 0.5,
+              "y": 0.5
             },
             "position": {
-              "x": 0.5, "y": 0.88
+              "x": 0.5,
+              "y": 0.88
             },
             "duration": 1000
           },
@@ -339,7 +346,6 @@
       "id": "opening",
       "view": "SceneView",
       "options": {},
-
       "actors": [
         {
           "id": "player",
@@ -354,7 +360,6 @@
           "actions": {}
         }
       ],
-
       "layers": [
         {
           "id": "background",
@@ -372,9 +377,18 @@
           "id": "subtitles",
           "z": 4
         }
-
       ],
-      "pre_scene_events": [],
+      "pre_scene_events": [
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "background-music",
+            "loop": true,
+            "restart": false
+          }
+        }
+      ],
       "events": [
         {
           "view": "self",
@@ -430,7 +444,6 @@
                 "speed": 10,
                 "font_size": 28,
                 "message": "I cant believe this shit"
-
               }
             ]
           }
@@ -454,14 +467,12 @@
                 "speed": 10,
                 "font_size": 28,
                 "message": "who is it?"
-
               },
               {
                 "actor_id": "oldLady",
                 "speed": 10,
                 "font_size": 28,
                 "message": "Can I come in?"
-
               }
             ]
           },
@@ -471,7 +482,10 @@
           "view": "logo",
           "method": "animate",
           "options": {
-            "position": {"x": 0.5, "y": 0.5},
+            "position": {
+              "x": 0.5,
+              "y": 0.5
+            },
             "duration": 1200
           },
           "auto_next": 1
@@ -481,8 +495,9 @@
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
-            "messages": ["She is the owner of the house, maybe she wants me to pay the rent"]
-
+            "messages": [
+              "She is the owner of the house, maybe she wants me to pay the rent"
+            ]
           }
         },
         {
@@ -514,8 +529,8 @@
                 "message": "Do you know what is happening with the moon?"
               }
             ]
-            }
-          },
+          }
+        },
         {
           "view": "self",
           "method": "new_choices",
@@ -530,11 +545,23 @@
             "choices": [
               {
                 "text": "tell a lie",
-                "dynamic_events": ["lie_1","lie_2", "lie_3", "next"]
+                "dynamic_events": [
+                  "lie_1",
+                  "lie_2",
+                  "lie_3",
+                  "next"
+                ]
               },
               {
                 "text": "tell the truth",
-                "dynamic_events": ["truth_0", "truth_1", "truth_2", "truth_3", "truth_4", "next"]
+                "dynamic_events": [
+                  "truth_0",
+                  "truth_1",
+                  "truth_2",
+                  "truth_3",
+                  "truth_4",
+                  "next"
+                ]
               }
             ]
           }
@@ -553,23 +580,37 @@
             "choices": [
               {
                 "text": "call ex-wife",
-                "dynamic_events": ["noResponse", "back"]
+                "dynamic_events": [
+                  "noResponse",
+                  "back"
+                ]
               },
               {
                 "text": "call girlfriend",
-                "dynamic_events": ["noResponse", "back"]
+                "dynamic_events": [
+                  "noResponse",
+                  "back"
+                ]
               },
               {
                 "text": "call parents",
-                "dynamic_events": ["noResponse", "back"]
+                "dynamic_events": [
+                  "noResponse",
+                  "back"
+                ]
               },
               {
                 "text": "call co-workers",
-                "dynamic_events": ["noResponse", "back"]
+                "dynamic_events": [
+                  "noResponse",
+                  "back"
+                ]
               },
               {
                 "text": "leave room",
-                "dynamic_events": ["next"]
+                "dynamic_events": [
+                  "next"
+                ]
               }
             ]
           }
@@ -587,34 +628,37 @@
                 "message": "There is nothing I can do in this room..."
               }
             ]
-            }
-          },
-          {
-            "view": "logo",
-            "method": "animate",
-            "options": {
-              "position": {"x": 0.5, "y": 0.5},
-              "duration": 1200
+          }
+        },
+        {
+          "view": "logo",
+          "method": "animate",
+          "options": {
+            "position": {
+              "x": 0.5,
+              "y": 0.5
             },
-            "auto_next": 1
+            "duration": 1200
           },
-          {
-            "view": "self",
-            "method": "new_monologue",
-            "options": {
-              "view_id": "mono2",
-              "messages": ["I left my room... what will I find on the street"]
-
-            }
-          },
-          {
-             "view": "self",
-             "method": "change_scene",
-             "options": {
-               "scene_id": "Street"
-             }
-           }
-
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "I left my room... what will I find on the street"
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "Street"
+          }
+        }
       ],
       "dynamic_events": [
         {
@@ -643,26 +687,31 @@
                 "message": "Tomorrow my son and grandson will come to see me from the India. Hopefully they could see that too."
               }
             ]
-            }
-          },
-          {
-            "id":"lie_2",
-            "view": "logo",
-            "method": "animate",
-            "options": {
-              "position": {"x": 0.5, "y": 0.5},
-              "duration": 1200
+          }
+        },
+        {
+          "id": "lie_2",
+          "view": "logo",
+          "method": "animate",
+          "options": {
+            "position": {
+              "x": 0.5,
+              "y": 0.5
             },
-            "auto_next": 1
+            "duration": 1200
           },
-          {
-            "id":"lie_3",
-            "view": "self",
-            "method": "new_monologue",
-            "options": {
-              "view_id": "mono2",
-              "messages": ["...India is on the otherside of the earth, maybe burned all now. But I didn’t tell the truth, so that she left happily."]
-            }
+          "auto_next": 1
+        },
+        {
+          "id": "lie_3",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "...India is on the otherside of the earth, maybe burned all now. But I didn’t tell the truth, so that she left happily."
+            ]
+          }
         },
         {
           "id": "truth_0",
@@ -694,237 +743,257 @@
                 "message": "..Sorry to hear that. Maybe the other side of the earth has burned completely by now… and we are next."
               }
             ]
-            }
-          },
-          {
-            "id":"truth_2",
-            "view": "logo",
-            "method": "animate",
-            "options": {
-              "position": {"x": 0.5, "y": 0.5},
-              "duration": 1200
-            },
-            "auto_next": 1
-          },
-          {
-            "id":"truth_3",
-            "view": "self",
-            "method": "new_image",
-            "options": {
-              "asset_id": "suicide",
-              "layer_id": "background"
-            },
-            "auto_next": 0
-          },
-          {
-            "id":"truth_4",
-            "view": "self",
-            "method": "new_monologue",
-            "options": {
-              "view_id": "mono2",
-              "messages": ["She left. With shocked, pale face.",
-              "...",
-              "After some moments, you hear a chair fall, and realize she commited suicide by hanging herself"]
-            }
+          }
         },
         {
-          "id":"noResponse",
+          "id": "truth_2",
+          "view": "logo",
+          "method": "animate",
+          "options": {
+            "position": {
+              "x": 0.5,
+              "y": 0.5
+            },
+            "duration": 1200
+          },
+          "auto_next": 1
+        },
+        {
+          "id": "truth_3",
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "suicide",
+            "layer_id": "background"
+          },
+          "auto_next": 0
+        },
+        {
+          "id": "truth_4",
           "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
-            "messages": ["no response..."]
+            "messages": [
+              "She left. With shocked, pale face.",
+              "...",
+              "After some moments, you hear a chair fall, and realize she commited suicide by hanging herself"
+            ]
           }
-      }
+        },
+        {
+          "id": "noResponse",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "no response..."
+            ]
+          }
+        }
       ]
     },
     {
-     "id": "Street",
-     "view": "SceneView",
-     "options": {
-       "opacity":0
-     },
-     "actors": [
-       {
-         "id": "player",
-         "name": "User User",
-         "short_name": "User",
-         "actions": {}
-       },
-       {
-         "id": "coworker",
-         "name": "co-worker, in car",
-         "short_name": "co-worker, in car",
-         "actions": {}
-       }
-     ],
-     "layers": [
-       {
-         "id": "background",
-         "z": 1
-       },
-       {
-         "id": "characters",
-         "z": 2
-       },
-       {
-         "id": "effectors",
-         "z": 3
-       },
-       {
-         "id": "subtitles",
-         "z": 4
-       }
-
-     ],
-     "preevents": [
-       {
-         "view": "self",
-         "method": "new_image",
-         "options": {
-           "asset_id": "desertedStreet",
-           "layer_id": "background"
-         }
-       }
-     ],
-     "post_scene_events": [],
-     "events": [
-       {
-         "view": "self",
-         "method": "fade",
-         "options": {
-           "opacity": [0, 1],
-           "duration": 1000
-         },
-         "auto_next": 1
-       },
-       {
-         "view": "self",
-         "method": "new_monologue",
-         "options": {
-           "view_id": "mono2",
-           "messages": ["The moon is very shiny",
-           "Most people look happy, but some people are a little scared."]
-         }
-       },
-       {
-         "view": "self",
-         "method": "new_conversation",
-         "options": {
-           "view_id": "conv1",
-           "messages": [
-             {
-               "actor_id": "player",
-               "speed": 10,
-               "font_size": 28,
-               "message": "Maybe I am the only one who knows what is happening exactly."
-             }
-           ]
-           }
-         },
-         {
-           "view": "self",
-           "method": "new_monologue",
-           "options": {
-             "view_id": "mono2",
-             "messages": ["I hear a car behind me..."]
-           }
-         },
-         {
-           "view": "self",
-           "method": "new_image",
-           "options": {
-             "asset_id": "coworkerimage",
-             "layer_id": "background"
-           },
-           "auto_next": 0
-         },
-         {
-           "view": "self",
-           "method": "new_conversation",
-           "options": {
-             "view_id": "conv1",
-             "messages": [
-               {
-                 "actor_id": "coworker",
-                 "speed": 10,
-                 "font_size": 28,
-                 "message": "Is this what we think it is? If so, we have a very small amount of time."
-               },
-               {
-                 "actor_id": "player",
-                 "speed": 10,
-                 "font_size": 28,
-                 "message": "what will you do?"
-               },
-               {
-                 "actor_id": "coworker",
-                 "speed": 10,
-                 "font_size": 28,
-                 "message": "I don't know, something crazy. I have always been the good one, so I want to go wild at least once."
-               }
-             ]
-             }
-           },
-           {
-             "view": "self",
-             "method": "new_monologue",
-             "options": {
-               "view_id": "mono2",
-               "messages": ["Before disappearing, she adds:"]
-             }
-           },
-           {
-             "view": "self",
-             "method": "new_conversation",
-             "options": {
-               "view_id": "conv1",
-               "messages": [
-                 {
-                   "actor_id": "coworker",
-                   "speed": 10,
-                   "font_size": 28,
-                   "message": "I don’t recommend you visit your girlfriend’s place. Visiting parents could be more valuable for you. and… "
-                 }
-               ]
-               }
-             },
-             {
-               "view": "self",
-               "method": "new_monologue",
-               "options": {
-                 "view_id": "mono2",
-                 "messages": ["should I go to - girlfriend’s room, or parents’ house?"]
-               }
-             },
-             {
-               "view": "self",
-               "method": "new_choices",
-               "options": {
-                 "view_id": "choi2",
-                 "title": "car and place choices",
-                 "description": "So... what should I do?",
-                 "choice_font_size": 46,
-                 "choice_radius": 50,
-                 "background_color": "000000",
-                 "background_opacity": 0.7,
-                 "choices": [
-                   {
-                     "text": "go to girlfriend’s room",
-                     "dynamic_events": ["gfhouse"]
-                   },
-                   {
-                     "text": "go to parents’ house",
-                     "dynamic_events": ["parentsHouse"]
-                   }
-                 ]
-               }
-             }
-
-     ],
-     "dynamic_events": [
-       {
-         "id": "gfhouse",
+      "id": "Street",
+      "view": "SceneView",
+      "options": {
+        "opacity": 0
+      },
+      "actors": [
+        {
+          "id": "player",
+          "name": "User User",
+          "short_name": "User",
+          "actions": {}
+        },
+        {
+          "id": "coworker",
+          "name": "co-worker, in car",
+          "short_name": "co-worker, in car",
+          "actions": {}
+        }
+      ],
+      "layers": [
+        {
+          "id": "background",
+          "z": 1
+        },
+        {
+          "id": "characters",
+          "z": 2
+        },
+        {
+          "id": "effectors",
+          "z": 3
+        },
+        {
+          "id": "subtitles",
+          "z": 4
+        }
+      ],
+      "pre_scene_events": [
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "desertedStreet",
+            "layer_id": "background"
+          }
+        }
+      ],
+      "post_scene_events": [],
+      "events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [
+              0,
+              1
+            ],
+            "duration": 1000
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "The moon is very shiny",
+              "Most people look happy, but some people are a little scared."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Maybe I am the only one who knows what is happening exactly."
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "I hear a car behind me..."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "coworkerimage",
+            "layer_id": "background"
+          },
+          "auto_next": 0
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "coworker",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Is this what we think it is? If so, we have a very small amount of time."
+              },
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "what will you do?"
+              },
+              {
+                "actor_id": "coworker",
+                "speed": 10,
+                "font_size": 28,
+                "message": "I don't know, something crazy. I have always been the good one, so I want to go wild at least once."
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "Before disappearing, she adds:"
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "coworker",
+                "speed": 10,
+                "font_size": 28,
+                "message": "I don’t recommend you visit your girlfriend’s place. Visiting parents could be more valuable for you. and… "
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "should I go to - girlfriend’s room, or parents’ house?"
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "car and place choices",
+            "description": "So... what should I do?",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "go to girlfriend’s room",
+                "dynamic_events": [
+                  "gfhouse"
+                ]
+              },
+              {
+                "text": "go to parents’ house",
+                "dynamic_events": [
+                  "parentsHouse"
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "dynamic_events": [
+        {
+          "id": "gfhouse",
           "view": "self",
           "method": "change_scene",
           "options": {
@@ -932,114 +1001,117 @@
           }
         },
         {
-          "id":"parentsHouse",
+          "id": "parentsHouse",
           "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "ParentsHouse"
           }
         }
-     ]
-   },
-   {
-    "id": "GirlfriendsHouse",
-    "view": "SceneView",
-    "options": {
-      "opacity": 0
+      ]
     },
-    "actors": [
-      {
-        "id": "player",
-        "name": "User User",
-        "short_name": "User",
-        "actions": {}
+    {
+      "id": "GirlfriendsHouse",
+      "view": "SceneView",
+      "options": {
+        "opacity": 0
       },
-      {
-        "id": "girlfriend",
-        "name": "girlfriend",
-        "short_name": "Girlfriend",
-        "actions": {}
-      },
-      {
-        "id": "coworker",
-        "name": "carl",
-        "short_name": "Carl",
-        "actions": {}
-      }
-
-    ],
-    "layers": [
-      {
-        "id": "background",
-        "z": 1
-      },
-      {
-        "id": "characters",
-        "z": 2
-      },
-      {
-        "id": "effectors",
-        "z": 3
-      },
-      {
-        "id": "subtitles",
-        "z": 4
-      }
-
-    ],
-    "preevents": [
-      {
-        "view": "self",
-        "method": "new_image",
-        "options": {
-          "asset_id": "background",
-          "layer_id": "background"
-        }
-      }
-    ],
-    "post_scene_events": [],
-    "events": [
-      {
-        "view": "self",
-        "method": "fade",
-        "options": {
-          "opacity": [0, 1],
-          "duration": 1000
+      "actors": [
+        {
+          "id": "player",
+          "name": "User User",
+          "short_name": "User",
+          "actions": {}
         },
-        "auto_next": 1
-      },
-      {
-        "view": "self",
-        "method": "new_image",
-        "options": {
-          "asset_id": "grabBat",
-          "layer_id": "background"
+        {
+          "id": "girlfriend",
+          "name": "girlfriend",
+          "short_name": "Girlfriend",
+          "actions": {}
         },
-        "auto_next": 0
-      },
-      {
-        "view": "self",
-        "method": "new_monologue",
-        "options": {
-          "view_id": "mono2",
-          "messages": ["Just got to my girlfriends place…. wait… what is that noice upstairs?",
-            " I will grab my girlfriends bat just in case it is needed… ",
-            "About to open the door… I open it, and…"]
+        {
+          "id": "coworker",
+          "name": "carl",
+          "short_name": "Carl",
+          "actions": {}
         }
-      },
-      {
-        "view": "self",
-        "method": "new_conversation",
-        "options": {
-          "view_id": "conv1",
-          "messages": [
-            {
-              "actor_id": "player",
-              "speed": 10,
-              "font_size": 28,
-              "message": "What the fuck are you doing with my girlfriend Carl?!"
-            }
-          ]
+      ],
+      "layers": [
+        {
+          "id": "background",
+          "z": 1
+        },
+        {
+          "id": "characters",
+          "z": 2
+        },
+        {
+          "id": "effectors",
+          "z": 3
+        },
+        {
+          "id": "subtitles",
+          "z": 4
+        }
+      ],
+      "pre_scene_events": [
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "background",
+            "layer_id": "background"
+          }
+        }
+      ],
+      "post_scene_events": [],
+      "events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [
+              0,
+              1
+            ],
+            "duration": 1000
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "grabBat",
+            "layer_id": "background"
+          },
+          "auto_next": 0
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "Just got to my girlfriends place…. wait… what is that noice upstairs?",
+              " I will grab my girlfriends bat just in case it is needed… ",
+              "About to open the door… I open it, and…"
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "What the fuck are you doing with my girlfriend Carl?!"
+              }
+            ]
           }
         },
         {
@@ -1056,7 +1128,9 @@
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
-            "messages": ["Carl is one of my co-workers, he also knew the world is ending soon"]
+            "messages": [
+              "Carl is one of my co-workers, he also knew the world is ending soon"
+            ]
           }
         },
         {
@@ -1072,757 +1146,822 @@
                 "message": "I… I am sorry… I.. just… please understand me, the world is ending"
               },
               {
-              "actor_id":"girlfriend",
-              "speed":10,
-              "font_size": 28,
-              "message": "I am so sorry user! I never thought you would have come… And your penis is just too small..."
-            },
-            {
-            "actor_id":"player",
-            "speed":10,
-            "font_size": 28,
-            "message": "..."
-          }
+                "actor_id": "girlfriend",
+                "speed": 10,
+                "font_size": 28,
+                "message": "I am so sorry user! I never thought you would have come… And your penis is just too small..."
+              },
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "..."
+              }
             ]
-            }
-          },
-
-          {
-            "view": "self",
-            "method": "new_monologue",
-            "options": {
-              "view_id": "mono2",
-              "messages": ["It took me one fucking hour to get here and this shit happens..."]
-            }
-          },
-          {
-            "view": "self",
-            "method": "new_choices",
-            "options": {
-              "view_id": "choi2",
-              "title": "How should I handle this...",
-              "description": "So... what should I do?",
-              "choice_font_size": 46,
-              "choice_radius": 50,
-              "background_color": "000000",
-              "background_opacity": 0.7,
-              "choices": [
-                {
-                  "text": "kill Carl",
-                  "dynamic_events": ["killImage", "killCarl", "next"]
-                },
-                {
-                  "text": "kill the girlfriend",
-                  "dynamic_events": ["killImage", "killGirlfriend", "next"]
-                },
-                {
-                  "text": "kill both",
-                  "dynamic_events": ["killImage", "killBoth", "next"]
-                },
-                {
-                  "text": "just leave",
-                  "dynamic_events": ["leave", "next"]
-                }
-              ]
-            }
-          },
-          {
-             "view": "self",
-             "method": "change_scene",
-             "options": {
-               "scene_id": "OnTheRoad"
-             }
-           }
-
-    ],
-    "dynamic_events": [
-      {
-        "id":"killCarl",
-        "view": "self",
-        "method": "new_monologue",
-        "options": {
-          "view_id": "mono2",
-          "messages": ["Carl was now dead, he put some resistance but it was not hard for me to kill him, I will go now to my ex wifes place"]
-        }
-      },
-      {
-        "id":"killImage",
-        "view": "self",
-        "method": "new_image",
-        "options": {
-          "asset_id": "hitBat",
-          "layer_id": "background"
+          }
         },
-        "auto_next": 0
-      },
-      {
-        "id":"kill the girlfriend",
-        "view": "self",
-        "method": "new_monologue",
-        "options": {
-          "view_id": "mono2",
-          "messages": ["It hurt me so much to do it but I killed my girlfriend... Carl just ran away, I will go now to my ex wifes place"]
-        }
-      },
-      {
-        "id":"killBoth",
-        "view": "self",
-        "method": "new_monologue",
-        "options": {
-          "view_id": "mono2",
-          "messages": ["I killed both, maybe this moon thing is starting to drive me crazy, I will go now to my ex wifes place"]
-        }
-      },
-      {
-        "id":"leave",
-        "view": "self",
-        "method": "new_monologue",
-        "options": {
-          "view_id": "mono2",
-          "messages": ["I just left... losing my integrity because of unfaithful people is not worth it, I will go now to my ex wifes place"]
-        }
-      }
-    ]
-  },
-  {
-   "id": "ParentsHouse",
-   "view": "SceneView",
-   "options": {
-     "opacity": 0
-   },
-   "actors": [
-     {
-       "id": "player",
-       "name": "User User",
-       "short_name": "User",
-       "actions": {}
-     },
-     {
-       "id": "mom",
-       "name": "mom",
-       "short_name": "mom",
-       "actions": {}
-     },
-     {
-       "id": "dad",
-       "name": "dad",
-       "short_name": "dad",
-       "actions": {}
-     }
-   ],
-   "layers": [
-     {
-       "id": "background",
-       "z": 1
-     },
-     {
-       "id": "characters",
-       "z": 2
-     },
-     {
-       "id": "effectors",
-       "z": 3
-     },
-     {
-       "id": "subtitles",
-       "z": 4
-     }
-
-   ],
-   "preevents": [
-     {
-       "view": "self",
-       "method": "new_image",
-       "options": {
-         "asset_id": "parentsHouse",
-         "layer_id": "background"
-       }
-     }
-   ],
-   "post_scene_events": [],
-   "events": [
-     {
-       "view": "self",
-       "method": "fade",
-       "options": {
-         "opacity": [0, 1],
-         "duration": 1000
-       },
-       "auto_next": 1
-     },
-     {
-       "view": "self",
-       "method": "new_monologue",
-       "options": {
-         "view_id": "mono2",
-         "messages": ["After half an hour of driving, I finally arrived at my parents house..."]
-       }
-     },
-     {
-       "view": "self",
-       "method": "new_image",
-       "options": {
-         "asset_id": "parents",
-         "layer_id": "background"
-       }
-     },
-     {
-       "view": "self",
-       "method": "new_conversation",
-       "options": {
-         "view_id": "conv1",
-         "messages": [
-           {
-             "actor_id": "dad",
-             "speed": 10,
-             "font_size": 28,
-             "message": "How are you son! And why are you at our place at this time?"
-           },
-           {
-           "actor_id":"player",
-           "speed":10,
-           "font_size": 28,
-           "message": "There is something I have to explain to you and mom…"
-         }
-
-         ]
-         }
-       },
-       {
-         "view": "self",
-         "method": "new_monologue",
-         "options": {
-           "view_id": "mono2",
-           "messages": ["After talking for 20 minutes and explaining everything that was going on, mom started talking"]
-         }
-       },
-       {
-         "view": "self",
-         "method": "new_conversation",
-         "options": {
-           "view_id": "conv1",
-           "messages": [
-             {
-               "actor_id": "mom",
-               "speed": 10,
-               "font_size": 28,
-               "message": "How could this happen?!"
-             },
-             {
-             "actor_id":"player",
-             "speed":10,
-             "font_size": 28,
-             "message": "It is something very rare that neither me and my co-workers thought whould happen… but it is happening, so I hope you do everything that makes you happy before sunrise"
-           },
-           {
-           "actor_id":"dad",
-           "speed":10,
-           "font_size": 28,
-           "message": "you are everything we could ever ask for, son"
-         }
-
-           ]
-           }
-         },
-         {
-           "view": "self",
-           "method": "new_choices",
-           "options": {
-             "view_id": "choi2",
-             "title": "Parents want me to stay, but I have to see my daughters",
-             "description": "So... what should I do?",
-             "choice_font_size": 46,
-             "choice_radius": 50,
-             "background_color": "000000",
-             "background_opacity": 0.7,
-             "choices": [
-               {
-                 "text": "Leave and go see daughters",
-                 "dynamic_events": ["next"]
-               },
-               {
-                 "text": "Stay with parents until sunrise",
-                 "dynamic_events": ["gameOverText", "gameOver"]
-               }
-             ]
-           }
-         },
-         {
-            "view": "self",
-            "method": "change_scene",
-            "options": {
-              "scene_id": "OnTheRoad"
-            }
-        }
-   ],
-   "dynamic_events": [
-     {
-       "id":"gameOver",
-        "view": "self",
-        "method": "change_scene",
-        "options": {
-          "scene_id": "gameOver"
-        }
-      },
-      {
-        "id":"gameOverText",
-
+        {
           "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
-            "messages": ["You decided to stay with your parents until the end of humanity",
-            "You and your parents talked and laughed and remembered beautiful memories until the sun rised and burned everyone",
-            "no one knows when their last day on earth will be, you need to make every second count",
-            "Enjoy your family, your friends, and have fun! Always remember you are very fortunate!"]
+            "messages": [
+              "It took me one fucking hour to get here and this shit happens..."
+            ]
           }
-
-      }
-   ]
- },
- {
-  "id": "OnTheRoad",
-  "view": "SceneView",
-  "options": {
-    "opacity": 0
-  },
-  "actors": [
-    {
-      "id": "player",
-      "name": "User User",
-      "short_name": "User",
-      "actions": {}
-    }
-  ],
-  "layers": [
-    {
-      "id": "background",
-      "z": 1
-    },
-    {
-      "id": "characters",
-      "z": 2
-    },
-    {
-      "id": "effectors",
-      "z": 3
-    },
-    {
-      "id": "subtitles",
-      "z": 4
-    }
-
-  ],
-  "preevents": [
-    {
-      "view": "self",
-      "method": "new_image",
-      "options": {
-        "asset_id": "onTheRoad",
-        "layer_id": "background"
-      }
-    }
-  ],
-  "post_scene_events": [],
-  "events": [
-    {
-      "view": "self",
-      "method": "fade",
-      "options": {
-        "opacity": [0, 1],
-        "duration": 1000
-      },
-      "auto_next": 1
-    },
-    {
-      "view": "self",
-      "method": "new_monologue",
-      "options": {
-        "view_id": "mono2",
-        "messages": ["I turned up the radio, so I could have noise around me… first, classical music… then,",
-          "Punk!",
-          "Car wheel goes flat."]
-      }
-    },
-      {
-        "view": "self",
-        "method": "new_conversation",
-        "options": {
-          "view_id": "conv1",
-          "messages":[
-            {
-              "actor_id":"player",
-              "speed":10,
-              "font_size": 28,
-              "message": "Shit, I will have to walk from now on"
-            }
-          ]
-        }
-  },
-  {
-    "view": "self",
-    "method": "new_image",
-    "options": {
-      "asset_id": "onTheRoad8",
-      "layer_id": "background"
-    }
-  },
-  {
-    "view": "self",
-    "method": "new_monologue",
-    "options": {
-      "view_id": "mono2",
-      "messages": ["On the road, I start think about my life’s choices. ",
-        "there were always 2 or more ways, and I always chose one thing, just like Robert Frost’s Poem",
-        "(while he is walking under the big moon, his memory changes to...) 8 year old me ",
-        "my younger brother drowned at a lake.",
-        "I was the only one who could help him, but I couldn’t. ",
-        "Because I was not good swimmer, and I was so afraid… ",
-        "So I stood there, trembling, watching him die, helpless."]
-    }
-  },
-  {
-    "view": "self",
-    "method": "new_choices",
-    "options": {
-      "view_id": "choi2",
-      "title": "",
-      "description": "",
-      "choice_font_size": 46,
-      "choice_radius": 50,
-      "background_color": "000000",
-      "background_opacity": 0.7,
-      "choices": [
-        {
-          "text": "I regret my choice",
-          "dynamic_events": ["next"]
         },
         {
-          "text": "I was right",
-          "dynamic_events": ["next"]
-        }
-      ]
-    }
-  },
-  {
-    "view": "self",
-    "method": "new_image",
-    "options": {
-      "asset_id": "onTheRoad19",
-      "layer_id": "background"
-    }
-  },
-  {
-    "view": "self",
-    "method": "new_monologue",
-    "options": {
-      "view_id": "mono2",
-      "messages": ["he keeps walking",
-        "19 years old.",
-        "I was having relationship with a girl named ‘Kim’",
-        "whom I broke up with after 2 months.",
-        "And at the graduation party, another girl tried to seduce me. Her name was ‘Laura’, who became a famous hollywood actress later.",
-        "Needless to say, she was amazingly beautiful.",
-        "She said, we can have sex for just one night… and make it a secret."]
-    }
-  },
-  {
-    "view": "self",
-    "method": "new_conversation",
-    "options": {
-      "view_id": "conv1",
-      "messages":[
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "How should I handle this...",
+            "description": "So... what should I do?",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "kill Carl",
+                "dynamic_events": [
+                  "killImage",
+                  "killCarl",
+                  "next"
+                ]
+              },
+              {
+                "text": "kill the girlfriend",
+                "dynamic_events": [
+                  "killImage",
+                  "killGirlfriend",
+                  "next"
+                ]
+              },
+              {
+                "text": "kill both",
+                "dynamic_events": [
+                  "killImage",
+                  "killBoth",
+                  "next"
+                ]
+              },
+              {
+                "text": "just leave",
+                "dynamic_events": [
+                  "leave",
+                  "next"
+                ]
+              }
+            ]
+          }
+        },
         {
-          "actor_id":"player",
-          "speed":10,
-          "font_size": 28,
-          "message": "I still cant belive I had a chance to have sex with her, but I didn’t, because of Kim."
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "OnTheRoad"
+          }
+        }
+      ],
+      "dynamic_events": [
+        {
+          "id": "killCarl",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "Carl was now dead, he put some resistance but it was not hard for me to kill him, I will go now to my ex wifes place"
+            ]
+          }
+        },
+        {
+          "id": "killImage",
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "hitBat",
+            "layer_id": "background"
+          },
+          "auto_next": 0
+        },
+        {
+          "id": "kill the girlfriend",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "It hurt me so much to do it but I killed my girlfriend... Carl just ran away, I will go now to my ex wifes place"
+            ]
+          }
+        },
+        {
+          "id": "killBoth",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "I killed both, maybe this moon thing is starting to drive me crazy, I will go now to my ex wifes place"
+            ]
+          }
+        },
+        {
+          "id": "leave",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "I just left... losing my integrity because of unfaithful people is not worth it, I will go now to my ex wifes place"
+            ]
+          }
         }
       ]
-    }
-},
-{
-  "view": "self",
-  "method": "new_choices",
-  "options": {
-    "view_id": "choi2",
-    "title": "",
-    "description": "",
-    "choice_font_size": 46,
-    "choice_radius": 50,
-    "background_color": "000000",
-    "background_opacity": 0.7,
-    "choices": [
-      {
-        "text": "I regret my choice, I should have had sex with Laura.",
-        "dynamic_events": ["next"]
-      },
-      {
-        "text": "I was right",
-        "dynamic_events": ["next"]
-      }
-    ]
-  }
-},
-{
-  "view": "self",
-  "method": "new_image",
-  "options": {
-    "asset_id": "onTheRoad20",
-    "layer_id": "background"
-  }
-},
-{
-  "view": "self",
-  "method": "new_monologue",
-  "options": {
-    "view_id": "mono2",
-    "messages": ["he keeps walking… now he remembers when he was…",
-      "20 years old.",
-      "One year after graduation, I decided to pursue an education.",
-      "My passion was always to be a pilot, but my parents never let me be a pilot because they were afraid of heights and thought I would not get paid much, so they told me I should pursue an education in science…",
-      "And at the graduation party, another girl tried to seduce me. Her name was ‘Laura’, who became a famous hollywood actress later.",
-      "Now that I am a scientist and know what is going to happen to the world in a couple of hours, sometimes I imagine how life would be right now if I was a pilot and had no clue what is going to happen",
-      "Sometimes, ignorance is bliss."]
-  }
-},
-{
-  "view": "self",
-  "method": "new_conversation",
-  "options": {
-    "view_id": "conv1",
-    "messages":[
-      {
-        "actor_id":"player",
-        "speed":10,
-        "font_size": 28,
-        "message": "Flying is still my passion"
-      }
-    ]
-  }
-},
-{
-  "view": "self",
-  "method": "new_choices",
-  "options": {
-    "view_id": "choi2",
-    "title": "",
-    "description": "",
-    "choice_font_size": 46,
-    "choice_radius": 50,
-    "background_color": "000000",
-    "background_opacity": 0.7,
-    "choices": [
-      {
-        "text": "I regret my choice, I should have followed my passion",
-        "dynamic_events": ["next"]
-      },
-      {
-        "text": "Being a scientist and knowing everything that is going to happen was good, even though it is not what I wanted in the beginning.",
-        "dynamic_events": ["next"]
-      }
-    ]
-  }
-},
-{
-  "view": "self",
-  "method": "new_image",
-  "options": {
-    "asset_id": "onTheRoad30",
-    "layer_id": "background"
-  }
-},
-{
-  "view": "self",
-  "method": "new_monologue",
-  "options": {
-    "view_id": "mono2",
-    "messages": ["he keeps walking. now he is…",
-      "30 years old.",
-      "I got married and I was workaholic at the time.",
-      "When our babies were born, I was at a fundraiser party at our laboratory. ",
-      "There were very important people who had huge amounts of money attending the party, and I was in charge of our team.",
-      "If I was not there, our fundraiser could have failed, and that would have been a big problem for the company. ",
-      "The 3 years we took to build a good company would have gone to waste.",
-      "But exactly at that time, my ex-wife was in hospital giving birth to our babies, alone.",
-      "I couldn’t be by her side, I couldn’t watch my twins being born."]
-  }
-},
-{
-  "view": "self",
-  "method": "new_conversation",
-  "options": {
-    "view_id": "conv1",
-    "messages":[
-      {
-        "actor_id":"player",
-        "speed":10,
-        "font_size": 28,
-        "message": "How could I miss the birth of my daughters...."
-      }
-    ]
-  }
-},
-{
-  "view": "self",
-  "method": "new_choices",
-  "options": {
-    "view_id": "choi2",
-    "title": "",
-    "description": "",
-    "choice_font_size": 46,
-    "choice_radius": 50,
-    "background_color": "000000",
-    "background_opacity": 0.7,
-    "choices": [
-      {
-        "text": "I regret my choice. I should have gone to hospital.",
-        "dynamic_events": ["next"]
-      },
-      {
-        "text": "I was right",
-        "dynamic_events": ["next"]
-      }
-    ]
-  }
-},
-{
-  "view": "self",
-  "method": "new_image",
-  "options": {
-    "asset_id": "cry",
-    "layer_id": "background"
-  }
-},
-{
-  "view": "self",
-  "method": "new_monologue",
-  "options": {
-    "view_id": "mono2",
-    "messages": ["Suddenly tears drop... continuously"]
-  }
-},
-{
-  "view": "self",
-  "method": "new_conversation",
-  "options": {
-    "view_id": "conv1",
-    "messages":[
-      {
-        "actor_id":"player",
-        "speed":10,
-        "font_size": 28,
-        "message": "Maybe I will spend the last moments of my life crying on the road..."
-      }
-    ]
-  }
-},
-{
-  "view": "self",
-  "method": "new_monologue",
-  "options": {
-    "view_id": "mono2",
-    "messages": ["While I’m crying on the road, a truck comes. I hitchhiked, and truck driver sent me to downtown."]
-  }
-}
-
-
-
-  ],
-  "dynamic_events": []
-},
-
-{
- "id": "gameOver",
- "view": "SceneView",
- "options": {
-   "opacity": 0
- },
- "actors": [
-   {
-     "id": "player",
-     "name": "User User",
-     "short_name": "User",
-     "actions": {}
-   }
- ],
- "layers": [
-   {
-     "id": "background",
-     "z": 1
-   },
-   {
-     "id": "characters",
-     "z": 2
-   },
-   {
-     "id": "effectors",
-     "z": 3
-   },
-   {
-     "id": "subtitles",
-     "z": 4
-   }
-
- ],
- "preevents": [
-   {
-     "view": "self",
-     "method": "new_image",
-     "options": {
-       "asset_id": "gameOver",
-       "layer_id": "background"
-     }
-   }
- ],
- "post_scene_events": [],
- "events": [
-   {
-     "view": "self",
-     "method": "fade",
-     "options": {
-       "opacity": [0, 1],
-       "duration": 1000
-     },
-     "auto_next": 1
-   },
-   {
-     "view": "self",
-     "method": "new_monologue",
-     "options": {
-       "view_id": "mono2",
-       "messages": ["Thank you for playing!"]
-     }
-   },
-   {
-     "view": "self",
-     "method": "new_choices",
-     "options": {
-       "view_id": "choi2",
-       "title": "",
-       "description": "",
-       "choice_font_size": 46,
-       "choice_radius": 50,
-       "background_color": "000000",
-       "background_opacity": 0.7,
-       "choices": [
-         {
-           "text": "Play again!",
-           "dynamic_events": ["next"]
-         }
-       ]
-     }
-   },
-   {
-      "view": "self",
-      "method": "change_scene",
+    },
+    {
+      "id": "ParentsHouse",
+      "view": "SceneView",
       "options": {
-        "scene_id": "opening"
-      }
-  }
-
- ],
- "dynamic_events": []
-}
+        "opacity": 0
+      },
+      "actors": [
+        {
+          "id": "player",
+          "name": "User User",
+          "short_name": "User",
+          "actions": {}
+        },
+        {
+          "id": "mom",
+          "name": "mom",
+          "short_name": "mom",
+          "actions": {}
+        },
+        {
+          "id": "dad",
+          "name": "dad",
+          "short_name": "dad",
+          "actions": {}
+        }
+      ],
+      "layers": [
+        {
+          "id": "background",
+          "z": 1
+        },
+        {
+          "id": "characters",
+          "z": 2
+        },
+        {
+          "id": "effectors",
+          "z": 3
+        },
+        {
+          "id": "subtitles",
+          "z": 4
+        }
+      ],
+      "pre_scene_events": [
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "parentsHouse",
+            "layer_id": "background"
+          }
+        }
+      ],
+      "post_scene_events": [],
+      "events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [
+              0,
+              1
+            ],
+            "duration": 1000
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "After half an hour of driving, I finally arrived at my parents house..."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "parents",
+            "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "dad",
+                "speed": 10,
+                "font_size": 28,
+                "message": "How are you son! And why are you at our place at this time?"
+              },
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "There is something I have to explain to you and mom…"
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "After talking for 20 minutes and explaining everything that was going on, mom started talking"
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "mom",
+                "speed": 10,
+                "font_size": 28,
+                "message": "How could this happen?!"
+              },
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "It is something very rare that neither me and my co-workers thought whould happen… but it is happening, so I hope you do everything that makes you happy before sunrise"
+              },
+              {
+                "actor_id": "dad",
+                "speed": 10,
+                "font_size": 28,
+                "message": "you are everything we could ever ask for, son"
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "Parents want me to stay, but I have to see my daughters",
+            "description": "So... what should I do?",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "Leave and go see daughters",
+                "dynamic_events": [
+                  "next"
+                ]
+              },
+              {
+                "text": "Stay with parents until sunrise",
+                "dynamic_events": [
+                  "gameOverText",
+                  "gameOver"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "OnTheRoad"
+          }
+        }
+      ],
+      "dynamic_events": [
+        {
+          "id": "gameOver",
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "gameOver"
+          }
+        },
+        {
+          "id": "gameOverText",
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "You decided to stay with your parents until the end of humanity",
+              "You and your parents talked and laughed and remembered beautiful memories until the sun rised and burned everyone",
+              "no one knows when their last day on earth will be, you need to make every second count",
+              "Enjoy your family, your friends, and have fun! Always remember you are very fortunate!"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "OnTheRoad",
+      "view": "SceneView",
+      "options": {
+        "opacity": 0
+      },
+      "actors": [
+        {
+          "id": "player",
+          "name": "User User",
+          "short_name": "User",
+          "actions": {}
+        }
+      ],
+      "layers": [
+        {
+          "id": "background",
+          "z": 1
+        },
+        {
+          "id": "characters",
+          "z": 2
+        },
+        {
+          "id": "effectors",
+          "z": 3
+        },
+        {
+          "id": "subtitles",
+          "z": 4
+        }
+      ],
+      "pre_scene_events": [
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "onTheRoad",
+            "layer_id": "background"
+          }
+        }
+      ],
+      "post_scene_events": [],
+      "events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [
+              0,
+              1
+            ],
+            "duration": 1000
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "I turned up the radio, so I could have noise around me… first, classical music… then,",
+              "Punk!",
+              "Car wheel goes flat."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Shit, I will have to walk from now on"
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "onTheRoad8",
+            "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "On the road, I start think about my life’s choices. ",
+              "there were always 2 or more ways, and I always chose one thing, just like Robert Frost’s Poem",
+              "(while he is walking under the big moon, his memory changes to...) 8 year old me ",
+              "my younger brother drowned at a lake.",
+              "I was the only one who could help him, but I couldn’t. ",
+              "Because I was not good swimmer, and I was so afraid… ",
+              "So I stood there, trembling, watching him die, helpless."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "",
+            "description": "",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "I regret my choice",
+                "dynamic_events": [
+                  "next"
+                ]
+              },
+              {
+                "text": "I was right",
+                "dynamic_events": [
+                  "next"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "onTheRoad19",
+            "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "he keeps walking",
+              "19 years old.",
+              "I was having relationship with a girl named ‘Kim’",
+              "whom I broke up with after 2 months.",
+              "And at the graduation party, another girl tried to seduce me. Her name was ‘Laura’, who became a famous hollywood actress later.",
+              "Needless to say, she was amazingly beautiful.",
+              "She said, we can have sex for just one night… and make it a secret."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "I still cant belive I had a chance to have sex with her, but I didn’t, because of Kim."
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "",
+            "description": "",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "I regret my choice, I should have had sex with Laura.",
+                "dynamic_events": [
+                  "next"
+                ]
+              },
+              {
+                "text": "I was right",
+                "dynamic_events": [
+                  "next"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "onTheRoad20",
+            "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "he keeps walking… now he remembers when he was…",
+              "20 years old.",
+              "One year after graduation, I decided to pursue an education.",
+              "My passion was always to be a pilot, but my parents never let me be a pilot because they were afraid of heights and thought I would not get paid much, so they told me I should pursue an education in science…",
+              "And at the graduation party, another girl tried to seduce me. Her name was ‘Laura’, who became a famous hollywood actress later.",
+              "Now that I am a scientist and know what is going to happen to the world in a couple of hours, sometimes I imagine how life would be right now if I was a pilot and had no clue what is going to happen",
+              "Sometimes, ignorance is bliss."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Flying is still my passion"
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "",
+            "description": "",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "I regret my choice, I should have followed my passion",
+                "dynamic_events": [
+                  "next"
+                ]
+              },
+              {
+                "text": "Being a scientist and knowing everything that is going to happen was good, even though it is not what I wanted in the beginning.",
+                "dynamic_events": [
+                  "next"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "onTheRoad30",
+            "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "he keeps walking. now he is…",
+              "30 years old.",
+              "I got married and I was workaholic at the time.",
+              "When our babies were born, I was at a fundraiser party at our laboratory. ",
+              "There were very important people who had huge amounts of money attending the party, and I was in charge of our team.",
+              "If I was not there, our fundraiser could have failed, and that would have been a big problem for the company. ",
+              "The 3 years we took to build a good company would have gone to waste.",
+              "But exactly at that time, my ex-wife was in hospital giving birth to our babies, alone.",
+              "I couldn’t be by her side, I couldn’t watch my twins being born."
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "How could I miss the birth of my daughters...."
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "",
+            "description": "",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "I regret my choice. I should have gone to hospital.",
+                "dynamic_events": [
+                  "next"
+                ]
+              },
+              {
+                "text": "I was right",
+                "dynamic_events": [
+                  "next"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "cry",
+            "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "Suddenly tears drop... continuously"
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_conversation",
+          "options": {
+            "view_id": "conv1",
+            "messages": [
+              {
+                "actor_id": "player",
+                "speed": 10,
+                "font_size": 28,
+                "message": "Maybe I will spend the last moments of my life crying on the road..."
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "While I’m crying on the road, a truck comes. I hitchhiked, and truck driver sent me to downtown."
+            ]
+          }
+        }
+      ],
+      "dynamic_events": []
+    },
+    {
+      "id": "gameOver",
+      "view": "SceneView",
+      "options": {
+        "opacity": 0
+      },
+      "actors": [
+        {
+          "id": "player",
+          "name": "User User",
+          "short_name": "User",
+          "actions": {}
+        }
+      ],
+      "layers": [
+        {
+          "id": "background",
+          "z": 1
+        },
+        {
+          "id": "characters",
+          "z": 2
+        },
+        {
+          "id": "effectors",
+          "z": 3
+        },
+        {
+          "id": "subtitles",
+          "z": 4
+        }
+      ],
+      "pre_scene_events": [
+        {
+          "view": "self",
+          "method": "new_image",
+          "options": {
+            "asset_id": "gameOver",
+            "layer_id": "background"
+          }
+        }
+      ],
+      "post_scene_events": [],
+      "events": [
+        {
+          "view": "self",
+          "method": "fade",
+          "options": {
+            "opacity": [
+              0,
+              1
+            ],
+            "duration": 1000
+          },
+          "auto_next": 1
+        },
+        {
+          "view": "self",
+          "method": "new_monologue",
+          "options": {
+            "view_id": "mono2",
+            "messages": [
+              "Thank you for playing!"
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "new_choices",
+          "options": {
+            "view_id": "choi2",
+            "title": "",
+            "description": "",
+            "choice_font_size": 46,
+            "choice_radius": 50,
+            "background_color": "000000",
+            "background_opacity": 0.7,
+            "choices": [
+              {
+                "text": "Play again!",
+                "dynamic_events": [
+                  "next"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "view": "self",
+          "method": "change_scene",
+          "options": {
+            "scene_id": "opening"
+          }
+        }
+      ],
+      "dynamic_events": []
+    }
   ]
 }
