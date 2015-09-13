@@ -840,6 +840,15 @@
             "asset_id": "desertedStreet",
             "layer_id": "background"
           }
+        },
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "background-music",
+            "loop": true,
+            "restart": false
+          }
         }
       ],
       "post_scene_events": [],
@@ -1061,6 +1070,15 @@
           "options": {
             "asset_id": "background",
             "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "background-music",
+            "loop": true,
+            "restart": false
           }
         }
       ],
@@ -1333,6 +1351,15 @@
             "asset_id": "parentsHouse",
             "layer_id": "background"
           }
+        },
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "background-music",
+            "loop": true,
+            "restart": false
+          }
         }
       ],
       "post_scene_events": [],
@@ -1525,6 +1552,15 @@
           "options": {
             "asset_id": "onTheRoad",
             "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "play_audio",
+          "options": {
+            "asset_id": "background-music",
+            "loop": true,
+            "restart": false
           }
         }
       ],
@@ -1905,6 +1941,14 @@
           "options": {
             "asset_id": "gameOver",
             "layer_id": "background"
+          }
+        },
+        {
+          "view": "self",
+          "method": "stop_audio",
+          "options": {
+            "asset_id": "background-music",
+            "fade": 1000
           }
         }
       ],
