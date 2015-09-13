@@ -1,19 +1,20 @@
 class PiG.View.SceneView extends SUI.View
   className: 'scene-view'
   initialize: (options) ->
-    @model.view = this
-    @dynamic_event_queue = []
-    @current_event_index = options.current_event_index or 0
-    @layer_manager       = new PiG.Helper.ViewManager
-    @view_manager        = new PiG.Helper.ViewManager
-    @audio_manager       = new PiG.Helper.ViewManager
-
+    @_init_associations options
     @_render()
     @_render_layer_views()
     @_position()
 
     @_start_from @current_event_index
 
+  _init_associations: (options) ->
+    @model.view = this
+    @dynamic_event_queue = []
+    @current_event_index = options.current_event_index or 0
+    @layer_manager       = new PiG.Helper.ViewManager
+    @view_manager        = new PiG.Helper.ViewManager
+    @audio_manager       = new PiG.Helper.ViewManager
 
   events:
     'click': 'next'
@@ -40,7 +41,7 @@ class PiG.View.SceneView extends SUI.View
       target = @view_manager.get event.get('view')
     else
       target = this
-      
+
 
     return unless target
 
