@@ -1,11 +1,11 @@
-class Moon.Model.Scene extends Backbone.Model
+class PiG.Model.Scene extends Backbone.Model
   initialize: (attributes, options) ->
-    @actors = new Moon.Collection.Actors
-    @layers = new Moon.Collection.Layers
-    @events = new Moon.Collection.Events
-    @pre_scene_events = new Moon.Collection.Events
-    @post_scene_events = new Moon.Collection.Events
-    @dynamic_events = new Moon.Collection.Events
+    @actors = new PiG.Collection.Actors
+    @layers = new PiG.Collection.Layers
+    @events = new PiG.Collection.Events
+    @pre_scene_events = new PiG.Collection.Events
+    @post_scene_events = new PiG.Collection.Events
+    @dynamic_events = new PiG.Collection.Events
 
 
   init_actors: (actors_data) ->

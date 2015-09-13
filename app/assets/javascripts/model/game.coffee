@@ -1,7 +1,7 @@
-class Moon.Model.Game extends SUI.Model
+class PiG.Model.Game extends SUI.Model
   initialize: ->
-    @scenes = new Moon.Collection.Scenes
-    @assets = new Moon.Collection.Assets
+    @scenes = new PiG.Collection.Scenes
+    @assets = new PiG.Collection.Assets
 
 
   init_assets: (assets_data) ->
@@ -45,8 +45,8 @@ class Moon.Model.Game extends SUI.Model
 
   _preload_audio: (asset, finish_callback) ->
     audio = new Howl
-      urls: [asset.get('src')]
-      buffer: asset.get('buffer') or false
+      src: [asset.get('src')]
+      html5: asset.get('buffer') or false
       onload: =>
         asset.audio = audio
         @loaded_assets++

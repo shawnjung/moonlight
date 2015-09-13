@@ -1,2 +1,2 @@
-class Moon.Collection.Layers extends Backbone.Collection
-  model: Moon.Model.Layer
+class PiG.Collection.Layers extends Backbone.Collection
+  model: PiG.Model.Layer

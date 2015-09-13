@@ -1,1 +1,1 @@
-class Moon.Model.Actor extends SUI.Model
+class PiG.Model.Actor extends SUI.Model

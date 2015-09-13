@@ -1,4 +1,4 @@
-class Moon.View.MonologueView extends Moon.View.BaseView
+class PiG.View.MonologueView extends PiG.View.BaseView
   className: 'monologue-view'
   template: TPL('monologue')
   default_voptions:

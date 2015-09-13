@@ -1,4 +1,4 @@
-class Moon.Helper.ViewManager
+class PiG.Helper.ViewManager
   constructor: (options) ->
     @views = {}
 

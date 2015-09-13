@@ -1,4 +1,4 @@
-class Moon.View.ChoicesView extends Moon.View.BaseView
+class PiG.View.ChoicesView extends PiG.View.BaseView
   className: 'choices-view'
   template: (type, attrs) ->
     @_template  = switch type
@@ -8,8 +8,8 @@ class Moon.View.ChoicesView extends Moon.View.BaseView
     @_template attrs
 
   item_view_classes:
-    text: 'Moon.View.TextChoiceView'
-    pointer: 'Moon.View.PointerChoiceView'
+    text: 'PiG.View.TextChoiceView'
+    pointer: 'PiG.View.PointerChoiceView'
 
   default_render_options:
     title: ''
@@ -40,7 +40,7 @@ class Moon.View.ChoicesView extends Moon.View.BaseView
 
 
 
-    @choices = new Moon.Collection.Choices options.choices
+    @choices = new PiG.Collection.Choices options.choices
 
     @_render()
     @_render_background()
@@ -91,7 +91,7 @@ class Moon.View.ChoicesView extends Moon.View.BaseView
 
     background_asset = @app.game.assets.get @visual_options.background_asset_id
 
-    background_view = new Moon.View.ImageView
+    background_view = new PiG.View.ImageView
       app: @app, parent: this, asset: background_asset
       wrapper_el: @$background_wrap[0]
 

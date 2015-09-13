@@ -1,4 +1,4 @@
-class Moon.View.PointerChoiceView extends Moon.View.BaseView
+class PiG.View.PointerChoiceView extends PiG.View.BaseView
   tagName: 'li'
   className: 'choice-item'
   initialize: (options) ->

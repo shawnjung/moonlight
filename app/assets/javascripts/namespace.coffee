@@ -1,4 +1,4 @@
-window.Moon =
+window.PiG =
   Model: {}
   Collection: {}
   View: {}

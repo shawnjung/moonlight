@@ -1,4 +1,4 @@
-class Moon.View.BaseView extends SUI.View
+class PiG.View.BaseView extends SUI.View
   constructor: (options) ->
     @scene = options.scene
     super options

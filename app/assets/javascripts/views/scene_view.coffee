@@ -1,11 +1,11 @@
-class Moon.View.SceneView extends SUI.View
+class PiG.View.SceneView extends SUI.View
   className: 'scene-view'
   initialize: (options) ->
     @model.view = this
     @dynamic_event_queue = []
     @current_event_index = options.current_event_index or 0
-    @view_manager        = new Moon.Helper.ViewManager
-    @audio_manager       = new Moon.Helper.ViewManager
+    @view_manager        = new PiG.Helper.ViewManager
+    @audio_manager       = new PiG.Helper.ViewManager
 
     @_render()
     @_render_layer_views()
@@ -98,7 +98,7 @@ class Moon.View.SceneView extends SUI.View
 
 
   new_image: (options = {}) ->
-    view  = new Moon.View.ImageView _(options).defaults
+    view  = new PiG.View.ImageView _(options).defaults
               app: @app, scene: @model
               asset: @app.game.assets.get(options.asset_id)
 
@@ -107,21 +107,21 @@ class Moon.View.SceneView extends SUI.View
 
 
   new_conversation: (options = {}) ->
-    view  = new Moon.View.ConversationView _(options).defaults
+    view  = new PiG.View.ConversationView _(options).defaults
               app: @app, scene: @model
 
     @view_manager.add options.view_id, view
     view
 
   new_monologue: (options = {}) ->
-    view  = new Moon.View.MonologueView _(options).defaults
+    view  = new PiG.View.MonologueView _(options).defaults
               app: @app, scene: @model
 
     @view_manager.add options.view_id, view
     view
 
   new_choices: (options) ->
-    view  = new Moon.View.ChoicesView _(options).defaults
+    view  = new PiG.View.ChoicesView _(options).defaults
               app: @app, scene: @model
 
     @view_manager.add options.view_id, view
@@ -136,13 +136,16 @@ class Moon.View.SceneView extends SUI.View
 
 
 
-  play_audio: (options) ->
+  play_audio: (options = {}) ->
+    _(options).defaults
+      loop: false
+      restart: true
     asset = @app.game.assets.get(options.asset_id)
 
     audio = asset.audio
     audio.volume(1)
     audio.loop() if options.loop
-    audio.play()
+    audio.play() if not audio.playing() or audio.playing() and options.restart
 
     @audio_manager.add options.audio_id, audio
 
@@ -183,7 +186,7 @@ class Moon.View.SceneView extends SUI.View
 
   _render_layer_views: ->
     @model.layers.each (layer) =>
-      layer.view = new Moon.View.LayerView
+      layer.view = new PiG.View.LayerView
         app: @app, parent: this, model: layer, scene: @model
 
 

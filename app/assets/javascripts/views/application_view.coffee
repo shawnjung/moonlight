@@ -1,4 +1,4 @@
-class Moon.View.ApplicationView extends SUI.View
+class PiG.View.ApplicationView extends SUI.View
   id: 'application-view'
   template: TPL('application')
   current_scale: 1

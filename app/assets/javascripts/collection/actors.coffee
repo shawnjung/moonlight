@@ -1,1 +1,1 @@
-class Moon.Collection.Actors extends SUI.Collection
+class PiG.Collection.Actors extends SUI.Collection

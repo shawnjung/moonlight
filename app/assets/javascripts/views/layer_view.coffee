@@ -1,4 +1,4 @@
-class Moon.View.LayerView extends Moon.View.BaseView
+class PiG.View.LayerView extends PiG.View.BaseView
   className: 'layer-view'
   initialize: (options) ->
     @scene = options.scene

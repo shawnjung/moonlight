@@ -1,4 +1,4 @@
-class Moon.View.ConversationView extends Moon.View.BaseView
+class PiG.View.ConversationView extends PiG.View.BaseView
   className: 'conversation-view'
   template: TPL('conversation')
   default_message_options:
@@ -8,7 +8,7 @@ class Moon.View.ConversationView extends Moon.View.BaseView
   initialize: (options) ->
     @current_message_index = 0
     @scene    = options.scene
-    @messages = new Moon.Collection.Messages options.messages
+    @messages = new PiG.Collection.Messages options.messages
 
     @_render()
     @_adjust_scale()

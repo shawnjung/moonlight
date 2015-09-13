@@ -1,2 +1,2 @@
-class Moon.Collection.Scenes extends Backbone.Collection
-  model: Moon.Model.Scene
+class PiG.Collection.Scenes extends Backbone.Collection
+  model: PiG.Model.Scene

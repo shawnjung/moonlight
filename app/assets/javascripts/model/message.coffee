@@ -1,1 +1,1 @@
-class Moon.Model.Message extends SUI.Model
+class PiG.Model.Message extends SUI.Model

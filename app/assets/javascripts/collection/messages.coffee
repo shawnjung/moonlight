@@ -1,2 +1,2 @@
-class Moon.Collection.Messages extends SUI.Collection
-  model: Moon.Model.Message
+class PiG.Collection.Messages extends SUI.Collection
+  model: PiG.Model.Message

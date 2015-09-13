@@ -1,4 +1,4 @@
-class Moon.View.ImageView extends Moon.View.BaseView
+class PiG.View.ImageView extends PiG.View.BaseView
   className: 'image-view'
   animate_attributes: ['scale', 'origin', 'position', 'opacity']
   initialize: (options = {}) ->

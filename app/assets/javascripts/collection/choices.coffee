@@ -1,2 +1,2 @@
-class Moon.Collection.Choices extends SUI.Collection
-  model: Moon.Model.Choice
+class PiG.Collection.Choices extends SUI.Collection
+  model: PiG.Model.Choice

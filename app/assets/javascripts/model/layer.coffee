@@ -1,1 +1,1 @@
-class Moon.Model.Layer extends Backbone.Model
+class PiG.Model.Layer extends Backbone.Model

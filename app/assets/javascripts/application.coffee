@@ -6,7 +6,7 @@
 #= require_tree ./views
 #= require_self
 
-class Moon.SceneManager extends SUI.Router
+class PiG.SceneManager extends SUI.Router
   screen_ratio:
     width: 2
     height: 3
@@ -16,8 +16,8 @@ class Moon.SceneManager extends SUI.Router
     height: 960
 
   initialize: (options = {}) ->
-    @view   = new Moon.View.ApplicationView app: this
-    @game   = new Moon.Model.Game
+    @view   = new PiG.View.ApplicationView app: this
+    @game   = new PiG.Model.Game
 
     $.ajax
       url: options.json
@@ -37,7 +37,7 @@ class Moon.SceneManager extends SUI.Router
 
   show_scene_view: (id) ->
     scene = @game.scenes.get id
-    @render_scene Moon.View.SceneView, model: scene
+    @render_scene PiG.View.SceneView, model: scene
 
 
 
@@ -47,7 +47,7 @@ class Moon.SceneManager extends SUI.Router
       @_current_scene.remove() if @_current_scene
       @_current_scene = new view_class options
 
-    if @_current_scene instanceof Moon.View.SceneView
+    if @_current_scene instanceof PiG.View.SceneView
       @_current_scene.perform_post_events render_scene
     else
       render_scene()

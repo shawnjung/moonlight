@@ -1,1 +1,1 @@
-class Moon.Model.Event extends Backbone.Model
+class PiG.Model.Event extends Backbone.Model
