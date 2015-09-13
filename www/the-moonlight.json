@@ -167,7 +167,6 @@
       "pre_scene_events": [],
       "post_scene_events": [
         {
-          "view": "self",
           "method": "fade",
           "options": {
             "opacity": [
@@ -181,7 +180,14 @@
       ],
       "events": [
         {
-          "view": "self",
+          "layer": "background",
+          "method": "shake",
+          "options": {
+            "strength": 2
+          },
+          "auto_next": 1
+        },
+        {
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -192,7 +198,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -207,7 +212,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -218,7 +222,6 @@
           }
         },
         {
-          "view": "self",
           "method": "play_audio",
           "options": {
             "asset_id": "background-music",
@@ -227,7 +230,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "fade_in_image",
           "options": {
             "view_id": "background",
@@ -237,7 +239,6 @@
           "auto_next": 1000
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -258,7 +259,6 @@
           }
         },
         {
-          "view": "self",
           "method": "fade_in_image",
           "options": {
             "view_id": "logo",
@@ -277,7 +277,6 @@
           "auto_next": 2000
         },
         {
-          "view": "self",
           "method": "fade_in_image",
           "options": {
             "view_id": "credit-shawn",
@@ -296,7 +295,6 @@
           "auto_next": 500
         },
         {
-          "view": "self",
           "method": "fade_in_image",
           "options": {
             "view_id": "credit-sangmin",
@@ -315,7 +313,6 @@
           "auto_next": 500
         },
         {
-          "view": "self",
           "method": "fade_in_image",
           "options": {
             "view_id": "credit-ozi",
@@ -334,7 +331,6 @@
           "auto_next": 0
         },
         {
-          "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "opening"
@@ -380,7 +376,6 @@
       ],
       "pre_scene_events": [
         {
-          "view": "self",
           "method": "play_audio",
           "options": {
             "asset_id": "background-music",
@@ -391,7 +386,6 @@
       ],
       "events": [
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -402,7 +396,6 @@
           }
         },
         {
-          "view": "self",
           "method": "fade_in_image",
           "options": {
             "asset_id": "moon-and-earth",
@@ -413,7 +406,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -424,7 +416,6 @@
           }
         },
         {
-          "view": "self",
           "method": "switch_background",
           "options": {
             "view_id": "background",
@@ -434,7 +425,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -449,7 +439,6 @@
           }
         },
         {
-          "view": "self",
           "method": "play_audio",
           "options": {
             "asset_id": "door-knock"
@@ -457,7 +446,6 @@
           "auto_next": 200
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -491,7 +479,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -501,7 +488,6 @@
           }
         },
         {
-          "view": "self",
           "method": "fade_in_image",
           "options": {
             "asset_id": "oldWoman1",
@@ -511,7 +497,6 @@
           "auto_next": 600
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -532,7 +517,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi1",
@@ -567,7 +551,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -616,7 +599,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -643,7 +625,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -653,7 +634,6 @@
           }
         },
         {
-          "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "Street"
@@ -663,7 +643,6 @@
       "dynamic_events": [
         {
           "id": "lie_1",
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -704,7 +683,6 @@
         },
         {
           "id": "lie_3",
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -715,7 +693,6 @@
         },
         {
           "id": "truth_0",
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "oldWoman2",
@@ -725,7 +702,6 @@
         },
         {
           "id": "truth_1",
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -760,7 +736,6 @@
         },
         {
           "id": "truth_3",
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "suicide",
@@ -770,7 +745,6 @@
         },
         {
           "id": "truth_4",
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -783,7 +757,6 @@
         },
         {
           "id": "noResponse",
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -834,7 +807,6 @@
       ],
       "pre_scene_events": [
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "desertedStreet",
@@ -842,7 +814,6 @@
           }
         },
         {
-          "view": "self",
           "method": "play_audio",
           "options": {
             "asset_id": "background-music",
@@ -854,7 +825,6 @@
       "post_scene_events": [],
       "events": [
         {
-          "view": "self",
           "method": "fade",
           "options": {
             "opacity": [
@@ -866,7 +836,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -877,7 +846,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -892,7 +860,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -902,7 +869,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "coworkerimage",
@@ -911,7 +877,6 @@
           "auto_next": 0
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -938,7 +903,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -948,7 +912,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -963,7 +926,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -973,7 +935,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -1003,7 +964,6 @@
       "dynamic_events": [
         {
           "id": "gfhouse",
-          "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "GirlfriendsHouse"
@@ -1011,7 +971,6 @@
         },
         {
           "id": "parentsHouse",
-          "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "ParentsHouse"
@@ -1065,7 +1024,6 @@
       ],
       "pre_scene_events": [
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "background",
@@ -1073,7 +1031,6 @@
           }
         },
         {
-          "view": "self",
           "method": "play_audio",
           "options": {
             "asset_id": "background-music",
@@ -1085,7 +1042,6 @@
       "post_scene_events": [],
       "events": [
         {
-          "view": "self",
           "method": "fade",
           "options": {
             "opacity": [
@@ -1097,7 +1053,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "grabBat",
@@ -1106,7 +1061,6 @@
           "auto_next": 0
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1118,7 +1072,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1133,7 +1086,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "bat",
@@ -1142,7 +1094,6 @@
           "auto_next": 0
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1152,7 +1103,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1179,7 +1129,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1189,7 +1138,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -1235,7 +1183,6 @@
           }
         },
         {
-          "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "OnTheRoad"
@@ -1245,7 +1192,6 @@
       "dynamic_events": [
         {
           "id": "killCarl",
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1256,7 +1202,6 @@
         },
         {
           "id": "killImage",
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "hitBat",
@@ -1266,7 +1211,6 @@
         },
         {
           "id": "kill the girlfriend",
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1277,7 +1221,6 @@
         },
         {
           "id": "killBoth",
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1288,7 +1231,6 @@
         },
         {
           "id": "leave",
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1345,7 +1287,6 @@
       ],
       "pre_scene_events": [
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "parentsHouse",
@@ -1353,7 +1294,6 @@
           }
         },
         {
-          "view": "self",
           "method": "play_audio",
           "options": {
             "asset_id": "background-music",
@@ -1365,7 +1305,6 @@
       "post_scene_events": [],
       "events": [
         {
-          "view": "self",
           "method": "fade",
           "options": {
             "opacity": [
@@ -1377,7 +1316,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1387,7 +1325,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "parents",
@@ -1395,7 +1332,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1416,7 +1352,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1426,7 +1361,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1453,7 +1387,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -1481,7 +1414,6 @@
           }
         },
         {
-          "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "OnTheRoad"
@@ -1491,7 +1423,6 @@
       "dynamic_events": [
         {
           "id": "gameOver",
-          "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "gameOver"
@@ -1499,7 +1430,6 @@
         },
         {
           "id": "gameOverText",
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1547,7 +1477,6 @@
       ],
       "pre_scene_events": [
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "onTheRoad",
@@ -1555,7 +1484,6 @@
           }
         },
         {
-          "view": "self",
           "method": "play_audio",
           "options": {
             "asset_id": "background-music",
@@ -1567,7 +1495,6 @@
       "post_scene_events": [],
       "events": [
         {
-          "view": "self",
           "method": "fade",
           "options": {
             "opacity": [
@@ -1579,7 +1506,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1591,7 +1517,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1606,7 +1531,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "onTheRoad8",
@@ -1614,7 +1538,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1630,7 +1553,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -1657,7 +1579,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "onTheRoad19",
@@ -1665,7 +1586,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1681,7 +1601,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1696,7 +1615,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -1723,7 +1641,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "onTheRoad20",
@@ -1731,7 +1648,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1747,7 +1663,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1762,7 +1677,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -1789,7 +1703,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "onTheRoad30",
@@ -1797,7 +1710,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1815,7 +1727,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1830,7 +1741,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -1857,7 +1767,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "cry",
@@ -1865,7 +1774,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1875,7 +1783,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_conversation",
           "options": {
             "view_id": "conv1",
@@ -1890,7 +1797,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1936,7 +1842,6 @@
       ],
       "pre_scene_events": [
         {
-          "view": "self",
           "method": "new_image",
           "options": {
             "asset_id": "gameOver",
@@ -1944,7 +1849,6 @@
           }
         },
         {
-          "view": "self",
           "method": "stop_audio",
           "options": {
             "asset_id": "background-music",
@@ -1955,7 +1859,6 @@
       "post_scene_events": [],
       "events": [
         {
-          "view": "self",
           "method": "fade",
           "options": {
             "opacity": [
@@ -1967,7 +1870,6 @@
           "auto_next": 1
         },
         {
-          "view": "self",
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
@@ -1977,7 +1879,6 @@
           }
         },
         {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "choi2",
@@ -1998,7 +1899,6 @@
           }
         },
         {
-          "view": "self",
           "method": "change_scene",
           "options": {
             "scene_id": "opening"

@@ -4,6 +4,7 @@ class PiG.View.SceneView extends SUI.View
     @model.view = this
     @dynamic_event_queue = []
     @current_event_index = options.current_event_index or 0
+    @layer_manager       = new PiG.Helper.ViewManager
     @view_manager        = new PiG.Helper.ViewManager
     @audio_manager       = new PiG.Helper.ViewManager
 
@@ -33,10 +34,13 @@ class PiG.View.SceneView extends SUI.View
 
 
   perform_event: (event) ->
-    if event.get('view') is 'self'
-      target = this
-    else
+    if event.get('layer')
+      target = @layer_manager.get event.get('layer')
+    else if event.get('view')
       target = @view_manager.get event.get('view')
+    else
+      target = this
+      
 
     return unless target
 
@@ -188,6 +192,8 @@ class PiG.View.SceneView extends SUI.View
     @model.layers.each (layer) =>
       layer.view = new PiG.View.LayerView
         app: @app, parent: this, model: layer, scene: @model
+
+      @layer_manager.add layer.id, layer.view
 
 
   _position: ->
