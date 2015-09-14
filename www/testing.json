@@ -41,11 +41,12 @@
   "scenes": [
     {
       "id": "opening",
-      "view": "SceneView",
+      "view": "LimitedTimeSceneView",
       "options": {
-        "opacity": 0
+        "time": ["2", "minutes"],
+        "indicator_layer": "subtitles",
+        "realtime": true
       },
-
       "actors": [
         {
           "id": "shawn",
@@ -66,7 +67,6 @@
           "actions": {}
         }
       ],
-
       "layers": [
         {
           "id": "background",
@@ -84,113 +84,11 @@
           "id": "subtitles",
           "z": 4
         }
-
       ],
-      "pre_scene_events": [
-        {
-          "view": "self",
-          "method": "new_image",
-          "options": {
-            "view_id":  "background",
-            "asset_id": "background",
-            "layer_id": "background"
-          }
-        },
-        {
-          "view": "self",
-          "method": "play_audio",
-          "options": {
-            "audio_id": "bg_sound",
-            "asset_id": "background-music",
-            "loop": true
-          }
-        },
-        {
-          "view": "self",
-          "method": "fade",
-          "options": {
-            "opacity": [0, 1],
-            "duration": 1000
-          }
-        }
-      ],
-      "post_scene_events": [
-        {
-          "view": "self",
-          "method": "fade",
-          "options": {
-            "opacity": [1, 0],
-            "duration": 1000
-          },
-          "wait": 1000
-        },
-        {
-          "view": "self",
-          "method": "stop_audio",
-          "options": {
-            "audio_id": "bg_sound",
-            "fade": 1000
-          },
-          "wait": 1000
-        }
-      ],
+      "pre_scene_events": [],
+      "post_scene_events": [],
       "events": [
         {
-          "view": "self",
-          "method": "fade_in_image",
-          "options": {
-            "view_id": "logo",
-            "asset_id": "logo",
-            "layer_id": "subtitles",
-            "position": {"x": 0.5, "y": 0.5},
-            "origin": {"x": 0.5, "y": 0.5},
-            "duration": 2000
-          },
-          "auto_next": 0
-        },
-        {
-          "view": "self",
-          "method": "fade_out_image",
-          "options": {
-            "view_id": "logo",
-            "duration": 700
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
-          "method": "fade_out_image",
-          "options": {
-            "view_id": "background",
-            "duration": 700
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
-          "method": "new_choices",
-          "options": {
-            "view_id": "choi1",
-            "title": "What should I do now?",
-            "description": "You have no idea what to do.",
-            "choice_font_size": 46,
-            "choice_radius": 50,
-            "background_color": "000000",
-            "background_opacity": 0.7,
-            "choices": [
-              {
-                "text": "tell a lie",
-                "dynamic_events": ["next"]
-              },
-              {
-                "text": "tell the truth",
-                "dynamic_events": ["back"]
-              }
-            ]
-          }
-        },
-        {
-          "view": "self",
           "method": "new_choices",
           "options": {
             "view_id": "select_location_in_living_room",
@@ -200,134 +98,45 @@
             "background_asset_id": "living-room-background",
             "choices": [
               {
-                "position": {"x": 0.25, "y": 0.25},
-                "dynamic_events": ["shawn_says_and_failed", "back"]
-
+                "position": {
+                  "x": 0.25,
+                  "y": 0.25
+                },
+                "dynamic_events": [
+                  "back"
+                ]
               },
               {
-                "position": {"x": 0.75, "y": 0.25},
-                "dynamic_events": ["knock_sound", "oz_says", "quit_the_room", "next"]
+                "position": {
+                  "x": 0.75,
+                  "y": 0.25
+                },
+                "dynamic_events": [
+                  "back"
+                ]
               },
               {
-                "position": {"x": 0.5, "y": 0.5},
-                "dynamic_events": ["sangmin_says_and_failed", "back"]
+                "position": {
+                  "x": 0.5,
+                  "y": 0.5
+                },
+                "dynamic_events": [
+                  {
+                    "method": "spend_time",
+                    "options": {
+                      "time": ["10", "seconds"]
+                    },
+                    "auto_next": 1
+                  },
+                  "back"
+                ]
               }
             ]
           }
         }
       ],
-      "dynamic_events": []
-    },
-    {
-      "id": "pizza",
-      "view": "SceneView",
-      "options": {
-        "opacity": 0
-      },
-      "actors": [],
-      "layers": [
-        {
-          "id": "background",
-          "z": 1
-        },
-        {
-          "id": "characters",
-          "z": 2
-        },
-        {
-          "id": "effectors",
-          "z": 3
-        },
-        {
-          "id": "subtitles",
-          "z": 4
-        }
-
-      ],
-      "pre_scene_events": [
-        {
-          "view": "self",
-          "method": "new_image",
-          "options": {
-            "asset_id": "pizza-background",
-            "layer_id": "background"
-          }
-        },
-        {
-          "view": "self",
-          "method": "play_audio",
-          "options": {
-            "audio_id": "bg_sound",
-            "asset_id": "pizza-theme-music",
-            "loop": true
-          }
-        }
-      ],
-      "post_scene_events": [
-        {
-          "view": "self",
-          "method": "stop_audio",
-          "options": {
-            "audio_id": "bg_sound",
-            "fade": 1000
-          },
-          "wait": 1000
-        },
-        {
-          "view": "self",
-          "method": "fade",
-          "options": {
-            "opacity": [1, 0],
-            "duration": 1000
-          },
-          "wait": 1000
-        }
-      ],
-      "events": [
-        {
-          "view": "self",
-          "method": "fade",
-          "options": {
-            "opacity": [0, 1],
-            "duration": 1000
-          },
-          "auto_next": 1
-        },
-        {
-          "view": "self",
-          "method": "new_monologue",
-          "options": {
-            "view_id": "mono1",
-            "opacity": 0.4,
-            "messages": [
-              "A delicious pizza is on the table."
-            ]
-          }
-        },
-        {
-          "view": "self",
-          "method": "new_monologue",
-          "options": {
-            "view_id": "mono2",
-            "halign": "center",
-            "valign": "middle",
-            "background_color": "ffffff",
-            "font_color": "000000",
-            "opacity": 1,
-            "messages": [
-              "I love pizza too much."
-            ]
-          }
-        },
-        {
-          "view": "self",
-          "method": "change_scene",
-          "options": {
-            "scene_id": "opening"
-          }
-        }
-      ],
-      "dynamic_events": []
+      "dynamic_events": [
+      ]
     }
   ]
 }

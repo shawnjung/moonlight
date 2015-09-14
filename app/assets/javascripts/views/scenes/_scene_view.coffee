@@ -42,9 +42,8 @@ class PiG.View.SceneView extends SUI.View
     else
       target = this
 
-
     return unless target
-
+    console.log event.toJSON()
     target[event.get('method')] event.get('options')
 
     if event.get('auto_next')
@@ -72,12 +71,14 @@ class PiG.View.SceneView extends SUI.View
 
   _perform_next_dynamic_event: ->
     event_name = @dynamic_event_queue.shift()
-    switch event_name
-      when 'next'
+    switch
+      when event_name is 'next'
         @perform_next_event()
-      when 'back'
+      when event_name is 'back'
         event = @model.events.at @current_event_index
         @perform_event event
+      when event_name instanceof Object
+        @perform_event new @model.events.model event_name
       else
         dynamic_event = @model.dynamic_events.get event_name
         @perform_event dynamic_event

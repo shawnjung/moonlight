@@ -1,4 +1,5 @@
 class PiG.Model.Scene extends Backbone.Model
+  view_namespace: 'PiG.View'
   initialize: (attributes, options) ->
     @actors = new PiG.Collection.Actors
     @layers = new PiG.Collection.Layers
@@ -25,3 +26,9 @@ class PiG.Model.Scene extends Backbone.Model
 
   init_dynamic_events: (dynamic_events_data) ->
     @dynamic_events.reset dynamic_events_data
+
+  load_view_class: ->
+    namespace = eval @view_namespace
+    output = namespace[@get('view')]
+    output = namespace.SceneView unless output
+    output

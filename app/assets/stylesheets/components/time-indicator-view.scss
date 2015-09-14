@@ -1,0 +1,21 @@
+@import "moon";
+
+@include keyframes(blinking) {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+.time-indicator-view {
+  position: absolute;
+  left: 0; top: 0; right: 0; z-index: 10;
+  text-align: center;
+  .time-block {
+    @include inline-block;
+    padding: 6em 90em 6em;
+    @include background-image(linear-gradient(90deg, rgba(black, 0) 0, black 0.3, black 0.7, rgba(black, 0) 1));
+    .time-strings { color: white; }
+  }
+  .blinking { @include animation(blinking 1s); }
+  .time-string { font-weight: bold;  }
+}

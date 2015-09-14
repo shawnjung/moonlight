@@ -37,7 +37,8 @@ class PiG.SceneManager extends SUI.Router
 
   show_scene_view: (id) ->
     scene = @game.scenes.get id
-    @render_scene PiG.View.SceneView, model: scene
+    view  = scene.load_view_class()
+    @render_scene view, model: scene
 
 
 
