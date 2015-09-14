@@ -180,14 +180,6 @@
       ],
       "events": [
         {
-          "layer": "background",
-          "method": "shake",
-          "options": {
-            "strength": 2
-          },
-          "auto_next": 1
-        },
-        {
           "method": "new_monologue",
           "options": {
             "view_id": "mono2",
