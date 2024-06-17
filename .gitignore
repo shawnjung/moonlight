@@ -7,7 +7,6 @@ npm-debug.log
 .cache/
 .sass-cache/
 node_modules/
-www/assets/
 Gemfile.lock
 InstalledFiles
 _yardoc
